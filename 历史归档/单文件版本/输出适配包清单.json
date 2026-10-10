@@ -2,47 +2,47 @@
   "core_instruction_version": "0.5",
   "packages": [
     {
-      "model": "Anima",
-      "characters": 11538,
+      "path": "助手指令/Anima.md",
       "sources": [
         {
-          "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f",
-          "path": "历史归档/单文件版本/VDL-v0.5-基础版.md"
+          "path": "历史归档/单文件版本/VDL-v0.5-基础版.md",
+          "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f"
         },
         {
-          "sha256": "39d9ad71d807c831f9654a888d8fffaa2221d7b395f371e5d6fd742ef4b7a31c",
-          "path": "视觉表现资源/09-画面深度与静态表现发展.md"
+          "path": "视觉表现资源/09-画面深度与静态表现发展.md",
+          "sha256": "39d9ad71d807c831f9654a888d8fffaa2221d7b395f371e5d6fd742ef4b7a31c"
         },
         {
-          "sha256": "46882381dc451f2b65ecb9834189f33f427e9e6cdfe8edab64bbb48ccdbf5d43",
-          "path": "助手指令/共用内容/输出适配/Anima-生图.md"
+          "path": "助手指令/共用内容/输出适配/Anima-生图.md",
+          "sha256": "3d75d6f3b0e12771417ab88610dfb39f65f413646c8da9cab0f179c2438d26c9"
         }
       ],
-      "sha256": "2a75e74d8d84edec252b94a8b58d56f0719f8a0ae57f6c3114776c2fa0082623",
-      "path": "助手指令/Anima.md"
+      "model": "Anima",
+      "sha256": "0b6df445acc05a9e687baf468c99adea1d07d2e53c99f93277de17eec266a970",
+      "characters": 12699
     },
     {
-      "model": "MiniMax-H3",
-      "characters": 10013,
+      "path": "助手指令/MiniMax-H3.md",
       "sources": [
         {
-          "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f",
-          "path": "历史归档/单文件版本/VDL-v0.5-基础版.md"
+          "path": "历史归档/单文件版本/VDL-v0.5-基础版.md",
+          "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f"
         },
         {
-          "sha256": "a002f09e6c04bc40123683e77c33db09ed3490bb22109481732bd6e761e73671",
-          "path": "助手指令/共用内容/输出适配/MiniMax-H3-视频.md"
+          "path": "助手指令/共用内容/输出适配/MiniMax-H3-视频.md",
+          "sha256": "fc07a79b5a84459ed8fc7ef309cbb21a8ab90d16eaeda24372f53e149b3cf5ec"
         }
       ],
-      "sha256": "a2da3f7ba05059d2f290360a9eb1f8c61ee7570cca6f3743f0642cceb2345432",
-      "path": "助手指令/MiniMax-H3.md"
+      "model": "MiniMax-H3",
+      "sha256": "ecef714868b09f0f75eadc91f5e61cdcd421255843c7008a9afaf345cce88ad1",
+      "characters": 12906
     }
   ],
-  "image_runs": 0,
+  "version": "0.3",
+  "video_model": "MiniMax-H3",
+  "status": "separate_model_packages_not_generation_validated",
   "video_runs": 0,
   "image_model": "Anima",
-  "status": "separate_model_packages_not_generation_validated",
-  "video_model": "MiniMax-H3",
-  "version": "0.2",
-  "verified_date": "2026-10-10"
+  "verified_date": "2026-10-10",
+  "image_runs": 0
 }

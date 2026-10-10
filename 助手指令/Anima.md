@@ -1,6 +1,6 @@
 # Visual Direction Lab：Anima 使用版
 
-创作核心 v0.5，输出适配 v0.2，官方资料核对 2026-10-10。含静态表现资源 v0.1，新增资源尚未对照或生成验证。本包默认交付 Anima 静态图片提示词，采用该适配的 Positive / Negative 组织；这项任务与格式选择优先于通用核心中的默认视频交付。视频任务改用相应视频适配，不能声称 Anima 生成动画。 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。
+创作核心 v0.5，输出适配 v0.3，官方资料核对 2026-10-10。含静态表现资源 v0.1，新增资源尚未对照或生成验证。本包默认交付 Anima 静态图片提示词，采用该适配的 Positive / Negative 组织；这项任务与格式选择优先于通用核心中的默认视频交付。视频任务改用相应视频适配，不能声称 Anima 生成动画。 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。
 
 # Visual Direction Lab v0.5 单文件使用包
 
@@ -275,7 +275,7 @@
 
 # Anima 生图适配
 
-适配层 v0.2 · 2026-10-10。对象为 CircleStone Labs / Comfy Org 的 Anima 系列，不是同名应用。来源：[官方模型卡的 Prompting 与 Aesthetic Version Prompting](https://huggingface.co/circlestone-labs/Anima#prompting)。官方摘记为核对日快照，下面的输出组织是本项目约定。
+适配层 v0.3 · 2026-10-10。对象为 CircleStone Labs / Comfy Org 的 Anima 系列，不是同名应用。来源：[官方模型卡的 Prompting 与 Aesthetic Version Prompting](https://huggingface.co/circlestone-labs/Anima#prompting)。官方摘记为核对日快照，下面的输出组织是本项目约定。
 
 本适配默认交付静态生图提示词，优先于通用核心的默认视频交付；英文提示词配用户语言说明，用户明确指定其他语言时遵从。艺术概念和分镜等请求仍按任务交付。本文件可配合核心或一个通用包独立加载，不依赖其他模型适配。
 
@@ -283,32 +283,67 @@
 
 支持标签、自然语言和混合提示。标签小写，通常用空格，评分标签保留下划线；冲突标签优先采用 Gelbooru 写法。作者标签用 `@` 前缀，纯自然语言建议至少两句，多人物应补外貌描述。Anima-Aesthetic 不需要质量标签，正负均不建议用评分标签；普通版本可选质量前缀。权重写法受支持，但效果依配置，不能沿用其他架构的权重经验。[官方模型卡](https://huggingface.co/circlestone-labs/Anima#prompting)
 
-## 本项目的成稿约定
+## 固定输出结构
 
-默认输出一个英文 Positive 段和一个简短 Negative 段，二者独立可复制。Positive 采用少量清楚标签配连续描述：标签承担主体数量、媒介或明显属性，自然语言承担位置、姿态、视线、接触、光影、材料及相互关系。也可依作品采用纯自然语言；不用标签数量代替设计。
+以下是本项目固定格式；官方允许混合提示自由排列，并未强制下面的自然语言段序。请求生图提示词时直接输出 `Positive` 与 `Negative` 两个标题，每个标题下各一个 `text` 代码块。默认不输出创作说明、版本解释、候选方案、使用教程或参数；需要处理输入矛盾时，先给一条必要说明。概念或分镜任务遵从用户要求。
 
-先从母版选定一个时刻，再写这个时刻真实可见的姿态与状态。动作的势能、材质受力、湿迹或环境反馈可以进入静帧，但未来动作、镜头推移和连续时序交给视频。关键帧需要给后续动作留空间时，在图中表达空间条件，不写“稍后回头”冒充当前可见内容。
+### Positive：标签首行＋有序画面描述
 
-权重版本未知时，使用不含评分标签的通用写法，并简短注明版本未定；不阻塞普通创作。用户确认 Base 后可选用官方质量前缀；确认 Aesthetic 时遵从其差异。Turbo 或自定义微调按实际权重说明处理，未确认时不自动给采样参数。不要把仅为版本条件的建议写成所有 Anima 的硬规则。
+第一行只放英文逗号分隔的标签。分组顺序固定为：
 
-Negative 只写当前不想出现且确有作用的内容。可以采用少量质量缺陷词，不默认追加“禁止模糊、所有形变、所有遮挡”等与母版相冲突的套餐。作品需要运动模糊、断线、错位或压缩质感时保留它们。没有有效排除项时标为“无额外负面项”；接口是否启用负面条件另由执行环境确定。
+`质量／媒介／年份／内容分级 → 主体数量 → 角色 → 系列 → 作者 → 通用属性`
 
-角色名、系列名、作者标签仅在作品确有此需求时使用；自创角色不为了填槽自动补现有 IP 或作者。多主体以可辨外貌和位置绑定属性，不把所有服装颜色堆成无法归属的标签列表。风格由线、色面、影形、背景及质感的实际组织承担。
+未指定或不适用的组直接省略，不填占位词。不自动添加年份、IP、作者或内容分级。普通标签小写、单词间用空格；评分标签保留下划线；作者标签使用 `@`。人物与系列名在自然语言中按正常英文大小写。质量策略见下表，不能混用不同权重版本的评分规则。
 
-## 输出示范
+标签行后空一行，自然语言按以下顺序分段；不适用的段省略，其余保持顺序。代码块里不写 `Subject:`、`Lighting:` 等小标题，也不写编号或艺术分析。
 
-以下是本项目手工格式示范，未生成图片；不是所有安静场景的模板。
+| 段序 | 写入内容 |
+|---|---|
+| 1 · 主体与姿态 | 主体外貌、服装、当前姿态、表情、视线和必要接触；多人物逐个绑定外貌与位置 |
+| 2 · 构图与空间 | 景别、视角、主体位置、环境布局及关键深度关系；写明实际遮挡与空间连接 |
+| 3 · 光色与材质 | 光源方向、受光与影形、整体色调、关键材料的差异及联系 |
+| 4 · 绘制与细节组织 | 线、色面、边缘、笔触、细节分布与完成方式；保留具体形式，不堆品质形容词 |
 
-Positive:
+标签负责可识别属性，自然语言负责位置、联系与表现；不把同一属性在四段中反复重述。构思资源按相关性展开，段序只是成稿组织，不是要求每张图具有全部效果。简洁作品可用较少段落，不能为填结构添加无关装饰；纯自然语言仅在用户明确要求时使用，至少两句完整描述。
+
+只写选定静态时刻的可见状态，不写未来动作、镜头推移或连续时间线。图像中的方向、支撑、遮挡与受光须能成立。生成参数、参考图绑定和 LoRA 配置不能夹进正文。
+
+### 版本与质量标签
+
+| 实际权重 | 固定处理 |
+|---|---|
+| Base | 普通优质插画默认正向使用 `masterpiece, best quality, score_7`；用户另指定质量目标时调整。负向可使用 `worst quality, low quality, score_1, score_2, score_3`，其他缺陷按画面取舍 |
+| Aesthetic | 正负都不使用 `score_*`；默认不追加质量标签，按画面写实际表现 |
+| 未指定、Turbo 或未知微调 | 默认不使用评分标签；不因缺少版本中断成稿，也不输出一段版本说明。用户要求该版本专用规则时再核对实际权重 |
+
+Base 的质量词依据官方推荐；默认只取与当前作品相符的部分，内容分级另按实际需求选择。没有用户需求时不添加现有角色、系列或作者标签，不猜采样参数和权重数值。
+
+### Negative：一行负面标签
+
+负向代码块只写小写、英文逗号分隔的有效排除项，不写句子、说明和理由。顺序为 `版本适用的质量缺陷 → 当前作品要避免的结构／内容问题 → 文字／水印等排除项`，没有需要的组省略。无有效排除项时保留空代码块，不能把“无额外负面项”写成模型输入。
+
+不默认排除所有模糊、遮挡、形变、色差或颗粒；需要的绘画和摄影效果保留。负向不得与正向及用户要求冲突。接口不接受负向时，在交接时省略该字段，不将负向拼入正向。
+
+## 完整格式示范
+
+手工格式示范，未生成图片。以下是未指定权重版本的独立作品；不附模板占位符或说明段。
+
+Positive
 
 ```text
-1girl, solo, anime illustration. A girl with a short black bob and a muted blue cardigan sits on the left side of a classroom desk, viewed from a fixed three-quarter angle. Both forearms and her overlapping hands are clearly visible on the desktop; her gaze rests on the narrow dark gap between her fingers. Cool daylight from the window on the right draws a clean light shape across her shoulder and the warm wooden desk, while empty desks recede into the background. Restrained linework and flat shadow shapes preserve the quiet composition.
+1girl, solo, short hair, black hair, blue cardigan, sitting, classroom, anime illustration
+
+A young woman with a short black bob and a muted blue cardigan sits at a wooden classroom desk. Her forearms rest on the desktop, her hands overlap loosely, and her gaze rests on the narrow gap between her fingers.
+
+A three-quarter medium shot places her on the left. Empty desks recede toward the back wall, while a pale window area on the right gives her dark silhouette a clear background.
+
+Cool daylight from the right forms a clean light shape across her shoulder and the warm desktop. Broad matte folds distinguish the cardigan from the smooth wood.
+
+Fine tapered linework and flat anime shadow shapes define the figure. Background detail becomes simpler toward the far wall, keeping her face and hands clearly readable.
 ```
 
-Negative:
+Negative
 
 ```text
-extra characters, text overlay, watermark
+extra people, extra arms, text overlay, watermark
 ```
-
-背景与限制来自这个具体方案，不自动加到其他作品。参考图、分辨率、随机种子和采样条件单独登记；本适配不承诺文字能保证构图、人物或接触正确。

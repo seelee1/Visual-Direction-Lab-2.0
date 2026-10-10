@@ -29,11 +29,11 @@ $sections = foreach ($source in $sources) {
     })
 }
 $resourceNote = if ($package.model -eq 'Anima') { '含静态表现资源 v0.1，新增资源尚未对照或生成验证。' } else { '' }
-$body = "# Visual Direction Lab：$($package.model) 使用版`n`n创作核心 v0.5，输出适配 v0.2，官方资料核对 2026-10-10。$resourceNote$($package.instruction) 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。`n`n" + ($sections -join "`n`n---`n`n") + "`n"
+$body = "# Visual Direction Lab：$($package.model) 使用版`n`n创作核心 v0.5，输出适配 v0.3，官方资料核对 2026-10-10。$resourceNote$($package.instruction) 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。`n`n" + ($sections -join "`n`n---`n`n") + "`n"
 [System.IO.File]::WriteAllText((Join-Path $projectRoot $output), $body, $utf8Writer)
 $sourceRecords = foreach ($source in $sources) { @{path=$source; sha256=(Get-FileHash -LiteralPath (Join-Path $projectRoot $source) -Algorithm SHA256).Hash.ToLowerInvariant()} }
 @{model=$package.model; path=$output; characters=$body.Length; sha256=(Get-FileHash -LiteralPath (Join-Path $projectRoot $output) -Algorithm SHA256).Hash.ToLowerInvariant(); sources=@($sourceRecords)}
 }
-$manifest = @{version='0.2'; core_instruction_version='0.5'; status='separate_model_packages_not_generation_validated'; verified_date='2026-10-10'; image_model='Anima'; video_model='MiniMax-H3'; image_runs=0; video_runs=0; packages=@($packageRecords)}
+$manifest = @{version='0.3'; core_instruction_version='0.5'; status='separate_model_packages_not_generation_validated'; verified_date='2026-10-10'; image_model='Anima'; video_model='MiniMax-H3'; image_runs=0; video_runs=0; packages=@($packageRecords)}
 [System.IO.File]::WriteAllText((Join-Path $projectRoot '历史归档/单文件版本/输出适配包清单.json'), ($manifest | ConvertTo-Json -Depth 10), $utf8Writer)
 $packageRecords | ForEach-Object { [pscustomobject]@{model=$_.model; package=$_.path; characters=$_.characters; source_files=$_.sources.Count} } | ConvertTo-Json
