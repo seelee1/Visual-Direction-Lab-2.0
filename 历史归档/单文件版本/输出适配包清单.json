@@ -1,19 +1,19 @@
 {
-  "version": "0.3.1",
-  "image_model": "Anima",
-  "video_model": "MiniMax-H3",
   "status": "separate_model_packages_not_generation_validated",
   "core_instruction_version": "0.5",
-  "image_runs": 0,
+  "verified_date": "2026-10-10",
   "packages": [
     {
-      "characters": 13386,
+      "model": "Anima",
       "path": "助手指令/Anima.md",
-      "sha256": "3d3b7a6ba13b9876684eacb80b301e2fd7e5c85c1ebeb3625f86b64e5aef6ca8",
       "sources": [
         {
           "path": "历史归档/单文件版本/VDL-v0.5-基础版.md",
           "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f"
+        },
+        {
+          "path": "视觉表现资源/10-艺术风格与审美方向发展.md",
+          "sha256": "0cb80dd9bffbcf4b54e50ebab35e05127e84c62097a30bba985c306bc5a74d92"
         },
         {
           "path": "视觉表现资源/09-画面深度与静态表现发展.md",
@@ -24,25 +24,33 @@
           "sha256": "2871599389541201f92125d043f5038e0900189460504a019b1e4f100427d943"
         }
       ],
-      "model": "Anima"
+      "characters": 17162,
+      "sha256": "a2275d694eb5f600e1d65759a1d6878b863ecb705942924f4f9e900442724e08"
     },
     {
-      "characters": 12910,
+      "model": "MiniMax-H3",
       "path": "助手指令/MiniMax-H3.md",
-      "sha256": "3c7fe5320b33c1f5563da3cf60eba767ff4b3cbb40627d640ff40a20bfc155f2",
       "sources": [
         {
           "path": "历史归档/单文件版本/VDL-v0.5-基础版.md",
           "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f"
         },
         {
+          "path": "视觉表现资源/10-艺术风格与审美方向发展.md",
+          "sha256": "0cb80dd9bffbcf4b54e50ebab35e05127e84c62097a30bba985c306bc5a74d92"
+        },
+        {
           "path": "助手指令/共用内容/输出适配/MiniMax-H3-视频.md",
           "sha256": "5aba30f0731c3c8f9a101602f8866d242ba080eb952601cc041904caf7311efd"
         }
       ],
-      "model": "MiniMax-H3"
+      "characters": 16706,
+      "sha256": "1de85dfa2144f893bd108932390c24651bd4464a657c03663d050f35e064bc16"
     }
   ],
+  "video_model": "MiniMax-H3",
   "video_runs": 0,
-  "verified_date": "2026-10-10"
+  "image_model": "Anima",
+  "version": "0.3.1",
+  "image_runs": 0
 }
