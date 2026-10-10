@@ -1,6 +1,6 @@
 # Visual Direction Lab：MiniMax-H3 使用版
 
-创作核心 v0.5，输出适配 v0.3，官方资料核对 2026-10-10。本包默认交付 MiniMax-H3 视频提示词，按实际任务选择基础或全参考字段；特定格式优先于通用核心的自然段默认交付。静态图片生成需另选生图适配。 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。
+创作核心 v0.5，输出适配 v0.3.1，官方资料核对 2026-10-10。本包默认交付 MiniMax-H3 视频提示词，按实际任务选择基础或全参考字段；特定格式优先于通用核心的自然段默认交付。静态图片生成需另选生图适配。 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。
 
 # Visual Direction Lab v0.5 单文件使用包
 
@@ -173,7 +173,7 @@
 
 # MiniMax-H3 视频适配
 
-适配层 v0.3 · 2026-10-10。来源为官方 [模型卡](https://huggingface.co/MiniMaxAI/MiniMax-H3)、[基础提示指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md)与[全参考指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md)。以下规则用于格式适配，未接通生成环境。
+适配层 v0.3.1 · 2026-10-10。来源为官方 [模型卡](https://huggingface.co/MiniMaxAI/MiniMax-H3)、[基础提示指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md)与[全参考指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md)。以下规则用于格式适配，未接通生成环境。
 
 本适配默认交付视频提示词，特定字段优先于通用核心的自然段默认交付；英文提示词配用户语言说明，台词和画面文字保持原文，用户明确指定其他语言时遵从。没有参考默认 T2VA；实际参考角色不明且影响模式时简短澄清。本文件可配合核心或一个通用包独立加载，不依赖生图适配。
 

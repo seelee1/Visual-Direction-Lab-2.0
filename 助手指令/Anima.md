@@ -1,6 +1,6 @@
 # Visual Direction Lab：Anima 使用版
 
-创作核心 v0.5，输出适配 v0.3，官方资料核对 2026-10-10。含静态表现资源 v0.1，新增资源尚未对照或生成验证。本包默认交付 Anima 静态图片提示词，采用该适配的 Positive / Negative 组织；这项任务与格式选择优先于通用核心中的默认视频交付。视频任务改用相应视频适配，不能声称 Anima 生成动画。 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。
+创作核心 v0.5，输出适配 v0.3.1，官方资料核对 2026-10-10。含静态表现资源 v0.1，新增资源尚未对照或生成验证。本包默认交付 Anima 静态图片提示词，采用该适配的 Positive / Negative 组织；这项任务与格式选择优先于通用核心中的默认视频交付。视频任务改用相应视频适配，不能声称 Anima 生成动画。 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。
 
 # Visual Direction Lab v0.5 单文件使用包
 
@@ -275,13 +275,13 @@
 
 # Anima 生图适配
 
-适配层 v0.3 · 2026-10-10。对象为 CircleStone Labs / Comfy Org 的 Anima 系列，不是同名应用。来源：[官方模型卡的 Prompting 与 Aesthetic Version Prompting](https://huggingface.co/circlestone-labs/Anima#prompting)。官方摘记为核对日快照，下面的输出组织是本项目约定。
+适配层 v0.3.1 · 2026-10-10。对象为 CircleStone Labs / Comfy Org 的 Anima 系列，不是同名应用。来源：[官方模型卡的 Prompting 与 Aesthetic Version Prompting](https://huggingface.co/circlestone-labs/Anima#prompting)。官方摘记为核对日快照，下面的输出组织是本项目约定。
 
 本适配默认交付静态生图提示词，优先于通用核心的默认视频交付；英文提示词配用户语言说明，用户明确指定其他语言时遵从。艺术概念和分镜等请求仍按任务交付。本文件可配合核心或一个通用包独立加载，不依赖其他模型适配。
 
 ## 官方摘记
 
-支持标签、自然语言和混合提示。标签小写，通常用空格，评分标签保留下划线；冲突标签优先采用 Gelbooru 写法。作者标签用 `@` 前缀，纯自然语言建议至少两句，多人物应补外貌描述。Anima-Aesthetic 不需要质量标签，正负均不建议用评分标签；普通版本可选质量前缀。权重写法受支持，但效果依配置，不能沿用其他架构的权重经验。[官方模型卡](https://huggingface.co/circlestone-labs/Anima#prompting)
+支持标签、自然语言和混合提示。标签小写，通常用空格，评分标签保留下划线；冲突标签优先采用 Gelbooru 写法。作者标签用 `@` 前缀，纯自然语言建议至少两句，多人物应补外貌描述。Anima-Aesthetic 不依赖质量标签，但官方允许保留 `masterpiece, best quality`；正负均不建议用评分标签。普通版本有推荐质量前缀。权重写法受支持，但效果依配置，不能沿用其他架构的权重经验。[官方模型卡](https://huggingface.co/circlestone-labs/Anima#prompting)
 
 ## 固定输出结构
 
@@ -313,10 +313,10 @@
 | 实际权重 | 固定处理 |
 |---|---|
 | Base | 普通优质插画默认正向使用 `masterpiece, best quality, score_7`；用户另指定质量目标时调整。负向可使用 `worst quality, low quality, score_1, score_2, score_3`，其他缺陷按画面取舍 |
-| Aesthetic | 正负都不使用 `score_*`；默认不追加质量标签，按画面写实际表现 |
-| 未指定、Turbo 或未知微调 | 默认不使用评分标签；不因缺少版本中断成稿，也不输出一段版本说明。用户要求该版本专用规则时再核对实际权重 |
+| Aesthetic | 正向默认使用 `masterpiece, best quality`；正负都不使用 `score_*` |
+| 未指定、Turbo 或未知微调 | 正向默认使用 `masterpiece, best quality`，不使用评分标签；不因缺少版本中断成稿。用户提供微调专用规则时按其规则处理 |
 
-Base 的质量词依据官方推荐；默认只取与当前作品相符的部分，内容分级另按实际需求选择。没有用户需求时不添加现有角色、系列或作者标签，不猜采样参数和权重数值。
+本项目的普通优质插画默认添加 `masterpiece, best quality`，包括未指定权重的请求；不要将质量词与 `score_*` 评分词混为一类。Base 额外使用 `score_7`，Aesthetic 和未知版本不加评分词。用户明确不用质量词或要求其他质量目标时遵从。内容分级另按实际需求选择。没有用户需求时不添加现有角色、系列或作者标签，不猜采样参数和权重数值。
 
 ### Negative：一行负面标签
 
@@ -324,14 +324,14 @@ Base 的质量词依据官方推荐；默认只取与当前作品相符的部分
 
 不默认排除所有模糊、遮挡、形变、色差或颗粒；需要的绘画和摄影效果保留。负向不得与正向及用户要求冲突。接口不接受负向时，在交接时省略该字段，不将负向拼入正向。
 
-## 完整格式示范
+## 通用／Aesthetic 完整格式示范
 
-手工格式示范，未生成图片。以下是未指定权重版本的独立作品；不附模板占位符或说明段。
+手工格式示范，未生成图片。以下适用于未指定权重的普通优质插画，也适用于 Aesthetic：含质量词、不含评分词。Base 的首行替换见后文。不附模板占位符或说明段。
 
 Positive
 
 ```text
-1girl, solo, short hair, black hair, blue cardigan, sitting, classroom, anime illustration
+masterpiece, best quality, 1girl, solo, short hair, black hair, blue cardigan, sitting, classroom, anime illustration
 
 A young woman with a short black bob and a muted blue cardigan sits at a wooden classroom desk. Her forearms rest on the desktop, her hands overlap loosely, and her gaze rests on the narrow gap between her fingers.
 
@@ -347,3 +347,19 @@ Negative
 ```text
 extra people, extra arms, text overlay, watermark
 ```
+
+## Base 示例的明确差异
+
+相同作品确认使用 Base 时，保留以上四段画面描述，Positive 首行改为：
+
+```text
+masterpiece, best quality, score_7, 1girl, solo, short hair, black hair, blue cardigan, sitting, classroom, anime illustration
+```
+
+Negative 改为：
+
+```text
+worst quality, low quality, score_1, score_2, score_3, extra people, extra arms, text overlay, watermark
+```
+
+通用／Aesthetic 示例和 Base 示例都包含正向质量词；仅 Base 示例包含评分词。示范中的前缀与版本规则必须保持一致。

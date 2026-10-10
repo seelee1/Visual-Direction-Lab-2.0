@@ -1,8 +1,15 @@
 {
+  "version": "0.3.1",
+  "image_model": "Anima",
+  "video_model": "MiniMax-H3",
+  "status": "separate_model_packages_not_generation_validated",
   "core_instruction_version": "0.5",
+  "image_runs": 0,
   "packages": [
     {
+      "characters": 13386,
       "path": "助手指令/Anima.md",
+      "sha256": "3d3b7a6ba13b9876684eacb80b301e2fd7e5c85c1ebeb3625f86b64e5aef6ca8",
       "sources": [
         {
           "path": "历史归档/单文件版本/VDL-v0.5-基础版.md",
@@ -14,15 +21,15 @@
         },
         {
           "path": "助手指令/共用内容/输出适配/Anima-生图.md",
-          "sha256": "3d75d6f3b0e12771417ab88610dfb39f65f413646c8da9cab0f179c2438d26c9"
+          "sha256": "2871599389541201f92125d043f5038e0900189460504a019b1e4f100427d943"
         }
       ],
-      "model": "Anima",
-      "sha256": "0b6df445acc05a9e687baf468c99adea1d07d2e53c99f93277de17eec266a970",
-      "characters": 12699
+      "model": "Anima"
     },
     {
+      "characters": 12910,
       "path": "助手指令/MiniMax-H3.md",
+      "sha256": "3c7fe5320b33c1f5563da3cf60eba767ff4b3cbb40627d640ff40a20bfc155f2",
       "sources": [
         {
           "path": "历史归档/单文件版本/VDL-v0.5-基础版.md",
@@ -30,19 +37,12 @@
         },
         {
           "path": "助手指令/共用内容/输出适配/MiniMax-H3-视频.md",
-          "sha256": "fc07a79b5a84459ed8fc7ef309cbb21a8ab90d16eaeda24372f53e149b3cf5ec"
+          "sha256": "5aba30f0731c3c8f9a101602f8866d242ba080eb952601cc041904caf7311efd"
         }
       ],
-      "model": "MiniMax-H3",
-      "sha256": "ecef714868b09f0f75eadc91f5e61cdcd421255843c7008a9afaf345cce88ad1",
-      "characters": 12906
+      "model": "MiniMax-H3"
     }
   ],
-  "version": "0.3",
-  "video_model": "MiniMax-H3",
-  "status": "separate_model_packages_not_generation_validated",
   "video_runs": 0,
-  "image_model": "Anima",
-  "verified_date": "2026-10-10",
-  "image_runs": 0
+  "verified_date": "2026-10-10"
 }
