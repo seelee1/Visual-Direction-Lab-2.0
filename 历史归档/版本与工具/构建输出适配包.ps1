@@ -7,7 +7,9 @@ $packages = @(
 )
 $utf8Writer = [System.Text.UTF8Encoding]::new($false)
 $packageRecords = foreach ($package in $packages) {
-$sources = @('历史归档/单文件版本/VDL-v0.5-基础版.md', $package.adapter)
+$sources = @('历史归档/单文件版本/VDL-v0.5-基础版.md')
+if ($package.model -eq 'Anima') { $sources += '视觉表现资源/09-画面深度与静态表现发展.md' }
+$sources += $package.adapter
 $output = $package.output
 $outputFolder = Split-Path -Parent (Join-Path $projectRoot $output)
 [System.IO.Directory]::CreateDirectory($outputFolder) | Out-Null
@@ -26,7 +28,8 @@ $sections = foreach ($source in $sources) {
         return ']('+$relative+')'
     })
 }
-$body = "# Visual Direction Lab：$($package.model) 使用版`n`n创作核心 v0.5，输出适配 v0.2，官方资料核对 2026-10-10。$($package.instruction) 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。`n`n" + ($sections -join "`n`n---`n`n") + "`n"
+$resourceNote = if ($package.model -eq 'Anima') { '含静态表现资源 v0.1，新增资源尚未对照或生成验证。' } else { '' }
+$body = "# Visual Direction Lab：$($package.model) 使用版`n`n创作核心 v0.5，输出适配 v0.2，官方资料核对 2026-10-10。$resourceNote$($package.instruction) 模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。艺术母版保持模型无关，概念、分镜等任务按用户要求交付。本包未进行图片或视频生成验证。`n`n" + ($sections -join "`n`n---`n`n") + "`n"
 [System.IO.File]::WriteAllText((Join-Path $projectRoot $output), $body, $utf8Writer)
 $sourceRecords = foreach ($source in $sources) { @{path=$source; sha256=(Get-FileHash -LiteralPath (Join-Path $projectRoot $source) -Algorithm SHA256).Hash.ToLowerInvariant()} }
 @{model=$package.model; path=$output; characters=$body.Length; sha256=(Get-FileHash -LiteralPath (Join-Path $projectRoot $output) -Algorithm SHA256).Hash.ToLowerInvariant(); sources=@($sourceRecords)}
