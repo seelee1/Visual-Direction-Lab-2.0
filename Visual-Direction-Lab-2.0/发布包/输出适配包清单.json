@@ -1,35 +1,44 @@
 {
-  "version": "0.1",
   "image_runs": 0,
-  "video_runs": 0,
+  "status": "separate_model_packages_not_generation_validated",
   "verified_date": "2026-10-10",
+  "version": "0.2",
+  "video_runs": 0,
   "packages": [
     {
-      "characters": 12736,
+      "model": "Anima",
+      "path": "发布包/VDL-v0.5-Anima-生图使用版.md",
+      "characters": 8071,
+      "sha256": "09507ada11ab484fe9ee65c6ccaadfc96d383d22920a4823e8bc833f6f216b92",
       "sources": [
         {
           "path": "发布包/VDL-v0.5-基础版.md",
           "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f"
         },
         {
-          "path": "模型使用/输出适配/README.md",
-          "sha256": "d10894827f5522e3842c352c9ca8e7e7b925d482ccb652b2cf1cfe6e30b63caa"
-        },
-        {
           "path": "模型使用/输出适配/Anima-生图.md",
-          "sha256": "de2ba64ee3240d8a8b126101e995b7902aa3c9a5dfffd2ab2b2e986fede96d28"
+          "sha256": "46882381dc451f2b65ecb9834189f33f427e9e6cdfe8edab64bbb48ccdbf5d43"
+        }
+      ]
+    },
+    {
+      "model": "MiniMax-H3",
+      "path": "发布包/VDL-v0.5-MiniMax-H3-视频使用版.md",
+      "characters": 10013,
+      "sha256": "a2da3f7ba05059d2f290360a9eb1f8c61ee7570cca6f3743f0642cceb2345432",
+      "sources": [
+        {
+          "path": "发布包/VDL-v0.5-基础版.md",
+          "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f"
         },
         {
           "path": "模型使用/输出适配/MiniMax-H3-视频.md",
-          "sha256": "13d9be7922986e065b9550b2c98a865a7936fd6dd092948ba3c5defae0d7de32"
+          "sha256": "a002f09e6c04bc40123683e77c33db09ed3490bb22109481732bd6e761e73671"
         }
-      ],
-      "sha256": "bbcba8e19e46a23eb30f2343d04d782c54b385dbe95797385bb447c5bf4bb6c5",
-      "path": "发布包/VDL-v0.5-Anima-H3-使用版.md"
+      ]
     }
   ],
-  "video_model": "MiniMax-H3",
   "image_model": "Anima",
-  "core_instruction_version": "0.5",
-  "status": "official_guidance_adaptation_not_generation_validated"
+  "video_model": "MiniMax-H3",
+  "core_instruction_version": "0.5"
 }
