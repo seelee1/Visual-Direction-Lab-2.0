@@ -2,8 +2,8 @@
 from pathlib import Path
 import json, hashlib
 
-PROJECT = Path(__file__).resolve().parent.parent
-ROOT = PROJECT / '创作案例与验证/实际试验/DeepSeek-v0.5-定向复查'
+PROJECT = Path(__file__).resolve().parent.parent.parent
+ROOT = PROJECT / '资料归档/创作案例与验证/实际试验/DeepSeek-v0.5-定向复查'
 if ROOT.exists():
     raise SystemExit('复查已准备，不覆盖冻结数据')
 for name in ('冻结材料', '请求', '原始输出'):
@@ -15,7 +15,7 @@ def digest(data):
 core_bytes = (PROJECT / '助手指令/共用内容/核心指令.md').read_bytes()
 (ROOT / '冻结材料/A0.md').write_bytes(core_bytes)
 core = core_bytes.decode('utf-8-sig').strip()
-old = json.loads((PROJECT / '创作案例与验证/实际试验/DeepSeek-v0.4-首轮/管理清单.json').read_text(encoding='utf-8'))
+old = json.loads((PROJECT / '资料归档/创作案例与验证/实际试验/DeepSeek-v0.4-首轮/管理清单.json').read_text(encoding='utf-8'))
 requests, scenes = [], []
 for index, (scene_id, historical_id) in enumerate((('N52','P014'),('N51','P010'),('D38','P006'),('D31','P002')), 1):
     scene = next(s for s in old['scenes'] if s['id']==scene_id)

@@ -1,6 +1,6 @@
 param([string]$TrialName='DeepSeek-v0.4-首轮')
 $ErrorActionPreference='Stop'
-$projectRoot=[System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
+$projectRoot=[System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
 $trialRoot=[System.IO.Path]::GetFullPath((Join-Path (Join-Path $PSScriptRoot '实际试验') $TrialName))
 if (-not $trialRoot.StartsWith([System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '实际试验'))+[System.IO.Path]::DirectorySeparatorChar)) { throw '试验名称超出目录' }
 if (Test-Path -LiteralPath $trialRoot) { throw '试验目录已存在，不覆盖冻结材料' }
@@ -14,8 +14,8 @@ $null=New-Item -ItemType Directory -Path (Join-Path $trialRoot '评审') -Force
 $conditions=@(
     @{id='B0';source=$null},
     @{id='A0';source='助手指令/共用内容/核心指令.md'},
-    @{id='A2';source='历史归档/单文件版本/VDL-v0.4-扩展版.md'},
-    @{id='A3';source='历史归档/单文件版本/VDL-v0.4-深化版.md'}
+    @{id='A2';source='资料归档/单文件版本/VDL-v0.4-扩展版.md'},
+    @{id='A3';source='资料归档/单文件版本/VDL-v0.4-深化版.md'}
 )
 $scenes=@(
     @{id='D31';kind='public_development';request='5 秒，日式二维少女奔跑、急停、回头；单镜头，脚部接触可见。'},

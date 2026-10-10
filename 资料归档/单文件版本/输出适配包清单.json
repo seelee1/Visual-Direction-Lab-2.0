@@ -1,14 +1,16 @@
 {
-  "status": "separate_model_packages_not_generation_validated",
-  "core_instruction_version": "0.5",
-  "verified_date": "2026-10-10",
+  "image_runs": 0,
+  "video_model": "MiniMax-H3",
+  "version": "0.3.1",
   "packages": [
     {
       "model": "Anima",
+      "sha256": "a2275d694eb5f600e1d65759a1d6878b863ecb705942924f4f9e900442724e08",
+      "characters": 17162,
       "path": "助手指令/Anima.md",
       "sources": [
         {
-          "path": "历史归档/单文件版本/VDL-v0.5-基础版.md",
+          "path": "资料归档/单文件版本/VDL-v0.5-基础版.md",
           "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f"
         },
         {
@@ -23,16 +25,16 @@
           "path": "助手指令/共用内容/输出适配/Anima-生图.md",
           "sha256": "2871599389541201f92125d043f5038e0900189460504a019b1e4f100427d943"
         }
-      ],
-      "characters": 17162,
-      "sha256": "a2275d694eb5f600e1d65759a1d6878b863ecb705942924f4f9e900442724e08"
+      ]
     },
     {
       "model": "MiniMax-H3",
+      "sha256": "490d8db9fe026093ce8cb1b5657839776037990b210acd7924e982aafb70f4f2",
+      "characters": 15420,
       "path": "助手指令/MiniMax-H3.md",
       "sources": [
         {
-          "path": "历史归档/单文件版本/VDL-v0.5-基础版.md",
+          "path": "资料归档/单文件版本/VDL-v0.5-基础版.md",
           "sha256": "653c2d3e5a73bf8222c6e322ec2afcae8205932d522308fccb60eb8db69e476f"
         },
         {
@@ -41,16 +43,14 @@
         },
         {
           "path": "助手指令/共用内容/输出适配/MiniMax-H3-视频.md",
-          "sha256": "5aba30f0731c3c8f9a101602f8866d242ba080eb952601cc041904caf7311efd"
+          "sha256": "7a3b705b0ebf34e4f64b4599b8c8a4dcfe11cb3f314301dc143030e24e0bfa98"
         }
-      ],
-      "characters": 16706,
-      "sha256": "1de85dfa2144f893bd108932390c24651bd4464a657c03663d050f35e064bc16"
+      ]
     }
   ],
-  "video_model": "MiniMax-H3",
   "video_runs": 0,
+  "verified_date": "2026-10-10",
   "image_model": "Anima",
-  "version": "0.3.1",
-  "image_runs": 0
+  "status": "separate_model_packages_not_generation_validated",
+  "core_instruction_version": "0.5"
 }

@@ -361,22 +361,6 @@ non_diegetic_music:
 
 上传图片不自动意味着首帧；用户明确资产角色时直接采用。已有起止帧相互矛盾时先处理母版或路径，不能暗中替换输入图。未取得图片内容时，可以交付文字方案和待绑定说明，不能声称已对齐其外貌与构图。H3 所需资产清单和调用参数放在提示词外，不伪造文件绑定。
 
-## 画面与声音的转换
-
-正文采用可独立理解的英文画面关系，按当前任务保留事件、连接、方向、光影、风格和节奏；单镜头保持单镜头。标签与字段只负责表达，不负责创造技巧。静帧已经规定的身份和布局与时间变化分别写清，不逐字重描所有背景装饰。
-
-镜头标记从 `[Shot 1]` 开始，首镜不加切镜时间，后续实际切镜才增加递增时间；运镜用自然语言写在对应画面中。发声者用稳定 ID，台词以 `<d>[Language] ...</d>` 承载，保留用户原文。环境和实体声音放入 soundscape，角色能听到的音乐属于场内事件；无配乐用 `N/A`，只有明确全程无声才将 soundscape 设为 `N/A`。[基础指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md)
-
-本项目默认不为视觉任务添加台词或配乐；可以补与已选事件相符的环境声和实体声音。用户指定静音、对白、音乐或声画关系时优先保留。不要为凑字段把安静镜头写成音乐高潮，也不将模型支持音频误解为必须有音乐。
-
-全参考中，先建立实际资产和目标内容的关系，再写保留或转移职责；这些是生成指令，不是已验证保真度。完整描述承担具体画面，不能被六段资产清单代替。没有真实参考材料时不输出假 `<Subject N>` 或 `<Audio N>`。
-
-直接本地运行按实际权重和接口接收方式绑定资产；不能把第三方 `@image1` 写法自动当作官方格式。
-
-对齐的必要信息不可省略：I2VA 的 Picture 1 对齐 Shot 1 的 0.00 秒；FL2VA 的 Picture 1 对齐起点，Picture 2 对齐实际最后一镜的总时长终点；L2VA 的 Picture 1 只对齐终点。起止时刻保留两位小数，镜号和时长按当前作品填写。[基础指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md)
-
-全参考标签为 `<Subject N>`、`<Picture N>`、`<Video N>`、`<Audio N>`。视觉保留关系采用 `fully_preserved`、`partially_preserved`、`attribute_transfer` 或 `weak_reference`；音频采用 `fully_copy`、`partially_copy`、`reference` 或 `weak_reference`，只对已定义角色评判，不能把新增剧情当成参考丢失。[全参考指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md)
-
 ## 无参考单镜头格式示范
 
 手工格式示范，未生成视频。此处没有实际输入图，因此是 T2VA。

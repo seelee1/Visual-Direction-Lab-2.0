@@ -1,7 +1,7 @@
 param()
 $ErrorActionPreference = 'Stop'
 $projectRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
-$packageRoot = Join-Path $projectRoot '历史归档/单文件版本'
+$packageRoot = Join-Path $projectRoot '资料归档/单文件版本'
 $utf8Writer = [System.Text.UTF8Encoding]::new($false)
 $null = New-Item -ItemType Directory -Path $packageRoot -Force
 $coreFiles = @('助手指令/共用内容/核心指令.md','视觉表现资源/01-视觉表现激活地图.md','助手指令/共用内容/输出与信息保留.md')
@@ -21,8 +21,8 @@ $packageRecords = foreach ($package in $packages) {
     $sourceRecords = foreach ($source in $package.sources) {
         @{path=$source; sha256=(Get-FileHash -LiteralPath (Join-Path $projectRoot $source) -Algorithm SHA256).Hash.ToLowerInvariant()}
     }
-    @{path=('历史归档/单文件版本/'+$package.name); description=$package.description; characters=$packageText.Length; sha256=(Get-FileHash -LiteralPath $outputPath -Algorithm SHA256).Hash.ToLowerInvariant(); sources=@($sourceRecords)}
+    @{path=('资料归档/单文件版本/'+$package.name); description=$package.description; characters=$packageText.Length; sha256=(Get-FileHash -LiteralPath $outputPath -Algorithm SHA256).Hash.ToLowerInvariant(); sources=@($sourceRecords)}
 }
-$manifest = @{version='0.5'; core_instruction_version='0.5'; status='candidate_revision_from_v0.4_pilot'; validation_at_build='no_v0.5_package_validation_at_build'; previous_version_primary_runs=16; independent_model_runs=0; video_runs=0; packages=@($packageRecords); loading='choose_one_package_or_use_modules'; historical_research='研究参考/'; historical_package_manifest='历史归档/单文件版本/历史/v0.3-使用包清单.json'; historical_package_manifests=@('历史归档/单文件版本/历史/v0.3-使用包清单.json','历史归档/单文件版本/历史/v0.4-使用包清单.json'); evaluation='创作案例与验证/'; source_of_truth='助手指令/共用内容/'}
+$manifest = @{version='0.5'; core_instruction_version='0.5'; status='candidate_revision_from_v0.4_pilot'; validation_at_build='no_v0.5_package_validation_at_build'; previous_version_primary_runs=16; independent_model_runs=0; video_runs=0; packages=@($packageRecords); loading='choose_one_package_or_use_modules'; historical_research='研究参考/'; historical_package_manifest='资料归档/单文件版本/历史/v0.3-使用包清单.json'; historical_package_manifests=@('资料归档/单文件版本/历史/v0.3-使用包清单.json','资料归档/单文件版本/历史/v0.4-使用包清单.json'); evaluation='创作案例与验证/'; source_of_truth='助手指令/共用内容/'}
 [System.IO.File]::WriteAllText((Join-Path $packageRoot '使用包清单.json'), ($manifest | ConvertTo-Json -Depth 10), $utf8Writer)
 $packageRecords | ForEach-Object { [pscustomobject]@{package=$_.path; characters=$_.characters; source_files=$_.sources.Count} } | ConvertTo-Json

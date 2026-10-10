@@ -7,7 +7,7 @@ $packages = @(
 )
 $utf8Writer = [System.Text.UTF8Encoding]::new($false)
 $packageRecords = foreach ($package in $packages) {
-$sources = @('历史归档/单文件版本/VDL-v0.5-基础版.md')
+$sources = @('资料归档/单文件版本/VDL-v0.5-基础版.md')
 $sources += '视觉表现资源/10-艺术风格与审美方向发展.md'
 if ($package.model -eq 'Anima') { $sources += '视觉表现资源/09-画面深度与静态表现发展.md' }
 $sources += $package.adapter
@@ -36,5 +36,5 @@ $sourceRecords = foreach ($source in $sources) { @{path=$source; sha256=(Get-Fil
 @{model=$package.model; path=$output; characters=$body.Length; sha256=(Get-FileHash -LiteralPath (Join-Path $projectRoot $output) -Algorithm SHA256).Hash.ToLowerInvariant(); sources=@($sourceRecords)}
 }
 $manifest = @{version='0.3.1'; core_instruction_version='0.5'; status='separate_model_packages_not_generation_validated'; verified_date='2026-10-10'; image_model='Anima'; video_model='MiniMax-H3'; image_runs=0; video_runs=0; packages=@($packageRecords)}
-[System.IO.File]::WriteAllText((Join-Path $projectRoot '历史归档/单文件版本/输出适配包清单.json'), ($manifest | ConvertTo-Json -Depth 10), $utf8Writer)
+[System.IO.File]::WriteAllText((Join-Path $projectRoot '资料归档/单文件版本/输出适配包清单.json'), ($manifest | ConvertTo-Json -Depth 10), $utf8Writer)
 $packageRecords | ForEach-Object { [pscustomobject]@{model=$_.model; package=$_.path; characters=$_.characters; source_files=$_.sources.Count} } | ConvertTo-Json

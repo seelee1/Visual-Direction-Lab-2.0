@@ -3,8 +3,8 @@ from pathlib import Path
 from datetime import datetime, timezone
 import json, hashlib, sys
 
-PROJECT = Path(__file__).resolve().parent.parent
-ROOT = PROJECT / '创作案例与验证/实际试验/DeepSeek-v0.5-母版转换'
+PROJECT = Path(__file__).resolve().parent.parent.parent
+ROOT = PROJECT / '资料归档/创作案例与验证/实际试验/DeepSeek-v0.5-母版转换'
 def sha(b): return hashlib.sha256(b).hexdigest()
 def read(p): return json.loads(p.read_text(encoding='utf-8'))
 def write(p, x): p.write_text(json.dumps(x, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')

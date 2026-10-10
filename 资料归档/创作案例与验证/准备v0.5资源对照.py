@@ -2,8 +2,8 @@
 from pathlib import Path
 import json, hashlib, random, re
 
-PROJECT = Path(__file__).resolve().parent.parent
-ROOT = PROJECT / '创作案例与验证/实际试验/DeepSeek-v0.5-资源对照'
+PROJECT = Path(__file__).resolve().parent.parent.parent
+ROOT = PROJECT / '资料归档/创作案例与验证/实际试验/DeepSeek-v0.5-资源对照'
 if ROOT.exists():
     raise SystemExit('已准备，不覆盖冻结数据')
 for folder in ('冻结材料','请求','原始输出','评审'):
@@ -27,7 +27,7 @@ files = {'motion':'构思资源/02-运动与物理表现机会.md','relation':'�
          'process':'构思资源/06-过程展开与关联发展.md','observe':'构思资源/07-观察证据与视觉形式.md'}
 texts={key:load(name) for key,name in files.items()}
 core=load('核心指令.md')
-old=json.loads((PROJECT/'创作案例与验证/实际试验/DeepSeek-v0.4-首轮/管理清单.json').read_text(encoding='utf-8'))
+old=json.loads((PROJECT/'资料归档/创作案例与验证/实际试验/DeepSeek-v0.4-首轮/管理清单.json').read_text(encoding='utf-8'))
 specs={
  'N52':{'motion':['M-A11','M-A13','M-A14','M-A16'],'relation':['R-A01','R-A03'],
         'style':['J-A02','J-A07'],'observe':['O-F02','O-F07'],

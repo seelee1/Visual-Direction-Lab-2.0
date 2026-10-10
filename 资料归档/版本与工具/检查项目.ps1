@@ -2,7 +2,8 @@ param()
 $ErrorActionPreference = 'Stop'
 $projectRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
 function Resolve-SavedPath([string]$savedPath) {
-    $savedPath = $savedPath.Replace('模型使用/构思资源/', '视觉表现资源/').Replace('模型使用/', '助手指令/共用内容/').Replace('发布包/', '历史归档/单文件版本/').Replace('../使用/', '助手指令/')
+    if ($savedPath.StartsWith('历史归档/')) { $savedPath = $savedPath.Replace('历史归档/', '资料归档/') }
+    $savedPath = $savedPath.Replace('模型使用/构思资源/', '视觉表现资源/').Replace('模型使用/', '助手指令/共用内容/').Replace('发布包/', '资料归档/单文件版本/').Replace('../使用/', '助手指令/')
     return Join-Path $projectRoot $savedPath
 }
 $issues = [System.Collections.Generic.List[string]]::new()
@@ -24,7 +25,7 @@ foreach ($file in $jsonFiles) {
     try { $null = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8 | ConvertFrom-Json }
     catch { $issues.Add('无效 JSON：'+$file.FullName) }
 }
-$experimentRoot = Join-Path $projectRoot '研究参考/实验'
+$experimentRoot = Join-Path $projectRoot '资料归档/研究参考/实验'
 $freeze = Get-Content -LiteralPath (Join-Path $experimentRoot '准备输出/冻结登记.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 foreach ($inputRecord in $freeze.inputs) {
     $actual = (Get-FileHash -LiteralPath (Join-Path $experimentRoot $inputRecord.file) -Algorithm SHA256).Hash.ToLowerInvariant()
@@ -41,7 +42,7 @@ foreach ($record in $requestManifest) {
     finally { $hashAlgorithm.Dispose() }
     if ($requestHash -ne $record.sha256) { $issues.Add('旧请求变化：'+$record.request_id) }
 }
-$manifest = Get-Content -LiteralPath (Join-Path $projectRoot '历史归档/单文件版本/使用包清单.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+$manifest = Get-Content -LiteralPath (Join-Path $projectRoot '资料归档/单文件版本/使用包清单.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 foreach ($package in $manifest.packages) {
     if ((Get-FileHash -LiteralPath (Resolve-SavedPath $package.path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $package.sha256) { $issues.Add('发布包变化：'+$package.path) }
     foreach ($source in $package.sources) {
@@ -49,7 +50,7 @@ foreach ($package in $manifest.packages) {
     }
 }
 $adaptedPackageCount = 0
-$adaptedManifestPath = Join-Path $projectRoot '历史归档/单文件版本/输出适配包清单.json'
+$adaptedManifestPath = Join-Path $projectRoot '资料归档/单文件版本/输出适配包清单.json'
 if (Test-Path -LiteralPath $adaptedManifestPath) {
     $adaptedManifest = Get-Content -LiteralPath $adaptedManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
     foreach ($package in $adaptedManifest.packages) {
@@ -70,7 +71,7 @@ foreach ($historyPath in $historicalManifestPaths) {
     }
 }
 $publicCaseCount = 0
-$caseConfigs = @(Get-ChildItem -LiteralPath (Join-Path $projectRoot '创作案例与验证') -Filter '*公开场景.json' -File)
+$caseConfigs = @(Get-ChildItem -LiteralPath (Join-Path $projectRoot '资料归档/创作案例与验证') -Filter '*公开场景.json' -File)
 foreach ($configFile in $caseConfigs) {
     $caseConfig = Get-Content -LiteralPath $configFile.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
     $publicCaseCount += $caseConfig.scenes.Count
@@ -91,7 +92,7 @@ foreach ($group in @($developmentIds | Group-Object)) {
 }
 $actualModelRuns = 0
 $excludedModelRuns = 0
-$actualTrialRoot = Join-Path $projectRoot '创作案例与验证/实际试验'
+$actualTrialRoot = Join-Path $projectRoot '资料归档/创作案例与验证/实际试验'
 if (Test-Path -LiteralPath $actualTrialRoot) {
     foreach ($trial in @(Get-ChildItem -LiteralPath $actualTrialRoot -Directory)) {
         $trialManifestPath = Join-Path $trial.FullName '管理清单.json'
