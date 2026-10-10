@@ -1,0 +1,22 @@
+{
+  "notes": [
+    "后台模型版本未公开",
+    "仅保存最终可见回答，不保存思考展开文本",
+    "新会话发送前检查并统一模式",
+    "首轮每条件每场景仅一次；不构成统计证据",
+    "本轮评审由项目作者知晓条件进行，不是盲评"
+  ],
+  "completed_requests": 16,
+  "search_mode": false,
+  "video_runs": 0,
+  "context": "one_new_conversation_per_request",
+  "thinking_mode": true,
+  "model_display_name": "全新模型上线（页面未显示可核验版本）",
+  "failed_requests": 0,
+  "platform": "DeepSeek web",
+  "status": "completed_pilot_outputs_captured",
+  "completed_responses_including_excluded": 17,
+  "submitted_requests": 17,
+  "backend_model_version": null,
+  "excluded_responses": 1
+}

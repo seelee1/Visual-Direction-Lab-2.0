@@ -1,0 +1,88 @@
+{
+  "trial_version": "0.5-targeted-1",
+  "request_count": 4,
+  "replicates": 1,
+  "scope": "core_only_not_resource_or_package_validation",
+  "requests": [
+    {
+      "request_id": "C001",
+      "scene": "N52",
+      "condition": "v0.5_core_only",
+      "replicate": 1,
+      "historical_reference": "P014",
+      "request_file": "请求/C001.md",
+      "sha256": "5c3fca2e787f25d2d9a468793f02b96fc6558d790165663d1477c81810e7f293",
+      "characters": 2067,
+      "fnv1a_utf16": 4014976085
+    },
+    {
+      "request_id": "C002",
+      "scene": "N51",
+      "condition": "v0.5_core_only",
+      "replicate": 1,
+      "historical_reference": "P010",
+      "request_file": "请求/C002.md",
+      "sha256": "3e978fa68fe9d5cfd104229e45a89ac7539ea8b7f0c5ce97658844d3a8c8124a",
+      "characters": 2061,
+      "fnv1a_utf16": 2888833773
+    },
+    {
+      "request_id": "C003",
+      "scene": "D38",
+      "condition": "v0.5_core_only",
+      "replicate": 1,
+      "historical_reference": "P006",
+      "request_file": "请求/C003.md",
+      "sha256": "0cbef129e747081d980e5330fd224738d6bf96cd0841395f3989ddc6b147637f",
+      "characters": 2058,
+      "fnv1a_utf16": 251721407
+    },
+    {
+      "request_id": "C004",
+      "scene": "D31",
+      "condition": "v0.5_core_only",
+      "replicate": 1,
+      "historical_reference": "P002",
+      "request_file": "请求/C004.md",
+      "sha256": "bc4061bb979174250255d94eafc2b6bee01db537b52131f7f324577a86b13291",
+      "characters": 2058,
+      "fnv1a_utf16": 2295838516
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "new_concrete_scene_not_strict_blind",
+      "request": "6 秒日式二维，一串悬挂的钥匙被手拨动，手离开后钥匙逐渐安定；固定近景单镜头。",
+      "id": "N52"
+    },
+    {
+      "kind": "new_concrete_scene_not_strict_blind",
+      "request": "8 秒日式二维，两人共同抬一块长木板通过狭窄门口，固定全景单镜头。",
+      "id": "N51"
+    },
+    {
+      "kind": "public_development",
+      "request": "6 秒，纯线条与色块动画，一个形状逐渐显现；没有人物与剧情。",
+      "id": "D38"
+    },
+    {
+      "kind": "public_development",
+      "request": "5 秒，日式二维少女奔跑、急停、回头；单镜头，脚部接触可见。",
+      "id": "D31"
+    }
+  ],
+  "output_contract": "只交付一份可独立理解的连续视频提示词，300–500 个中文字符，不展示方案列表或分析。遇到要求冲突可以简短说明。",
+  "materials": [
+    {
+      "condition": "A0",
+      "frozen_file": "冻结材料/A0.md",
+      "sha256": "8d27d35c7d9b041afb0f91de902d7e3ea94735ee8d45ef0794eb1bd7e39f51f3"
+    }
+  ],
+  "limitations": [
+    "public_previous_tasks",
+    "historical_reference_not_contemporaneous_control",
+    "one_sample_each",
+    "exact_backend_unknown"
+  ]
+}

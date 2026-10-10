@@ -1,0 +1,256 @@
+{
+  "replicates": 1,
+  "trial_name": "DeepSeek-v0.4-首轮",
+  "trial_version": "0.4-pilot-1",
+  "conditions": [
+    {
+      "source": null,
+      "id": "B0"
+    },
+    {
+      "source": "模型使用/核心指令.md",
+      "id": "A0"
+    },
+    {
+      "source": "发布包/VDL-v0.4-扩展版.md",
+      "id": "A2"
+    },
+    {
+      "source": "发布包/VDL-v0.4-深化版.md",
+      "id": "A3"
+    }
+  ],
+  "request_count": 16,
+  "limitations": [
+    "pilot_not_statistical_evidence",
+    "new_cases_are_public_at_execution",
+    "web_model_exact_backend_unknown",
+    "different_input_lengths"
+  ],
+  "created_at": "2026-10-10T11:51:49.1797122+08:00",
+  "requests": [
+    {
+      "request_id": "P001",
+      "scene": "D31",
+      "scene_kind": "public_development",
+      "condition": "B0",
+      "replicate": 1,
+      "request_file": "请求/P001.md",
+      "sha256": "938682554d88cb80fac572dc382b7e753c4cd7456f4abdf3046f538516143d58",
+      "characters": 119,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P002",
+      "scene": "D31",
+      "scene_kind": "public_development",
+      "condition": "A0",
+      "replicate": 1,
+      "request_file": "请求/P002.md",
+      "sha256": "4eaed9f23056d0768975d5111648ac9f739677597353342428ea47c34bab77bb",
+      "characters": 1914,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P003",
+      "scene": "D31",
+      "scene_kind": "public_development",
+      "condition": "A2",
+      "replicate": 1,
+      "request_file": "请求/P003.md",
+      "sha256": "4cb7f084c1424be239cb39d050f2d1b1b77444f4c696803db00dc9b23e956304",
+      "characters": 12820,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P004",
+      "scene": "D31",
+      "scene_kind": "public_development",
+      "condition": "A3",
+      "replicate": 1,
+      "request_file": "请求/P004.md",
+      "sha256": "cbc65f443a93befd03e63a40cc155b9dc5c4d9b9fe9865c7d2abd3bf13eb8fe7",
+      "characters": 22067,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P005",
+      "scene": "D38",
+      "scene_kind": "public_development",
+      "condition": "B0",
+      "replicate": 1,
+      "request_file": "请求/P005.md",
+      "sha256": "61609f484fcb110394d1e9739c6aa4e03f2be2c0f6d9bb7384f88c071e2a7f1c",
+      "characters": 119,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P006",
+      "scene": "D38",
+      "scene_kind": "public_development",
+      "condition": "A0",
+      "replicate": 1,
+      "request_file": "请求/P006.md",
+      "sha256": "921905c85ae38e2d9fa3b77bd41568c21c3b3e913e96eb1279f15acffff9767c",
+      "characters": 1914,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P007",
+      "scene": "D38",
+      "scene_kind": "public_development",
+      "condition": "A2",
+      "replicate": 1,
+      "request_file": "请求/P007.md",
+      "sha256": "25090011e3d5e24cb71e131c927ef00981b0b74a7c7351c6d7fd4b4fb55023ad",
+      "characters": 12820,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P008",
+      "scene": "D38",
+      "scene_kind": "public_development",
+      "condition": "A3",
+      "replicate": 1,
+      "request_file": "请求/P008.md",
+      "sha256": "7e5a530692799f5844c42f32802ad4b099a8db5fbfdb8bf045dd43791973fdc1",
+      "characters": 22067,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P009",
+      "scene": "N51",
+      "scene_kind": "new_concrete_scene_not_strict_blind",
+      "condition": "B0",
+      "replicate": 1,
+      "request_file": "请求/P009.md",
+      "sha256": "2ea01dfc188e94e0970eee48e6d17c5dc88889b1e26c6864f04cc9c55ae33127",
+      "characters": 122,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P010",
+      "scene": "N51",
+      "scene_kind": "new_concrete_scene_not_strict_blind",
+      "condition": "A0",
+      "replicate": 1,
+      "request_file": "请求/P010.md",
+      "sha256": "c3ba86808581e490ab61a9c39d08d6d7ff42e609555bd82edb460532a8afc2e3",
+      "characters": 1917,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P011",
+      "scene": "N51",
+      "scene_kind": "new_concrete_scene_not_strict_blind",
+      "condition": "A2",
+      "replicate": 1,
+      "request_file": "请求/P011.md",
+      "sha256": "e814d6dafa30a67d2b5c7179309e50f0e30069daca1454b185f4a879e04093f8",
+      "characters": 12823,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P012",
+      "scene": "N51",
+      "scene_kind": "new_concrete_scene_not_strict_blind",
+      "condition": "A3",
+      "replicate": 1,
+      "request_file": "请求/P012.md",
+      "sha256": "d152fd65a1a769ce7ec0a19980dd4d8144d54a0792be32b35495550abd991cc4",
+      "characters": 22070,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P013",
+      "scene": "N52",
+      "scene_kind": "new_concrete_scene_not_strict_blind",
+      "condition": "B0",
+      "replicate": 1,
+      "request_file": "请求/P013.md",
+      "sha256": "872201917d6099114639c4d5650d0999ee186a4b26d4937f899353e13ce59648",
+      "characters": 128,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P014",
+      "scene": "N52",
+      "scene_kind": "new_concrete_scene_not_strict_blind",
+      "condition": "A0",
+      "replicate": 1,
+      "request_file": "请求/P014.md",
+      "sha256": "40277619c8ffcdbe7556eb8dc172b0b5e9e83e4b3d8f23a3651b88a43b35aea6",
+      "characters": 1923,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P015",
+      "scene": "N52",
+      "scene_kind": "new_concrete_scene_not_strict_blind",
+      "condition": "A2",
+      "replicate": 1,
+      "request_file": "请求/P015.md",
+      "sha256": "0760c27ac27e11b1c5cc67ebc71416153581dbc27b573be72d5b0b8f6ce847ca",
+      "characters": 12829,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "P016",
+      "scene": "N52",
+      "scene_kind": "new_concrete_scene_not_strict_blind",
+      "condition": "A3",
+      "replicate": 1,
+      "request_file": "请求/P016.md",
+      "sha256": "6d09a2d11140b7331d6da6ba10d08ce34b9f873d2656968fe7743d44fbe7f31b",
+      "characters": 22076,
+      "status": "prepared_not_executed"
+    }
+  ],
+  "materials": [
+    {
+      "characters": 1765,
+      "sha256": "389a04c4e8134ca48fb30d14e647857a336e6b98dcab285d6c10a21c5a4c8dff",
+      "condition": "A0",
+      "original_source": "模型使用/核心指令.md",
+      "frozen_file": "冻结材料/A0.md"
+    },
+    {
+      "characters": 12671,
+      "sha256": "266daf2a1ceeb243b2e6388573a0f67e132268d423a25956625cafef1d21f0c0",
+      "condition": "A2",
+      "original_source": "发布包/VDL-v0.4-扩展版.md",
+      "frozen_file": "冻结材料/A2.md"
+    },
+    {
+      "characters": 21918,
+      "sha256": "009bbd08e66ef83f0d57688602c67b43d7136e17b6dc15c74e3d5000f21dea2d",
+      "condition": "A3",
+      "original_source": "发布包/VDL-v0.4-深化版.md",
+      "frozen_file": "冻结材料/A3.md"
+    }
+  ],
+  "randomization_seed": 20261010,
+  "output_contract": "只交付一份可独立理解的连续视频提示词，300–500 个中文字符，不展示方案列表或分析。遇到要求冲突可以简短说明。",
+  "scenes": [
+    {
+      "kind": "public_development",
+      "request": "5 秒，日式二维少女奔跑、急停、回头；单镜头，脚部接触可见。",
+      "id": "D31"
+    },
+    {
+      "kind": "public_development",
+      "request": "6 秒，纯线条与色块动画，一个形状逐渐显现；没有人物与剧情。",
+      "id": "D38"
+    },
+    {
+      "kind": "new_concrete_scene_not_strict_blind",
+      "request": "8 秒日式二维，两人共同抬一块长木板通过狭窄门口，固定全景单镜头。",
+      "id": "N51"
+    },
+    {
+      "kind": "new_concrete_scene_not_strict_blind",
+      "request": "6 秒日式二维，一串悬挂的钥匙被手拨动，手离开后钥匙逐渐安定；固定近景单镜头。",
+      "id": "N52"
+    }
+  ]
+}

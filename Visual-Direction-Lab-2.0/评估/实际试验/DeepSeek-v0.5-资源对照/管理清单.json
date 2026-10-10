@@ -1,0 +1,356 @@
+{
+  "trial_version": "0.5-resources-1",
+  "request_count": 12,
+  "requests": [
+    {
+      "request_id": "T001",
+      "scene": "N52",
+      "condition": "K",
+      "material": "N52-K",
+      "request_file": "请求/T001.md",
+      "characters": 2067,
+      "sha256": "5c3fca2e787f25d2d9a468793f02b96fc6558d790165663d1477c81810e7f293",
+      "fnv1a_utf16": 4014976085,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T002",
+      "scene": "N52",
+      "condition": "R",
+      "material": "N52-R",
+      "request_file": "请求/T002.md",
+      "characters": 3330,
+      "sha256": "0137282366104108a919474b9b5932acafb3c6078faaca927cc3f76bae33da55",
+      "fnv1a_utf16": 3086353417,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T003",
+      "scene": "N52",
+      "condition": "E",
+      "material": "N52-E",
+      "request_file": "请求/T003.md",
+      "characters": 3330,
+      "sha256": "0137282366104108a919474b9b5932acafb3c6078faaca927cc3f76bae33da55",
+      "fnv1a_utf16": 3086353417,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T004",
+      "scene": "N51",
+      "condition": "K",
+      "material": "N51-K",
+      "request_file": "请求/T004.md",
+      "characters": 2061,
+      "sha256": "3e978fa68fe9d5cfd104229e45a89ac7539ea8b7f0c5ce97658844d3a8c8124a",
+      "fnv1a_utf16": 2888833773,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T005",
+      "scene": "N51",
+      "condition": "R",
+      "material": "N51-R",
+      "request_file": "请求/T005.md",
+      "characters": 3154,
+      "sha256": "74f4a156748a45929654c816cbb9556338168f20c5a1ef8b9c51b6a5fc105249",
+      "fnv1a_utf16": 2527225065,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T006",
+      "scene": "N51",
+      "condition": "E",
+      "material": "N51-E",
+      "request_file": "请求/T006.md",
+      "characters": 3459,
+      "sha256": "3f262983e958d7df9c10f4281590c6ad8844b5abc3b08dc7a9dc9ec4c955b46d",
+      "fnv1a_utf16": 1257003963,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T007",
+      "scene": "D38",
+      "condition": "K",
+      "material": "D38-K",
+      "request_file": "请求/T007.md",
+      "characters": 2058,
+      "sha256": "0cbef129e747081d980e5330fd224738d6bf96cd0841395f3989ddc6b147637f",
+      "fnv1a_utf16": 251721407,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T008",
+      "scene": "D38",
+      "condition": "R",
+      "material": "D38-R",
+      "request_file": "请求/T008.md",
+      "characters": 3021,
+      "sha256": "a632da7757cb60b73825bbc94a0a927cbb94447056d0821ae0ded6d75310c194",
+      "fnv1a_utf16": 373447001,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T009",
+      "scene": "D38",
+      "condition": "E",
+      "material": "D38-E",
+      "request_file": "请求/T009.md",
+      "characters": 3292,
+      "sha256": "0c1fa89a071b5ecb2e29c05228c0b52a7483ba95d61fe8183215a5f781bd83c6",
+      "fnv1a_utf16": 3843459191,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T010",
+      "scene": "D31",
+      "condition": "K",
+      "material": "D31-K",
+      "request_file": "请求/T010.md",
+      "characters": 2058,
+      "sha256": "bc4061bb979174250255d94eafc2b6bee01db537b52131f7f324577a86b13291",
+      "fnv1a_utf16": 2295838516,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T011",
+      "scene": "D31",
+      "condition": "R",
+      "material": "D31-R",
+      "request_file": "请求/T011.md",
+      "characters": 3274,
+      "sha256": "a287b348d59242affad61256aafb23b4e60e687701fa740443dbaf0dc1548b86",
+      "fnv1a_utf16": 3811222616,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    },
+    {
+      "request_id": "T012",
+      "scene": "D31",
+      "condition": "E",
+      "material": "D31-E",
+      "request_file": "请求/T012.md",
+      "characters": 3624,
+      "sha256": "d3e82d7fc9bb1976194f6f53690744d93112386248df7019811319edf43dc926",
+      "fnv1a_utf16": 2131428110,
+      "replicate": 1,
+      "status": "prepared_not_executed"
+    }
+  ],
+  "materials": [
+    {
+      "condition": "N52-K",
+      "frozen_file": "冻结材料/N52-K.md",
+      "sha256": "8d27d35c7d9b041afb0f91de902d7e3ea94735ee8d45ef0794eb1bd7e39f51f3"
+    },
+    {
+      "condition": "N52-R",
+      "frozen_file": "冻结材料/N52-R.md",
+      "sha256": "698f00f0a3257cddfe2c66d23cd17ca0c403c03d5aba99b64a52551c6e345e37"
+    },
+    {
+      "condition": "N52-E",
+      "frozen_file": "冻结材料/N52-E.md",
+      "sha256": "698f00f0a3257cddfe2c66d23cd17ca0c403c03d5aba99b64a52551c6e345e37"
+    },
+    {
+      "condition": "N51-K",
+      "frozen_file": "冻结材料/N51-K.md",
+      "sha256": "8d27d35c7d9b041afb0f91de902d7e3ea94735ee8d45ef0794eb1bd7e39f51f3"
+    },
+    {
+      "condition": "N51-R",
+      "frozen_file": "冻结材料/N51-R.md",
+      "sha256": "0fb5c9f173d9feb5ef07141afa34811e8a385f7b38b7e5d5517adbb9c1474543"
+    },
+    {
+      "condition": "N51-E",
+      "frozen_file": "冻结材料/N51-E.md",
+      "sha256": "d37bbbdeba942ff3011d2c1ba04071ac28e217cc266ec9fb8d177af52030f851"
+    },
+    {
+      "condition": "D38-K",
+      "frozen_file": "冻结材料/D38-K.md",
+      "sha256": "8d27d35c7d9b041afb0f91de902d7e3ea94735ee8d45ef0794eb1bd7e39f51f3"
+    },
+    {
+      "condition": "D38-R",
+      "frozen_file": "冻结材料/D38-R.md",
+      "sha256": "90512b59896278ff0becb1502ec7ecd135b9ef4febd916eb2eb2e2381714f2df"
+    },
+    {
+      "condition": "D38-E",
+      "frozen_file": "冻结材料/D38-E.md",
+      "sha256": "38f83ee47a48a1f7ffddb6b5d5cebeb418eebbc8aae62131ee277359c7ac56ef"
+    },
+    {
+      "condition": "D31-K",
+      "frozen_file": "冻结材料/D31-K.md",
+      "sha256": "8d27d35c7d9b041afb0f91de902d7e3ea94735ee8d45ef0794eb1bd7e39f51f3"
+    },
+    {
+      "condition": "D31-R",
+      "frozen_file": "冻结材料/D31-R.md",
+      "sha256": "bf65091a1f580ef1e229ef8e90c8f0fa6eab1e774c5c038b5ff3aac5c04c1069"
+    },
+    {
+      "condition": "D31-E",
+      "frozen_file": "冻结材料/D31-E.md",
+      "sha256": "8baa42413aa61307a819680a6c9ef7490c4ad42fc642e93f41618ec0f4e7d156"
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "public_development",
+      "request": "5 秒，日式二维少女奔跑、急停、回头；单镜头，脚部接触可见。",
+      "id": "D31"
+    },
+    {
+      "kind": "public_development",
+      "request": "6 秒，纯线条与色块动画，一个形状逐渐显现；没有人物与剧情。",
+      "id": "D38"
+    },
+    {
+      "kind": "new_concrete_scene_not_strict_blind",
+      "request": "8 秒日式二维，两人共同抬一块长木板通过狭窄门口，固定全景单镜头。",
+      "id": "N51"
+    },
+    {
+      "kind": "new_concrete_scene_not_strict_blind",
+      "request": "6 秒日式二维，一串悬挂的钥匙被手拨动，手离开后钥匙逐渐安定；固定近景单镜头。",
+      "id": "N52"
+    }
+  ],
+  "conditions": {
+    "K": "仅核心",
+    "R": "核心加相关通用入口选段",
+    "E": "R加场景变体入口；N52无此入口，与R文本相同，作为重复参照"
+  },
+  "selection": {
+    "N52": {
+      "motion": [
+        "M-A11",
+        "M-A13",
+        "M-A14",
+        "M-A16"
+      ],
+      "relation": [
+        "R-A01",
+        "R-A03"
+      ],
+      "style": [
+        "J-A02",
+        "J-A07"
+      ],
+      "observe": [
+        "O-F02",
+        "O-F07"
+      ],
+      "process": [
+        "P-D04 展开局部与整体之间",
+        "P-D08 发展明暗、色彩和材料联系"
+      ],
+      "variant": null
+    },
+    "N51": {
+      "motion": [
+        "M-A04",
+        "M-A07",
+        "M-A15"
+      ],
+      "relation": [
+        "R-A02",
+        "R-A05"
+      ],
+      "style": [
+        "J-A01",
+        "J-A09"
+      ],
+      "observe": [
+        "O-F01",
+        "O-F06"
+      ],
+      "process": [
+        "P-D02 选择转折，而非平均描述",
+        "P-D07 发展空间路径"
+      ],
+      "variant": "S-V05 交接、接住或放下物体"
+    },
+    "D38": {
+      "motion": [],
+      "relation": [
+        "R-A13",
+        "R-A04"
+      ],
+      "style": [
+        "J-A06",
+        "J-A07"
+      ],
+      "observe": [
+        "O-F12",
+        "O-F13",
+        "O-F17",
+        "O-F19",
+        "O-F22"
+      ],
+      "process": [
+        "P-D05 让前后状态不同",
+        "P-D11 用风格重新分配展开程度"
+      ],
+      "variant": "S-V14 纯线条、色块或形状显现"
+    },
+    "D31": {
+      "motion": [
+        "M-A02",
+        "M-A03",
+        "M-A08"
+      ],
+      "relation": [
+        "R-A05",
+        "R-A07"
+      ],
+      "style": [
+        "J-A01",
+        "J-A02",
+        "J-A09"
+      ],
+      "observe": [
+        "O-F01",
+        "O-F07",
+        "O-F09"
+      ],
+      "process": [
+        "P-D07 发展空间路径",
+        "P-D08 发展明暗、色彩和材料联系"
+      ],
+      "variant": "S-V01 奔跑、急停、回头"
+    }
+  },
+  "source_hashes": {
+    "核心指令.md": "8d27d35c7d9b041afb0f91de902d7e3ea94735ee8d45ef0794eb1bd7e39f51f3",
+    "构思资源/02-运动与物理表现机会.md": "054899e79dc7411b5b6b45e873b495b18a9918a40a746fa3ce0984954dd49673",
+    "构思资源/03-跨域关系与艺术发展.md": "2d20f631373310605bb10681f5f69e88862dc8c045d90c7c95ebaa379a9d4985",
+    "构思资源/04-二维与风格转译.md": "f0c63760d47bc22523014f141fe5cf8c34a611073a68ca07a7aff458d0063892",
+    "构思资源/05-同一事件的艺术变体.md": "aca6753d65e0602a100cb17aa994a2e7e673343fc69bc0c89f2c5a2b987ea56e",
+    "构思资源/06-过程展开与关联发展.md": "0cdd08efd9ebbd753d993891e5fddf562583af37dc696dfe290676e6e7e659f7",
+    "构思资源/07-观察证据与视觉形式.md": "661035c0f0371954cf8a591bbc424768bfcd480fa271b808a498eb7460df8004"
+  },
+  "output_contract": "只交付一份可独立理解的连续视频提示词，300–500 个中文字符，不展示方案列表或分析。遇到要求冲突可以简短说明。",
+  "limitations": [
+    "one_sample_per_unique_condition",
+    "known_public_tasks",
+    "unequal_input_length",
+    "scenario_entries_add_directions_not_only_examples",
+    "not_full_package_or_video_test"
+  ]
+}

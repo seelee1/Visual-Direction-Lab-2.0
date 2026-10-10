@@ -1,0 +1,16 @@
+{
+  "platform": "DeepSeek web",
+  "search_mode": false,
+  "backend_model_version": null,
+  "completed_requests": 4,
+  "excluded_responses": 0,
+  "video_runs": 0,
+  "thinking_mode": true,
+  "status": "completed_targeted_outputs_captured",
+  "scope": "core_only_not_resource_or_package_validation",
+  "notes": [
+    "历史参照，不是同期随机对照",
+    "每场景仅一次",
+    "由开发者知条件审查"
+  ]
+}

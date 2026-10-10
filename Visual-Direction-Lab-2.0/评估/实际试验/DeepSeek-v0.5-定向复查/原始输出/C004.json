@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-10-10T12:38:05.7793735+08:00",
+  "response_file": "原始输出/C004.md",
+  "loading_mode": "inline_text",
+  "thinking_mode": true,
+  "status": "completed_visible_answer_captured",
+  "backend_model_version": null,
+  "observation_note": "输入原文逐字核对；仅核心指令，不加载构思资源或输出约定文档",
+  "answer_characters": 326,
+  "platform": "DeepSeek web",
+  "reasoning_saved": false,
+  "search_mode": false,
+  "conversation_url": "https://chat.deepseek.com/a/chat/s/b4acb17d-1df5-4061-aa0f-b9e597f6d6f3",
+  "eligible_for_primary": true,
+  "request_sha256": "bc4061bb979174250255d94eafc2b6bee01db537b52131f7f324577a86b13291",
+  "response_sha256": "780de951bc8b6a65ac65c9cfbca12bafd47e59277d04579414fb2afda8644825",
+  "request_id": "C004"
+}

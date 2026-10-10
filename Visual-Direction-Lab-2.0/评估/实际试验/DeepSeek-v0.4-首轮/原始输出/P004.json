@@ -1,0 +1,20 @@
+{
+  "request_sha256": "cbc65f443a93befd03e63a40cc155b9dc5c4d9b9fe9865c7d2abd3bf13eb8fe7",
+  "request_id": "P004",
+  "status": "completed_visible_answer_captured",
+  "model_display": "全新模型上线（页面未显示可核验版本）",
+  "eligible_for_primary": true,
+  "platform": "DeepSeek web",
+  "reasoning_saved": false,
+  "thinking_mode": true,
+  "response_file": "原始输出/P004.md",
+  "loading_mode": "inline_text",
+  "observation_note": "",
+  "response_sha256": "69b3a93b3d96ad5578c66b7666ad6e6df12c11d551e98d633cd7bfff481ebe83",
+  "conversation_url": "https://chat.deepseek.com/a/chat/s/7efc0cb0-4ed9-4648-917b-8742b7af06d7",
+  "search_mode": false,
+  "attempt_suffix": "",
+  "answer_characters": 307,
+  "captured_at": "2026-10-10T12:19:43.3119037+08:00",
+  "backend_model_version": null
+}

@@ -1,0 +1,20 @@
+{
+  "backend_model_version": null,
+  "model_display": "全新模型上线（页面未显示可核验版本）",
+  "request_sha256": "e814d6dafa30a67d2b5c7179309e50f0e30069daca1454b185f4a879e04093f8",
+  "eligible_for_primary": true,
+  "captured_at": "2026-10-10T12:13:05.6206321+08:00",
+  "status": "completed_visible_answer_captured",
+  "loading_mode": "inline_text",
+  "reasoning_saved": false,
+  "answer_characters": 389,
+  "response_sha256": "635facb4bbe6d9d15d1b88eabca156ca9d42b34d56dcf9759e82616f3557a259",
+  "request_id": "P011",
+  "attempt_suffix": "",
+  "platform": "DeepSeek web",
+  "thinking_mode": true,
+  "search_mode": false,
+  "response_file": "原始输出/P011.md",
+  "observation_note": "完整正文发送；请求字符数及UTF-16 FNV-1a指纹与冻结请求一致。",
+  "conversation_url": "https://chat.deepseek.com/a/chat/s/36dc10e1-216f-475a-96d9-238e957598b1"
+}

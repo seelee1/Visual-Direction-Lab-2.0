@@ -1,0 +1,129 @@
+{
+  "trial_version": "0.5-conversion-1",
+  "materials": [
+    {
+      "condition": "核心指令.md",
+      "frozen_file": "冻结材料/核心指令.md",
+      "sha256": "8d27d35c7d9b041afb0f91de902d7e3ea94735ee8d45ef0794eb1bd7e39f51f3"
+    },
+    {
+      "condition": "输出与信息保留.md",
+      "frozen_file": "冻结材料/输出与信息保留.md",
+      "sha256": "a925418328fb36c9b1b419c7c1d6eea57fdbbf3e2300d7c8edaa343bd4ec3a03"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "C01",
+      "request": "8 秒日式二维，少女在白天的空教室里静静坐着；单镜头，不添加剧情事件。"
+    },
+    {
+      "id": "C02",
+      "request": "8 秒日式二维，一名人物站在有立柱的室内，一束室外移动的光照入；人物基本不动，单镜头。"
+    },
+    {
+      "id": "C03",
+      "request": "8 秒日式二维，一滴水落入浅水盘，水面映着窗框；固定近景单镜头。"
+    },
+    {
+      "id": "C04",
+      "request": "10 秒日式二维，山间的雾缓慢穿过树林；固定远景单镜头，不添加人物。"
+    }
+  ],
+  "requests": [
+    {
+      "request_id": "M001",
+      "scene": "C01",
+      "condition": "art_master",
+      "sha256": "32312faafd29bf05189b5f28cdf8a631897cef67d46d65df71f955561e470571",
+      "characters": 2075,
+      "fnv1a_utf16": 1131048537,
+      "dependency": null
+    },
+    {
+      "request_id": "M002",
+      "scene": "C02",
+      "condition": "art_master",
+      "sha256": "2339a28826d3bd2b8611f837ee9626e68054f52f1b7d929e0b4e6c6619aec2fe",
+      "characters": 2083,
+      "fnv1a_utf16": 3367329469,
+      "dependency": null
+    },
+    {
+      "request_id": "M003",
+      "scene": "C03",
+      "condition": "art_master",
+      "sha256": "ad88450ee380ae97388fb02bd340f2beca51d4cffe8c817daef4e80b2d9c82bb",
+      "characters": 2072,
+      "fnv1a_utf16": 2839635227,
+      "dependency": null
+    },
+    {
+      "request_id": "M004",
+      "scene": "C04",
+      "condition": "art_master",
+      "sha256": "83859b0641450ec73abcc48e57b0a27caaa88966bcc9aee6b37e13cf268b7c7d",
+      "characters": 2074,
+      "fnv1a_utf16": 824242116,
+      "dependency": null
+    },
+    {
+      "request_id": "P001",
+      "scene": "C01",
+      "condition": "conversion",
+      "sha256": "9b7011a4a533c4d2a928f6891e1d2cce850ae82c94e465c5b20675a0aa2d51be",
+      "characters": 2307,
+      "fnv1a_utf16": 2900430850,
+      "dependency": {
+        "request_id": "M001",
+        "response_sha256": "dfd1c39d487dc4fd10068ab02eba87d66007e62b9f8b4d3c2b29beab76a25751"
+      }
+    },
+    {
+      "request_id": "P002",
+      "scene": "C02",
+      "condition": "conversion",
+      "sha256": "e2bfe9e7712bdd38f2809b558851511ecc3f19aa708597a1725a489dbb81cbd2",
+      "characters": 2232,
+      "fnv1a_utf16": 1952143113,
+      "dependency": {
+        "request_id": "M002",
+        "response_sha256": "bd1996568aff6026772097c68ae3a583c4790242537ef09b7957fd7f68a2d616"
+      }
+    },
+    {
+      "request_id": "P003",
+      "scene": "C03",
+      "condition": "conversion",
+      "sha256": "d1ad31deb24e27b9791cb3bfad67439808fd356883ad8af2b24d3a796af56c78",
+      "characters": 2260,
+      "fnv1a_utf16": 101535654,
+      "dependency": {
+        "request_id": "M003",
+        "response_sha256": "aa70105ea6a1ca801c6642b504a35ca4d3c8c0dd79afa9a1871250340eb518e1"
+      }
+    },
+    {
+      "request_id": "P004",
+      "scene": "C04",
+      "condition": "conversion",
+      "sha256": "fcf762ca788bec7a57b443547e7982e281ecc55465cca071dc38797cc142e340",
+      "characters": 2428,
+      "fnv1a_utf16": 1751027202,
+      "dependency": {
+        "request_id": "M004",
+        "response_sha256": "550c1e61b32c52c54214e976aef032cf63bdc8bfbe7fb6904097ab74a094803c"
+      }
+    }
+  ],
+  "planned_requests": 8,
+  "master_contract": "交付一份 600–900 个中文字符的简短艺术母版，明确选定的观看重点、画面布局、可见发展、关键关系与形式节奏。可分段，不写候选列表、制作流程或原理教材；不要输出视频提示词，不展示内部思考。未指定条件自行作明确创作选择。",
+  "limitations": [
+    "diagnostic_not_randomized_comparison",
+    "one_master_per_scene",
+    "core_only_master",
+    "new_conversation_conversion",
+    "conversion_requests_frozen_after_master_capture",
+    "no_blind_review_or_video"
+  ]
+}

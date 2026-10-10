@@ -1,0 +1,166 @@
+{
+  "primary_outputs": 16,
+  "excluded_outputs": 1,
+  "characters_definition": "最终可见文本的 UTF-16 长度，包含标点、数字和内部换行，去除文件结尾换行",
+  "conditions": {
+    "B0": {
+      "n": 4,
+      "mean_characters": 291.5,
+      "min_characters": 278,
+      "max_characters": 312,
+      "length_compliant": 1
+    },
+    "A0": {
+      "n": 4,
+      "mean_characters": 338.25,
+      "min_characters": 320,
+      "max_characters": 359,
+      "length_compliant": 4
+    },
+    "A2": {
+      "n": 4,
+      "mean_characters": 362.25,
+      "min_characters": 307,
+      "max_characters": 422,
+      "length_compliant": 4
+    },
+    "A3": {
+      "n": 4,
+      "mean_characters": 340.25,
+      "min_characters": 307,
+      "max_characters": 363,
+      "length_compliant": 4
+    }
+  },
+  "rows": [
+    {
+      "request_id": "P001",
+      "scene": "D31",
+      "condition": "B0",
+      "characters": 312,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/7d51b57f-5ebe-4889-8e1c-a27bb87753b1"
+    },
+    {
+      "request_id": "P002",
+      "scene": "D31",
+      "condition": "A0",
+      "characters": 320,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/e505aefc-4373-4d47-8672-f8818d42e6ba"
+    },
+    {
+      "request_id": "P003",
+      "scene": "D31",
+      "condition": "A2",
+      "characters": 307,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/f7f81b95-74a5-4c2c-9196-3e7ad7e2b8bd"
+    },
+    {
+      "request_id": "P004",
+      "scene": "D31",
+      "condition": "A3",
+      "characters": 307,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/7efc0cb0-4ed9-4648-917b-8742b7af06d7"
+    },
+    {
+      "request_id": "P005",
+      "scene": "D38",
+      "condition": "B0",
+      "characters": 284,
+      "length_compliant": false,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/4c66c623-4870-44be-9426-041accf82c6b"
+    },
+    {
+      "request_id": "P006",
+      "scene": "D38",
+      "condition": "A0",
+      "characters": 354,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/afa8e48e-52f2-4ecc-9fbe-f95fbec87e1a"
+    },
+    {
+      "request_id": "P007",
+      "scene": "D38",
+      "condition": "A2",
+      "characters": 331,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/6602566b-de43-4245-8ecf-2ad4aed42c7f"
+    },
+    {
+      "request_id": "P008",
+      "scene": "D38",
+      "condition": "A3",
+      "characters": 363,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/d598bbca-bbef-4441-a078-85ec1e538a92"
+    },
+    {
+      "request_id": "P009",
+      "scene": "N51",
+      "condition": "B0",
+      "characters": 292,
+      "length_compliant": false,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/78786513-7055-4cf6-8848-6d30c8232d8f"
+    },
+    {
+      "request_id": "P010",
+      "scene": "N51",
+      "condition": "A0",
+      "characters": 359,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/01a5c009-47d3-489c-a9de-40b95a2cda0e"
+    },
+    {
+      "request_id": "P011",
+      "scene": "N51",
+      "condition": "A2",
+      "characters": 389,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/36dc10e1-216f-475a-96d9-238e957598b1"
+    },
+    {
+      "request_id": "P012",
+      "scene": "N51",
+      "condition": "A3",
+      "characters": 350,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/9b45edb5-9ef6-4ddc-beba-f40645eba486"
+    },
+    {
+      "request_id": "P013",
+      "scene": "N52",
+      "condition": "B0",
+      "characters": 278,
+      "length_compliant": false,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/aa87d053-62c8-40d2-a775-10db350fa773"
+    },
+    {
+      "request_id": "P014",
+      "scene": "N52",
+      "condition": "A0",
+      "characters": 320,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/7ad1a9fc-5d6b-4bf2-b7ba-0580e31a12e0"
+    },
+    {
+      "request_id": "P015",
+      "scene": "N52",
+      "condition": "A2",
+      "characters": 422,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/0c9b711a-a8e6-4980-afe7-711a3a564632"
+    },
+    {
+      "request_id": "P016",
+      "scene": "N52",
+      "condition": "A3",
+      "characters": 341,
+      "length_compliant": true,
+      "conversation_url": "https://chat.deepseek.com/a/chat/s/1b526470-f54a-4b75-a6f1-856604cbfe58"
+    }
+  ],
+  "not_an_effectiveness_score": true
+}

@@ -1,0 +1,14 @@
+{
+  "status": "completed_resources_pilot",
+  "completed_requests": 12,
+  "excluded_responses": 0,
+  "video_runs": 0,
+  "backend_model_version": null,
+  "thinking_mode": true,
+  "search_mode": false,
+  "notes": [
+    "选段对照，不是整包测试",
+    "每个独特输入一次；钥匙R/E同文重复",
+    "开发者知条件审查，尚未独立盲评"
+  ]
+}

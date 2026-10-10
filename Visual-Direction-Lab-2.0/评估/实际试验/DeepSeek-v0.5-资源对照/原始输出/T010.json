@@ -1,0 +1,17 @@
+{
+  "request_id": "T010",
+  "eligible_for_primary": true,
+  "status": "completed_visible_answer_captured",
+  "conversation_url": "https://chat.deepseek.com/a/chat/s/9c1d0816-5db8-4b8c-bed8-b5a18e866144",
+  "captured_at": "2026-10-10T04:44:11.772505+00:00",
+  "platform": "DeepSeek web",
+  "backend_model_version": null,
+  "thinking_mode": true,
+  "search_mode": false,
+  "reasoning_saved": false,
+  "loading_mode": "inline_text_checked_before_submission",
+  "request_sha256": "bc4061bb979174250255d94eafc2b6bee01db537b52131f7f324577a86b13291",
+  "response_file": "原始输出/T010.md",
+  "response_sha256": "bbb884096fc38909021c627eecd9427af9aca3d8985e4fdc921f711131d5c189",
+  "answer_characters": 329
+}
