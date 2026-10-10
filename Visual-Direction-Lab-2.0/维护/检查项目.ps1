@@ -44,6 +44,18 @@ foreach ($package in $manifest.packages) {
         if ((Get-FileHash -LiteralPath (Join-Path $projectRoot $source.path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $source.sha256) { $issues.Add('发布包需重建：'+$source.path) }
     }
 }
+$adaptedPackageCount = 0
+$adaptedManifestPath = Join-Path $projectRoot '发布包/输出适配包清单.json'
+if (Test-Path -LiteralPath $adaptedManifestPath) {
+    $adaptedManifest = Get-Content -LiteralPath $adaptedManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    foreach ($package in $adaptedManifest.packages) {
+        if ((Get-FileHash -LiteralPath (Join-Path $projectRoot $package.path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $package.sha256) { $issues.Add('输出适配包变化：'+$package.path) }
+        foreach ($source in $package.sources) {
+            if ((Get-FileHash -LiteralPath (Join-Path $projectRoot $source.path) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $source.sha256) { $issues.Add('输出适配包需重建：'+$source.path) }
+        }
+        $adaptedPackageCount++
+    }
+}
 $historicalPackageCount = 0
 $historicalManifestPaths = @(@($manifest.historical_package_manifest) + @($manifest.historical_package_manifests) | Where-Object { $_ } | Select-Object -Unique)
 foreach ($historyPath in $historicalManifestPaths) {
@@ -99,4 +111,4 @@ if (Test-Path -LiteralPath $actualTrialRoot) {
     }
 }
 if ($issues.Count) { $issues | ForEach-Object { Write-Output $_ }; throw ('发现 '+$issues.Count+' 项结构问题') }
-[pscustomobject]@{status='passed_document_structure_and_saved_trial_integrity_only'; markdown_files=$markdownFiles.Count; json_files=$jsonFiles.Count; old_frozen_inputs=$freeze.inputs.Count; unchanged_old_requests=$oldRequests.Count; packages=$manifest.packages.Count; unchanged_historical_packages=$historicalPackageCount; development_entries=$developmentIds.Count; public_cases=$publicCaseCount; independent_model_runs=$actualModelRuns; excluded_model_runs=$excludedModelRuns; video_runs=0} | ConvertTo-Json
+[pscustomobject]@{status='passed_document_structure_and_saved_trial_integrity_only'; markdown_files=$markdownFiles.Count; json_files=$jsonFiles.Count; old_frozen_inputs=$freeze.inputs.Count; unchanged_old_requests=$oldRequests.Count; packages=$manifest.packages.Count; adapted_packages=$adaptedPackageCount; unchanged_historical_packages=$historicalPackageCount; development_entries=$developmentIds.Count; public_cases=$publicCaseCount; independent_model_runs=$actualModelRuns; excluded_model_runs=$excludedModelRuns; video_runs=0} | ConvertTo-Json

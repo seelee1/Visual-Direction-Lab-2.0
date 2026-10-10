@@ -4,7 +4,7 @@
 
 当前为 **v0.5 文档候选版**，整体交付已整理；不代表模型能力或成片效果全面验证。
 
-- [开始使用](Visual-Direction-Lab-2.0/模型使用/README.md)：核心指令、三个单文件包与模块加载。
+- [开始使用](Visual-Direction-Lab-2.0/模型使用/README.md)：当前 Anima 生图 / MiniMax-H3 视频使用版，以及通用包与模块加载。
 - [完整项目入口](Visual-Direction-Lab-2.0/README.md)：资源、研究与版本关系。
 - [整体交付与当前状态](Visual-Direction-Lab-2.0/交付/整体交付与当前状态.md)：逐项对应项目目标，区分已交付与待验证。
 - [体系架构与设计原则](Visual-Direction-Lab-2.0/交付/体系架构与设计原则.md)：核心资产、知识覆盖及创作责任。
