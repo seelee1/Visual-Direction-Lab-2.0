@@ -2,7 +2,7 @@
 
 适配层 v0.3.1 · 2026-10-10。来源为官方 [模型卡](https://huggingface.co/MiniMaxAI/MiniMax-H3)、[基础提示指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md)与[全参考指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md)。以下规则用于格式适配，未接通生成环境。
 
-本适配默认交付视频提示词，特定字段优先于通用核心的自然段默认交付；英文提示词配用户语言说明，台词和画面文字保持原文，用户明确指定其他语言时遵从。没有参考默认 T2VA；实际参考角色不明且影响模式时简短澄清。本文件可配合核心或一个通用包独立加载，不依赖生图适配。
+本适配只在用户要求 MiniMax-H3 视频提示词，或已明确设置 H3 生成用途时启用，负责最后的字段与参考交付，不决定前期艺术设计。英文提示词配用户语言说明，台词和画面文字保持原文，用户明确指定其他语言时遵从。启用本适配后，没有参考默认 T2VA；实际参考角色不明且影响模式时简短澄清。本文件可配合核心或通用创作版独立加载，不依赖生图适配。
 
 ## 官方格式摘记
 
@@ -14,7 +14,7 @@
 
 ## 固定输出结构
 
-请求可用视频提示词时，直接交付一个 `text` 代码块。代码块内仅有当前模式需要的对齐句和官方字段；不加艺术方案说明、任务清单、Positive／Negative、JSON 包装或翻译版。字段名大小写与下划线保持不变，字段之间空一行，不能自创“镜头”“动作”“声音”等替代字段。用户明确要求接口 JSON 时再按已知接口封装，不猜 API 参数。
+请求可用视频提示词时，先在代码块外写一行「建议画幅：宽:高｜简短构图理由」，再交付一个 `text` 代码块。比例依据构图及运动范围选择，具体像素分辨率由用户按配置决定；已指定比例时沿用，明确只要提示词正文时省略建议行。代码块内仅有当前模式需要的对齐句和官方字段；不加艺术方案说明、任务清单、Positive／Negative、JSON 包装或翻译版。字段名大小写与下划线保持不变，字段之间空一行，不能自创“镜头”“动作”“声音”等替代字段。用户明确要求接口 JSON 时再按已知接口封装，不猜 API 参数。
 
 模式按实际参考职责选择，不能仅因上传文件就切到某一模式。默认纯文字 T2VA；参考角色不明且会改变模式时，只询问缺失的角色信息。概念、分镜等任务仍遵从用户指定交付。
 
@@ -95,6 +95,8 @@ non_diegetic_music:
 ## 无参考单镜头格式示范
 
 手工格式示范，未生成视频。此处没有实际输入图，因此是 T2VA。
+
+建议画幅：4:3｜同时保留左侧人物、桌面接触与后方教室层次。
 
 ```text
 integrated_multimodal_description: [Shot 1] A restrained 2D-animated classroom scene unfolds over eight seconds in a static three-quarter medium shot. A girl with a short black bob and a muted blue cardigan sits on the left, with both forearms and her overlapping hands visible on the desk. Empty desks recede behind her. Cool window light remains fixed across her shoulder and the warm desktop. She holds her gaze toward the window, then slowly lowers her eyes to the dark gap between her fingers. As her head inclines, a small lock of hair briefly interrupts the light shape on her shoulder and then settles. The desk layout and background light remain unchanged; clean linework and flat shadow shapes carry the quiet movement. There is no dialogue or cut.

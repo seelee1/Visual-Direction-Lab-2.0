@@ -2,7 +2,7 @@
 
 适配层 v0.3.1 · 2026-10-10。对象为 CircleStone Labs / Comfy Org 的 Anima 系列，不是同名应用。来源：[官方模型卡的 Prompting 与 Aesthetic Version Prompting](https://huggingface.co/circlestone-labs/Anima#prompting)。官方摘记为核对日快照，下面的输出组织是本项目约定。
 
-本适配默认交付静态生图提示词，优先于通用核心的默认视频交付；英文提示词配用户语言说明，用户明确指定其他语言时遵从。艺术概念和分镜等请求仍按任务交付。本文件可配合核心或一个通用包独立加载，不依赖其他模型适配。
+本适配只在用户要求 Anima 生图提示词，或已明确设置 Anima 生成用途时启用，负责最后的静态提示词交付，不决定前期艺术设计。英文提示词配用户语言说明，用户明确指定其他语言时遵从。艺术概念和分镜等请求仍按任务交付。本文件可配合核心或通用创作版独立加载，不依赖其他模型适配。
 
 ## 官方摘记
 
@@ -10,7 +10,7 @@
 
 ## 固定输出结构
 
-以下是本项目固定格式；官方允许混合提示自由排列，并未强制下面的自然语言段序。请求生图提示词时直接输出 `Positive` 与 `Negative` 两个标题，每个标题下各一个 `text` 代码块。默认不输出创作说明、版本解释、候选方案、使用教程或参数；需要处理输入矛盾时，先给一条必要说明。概念或分镜任务遵从用户要求。
+以下是本项目固定格式；官方允许混合提示自由排列，并未强制下面的自然语言段序。请求生图提示词时，先在代码块外写一行「建议画幅：宽:高｜简短构图理由」，再输出 `Positive` 与 `Negative` 两个标题，每个标题下各一个 `text` 代码块。具体像素分辨率由用户按配置决定；已指定比例时沿用，明确只要提示词正文时省略建议行。默认不输出其他创作说明、版本解释、候选方案、使用教程或参数；需要处理输入矛盾时，先给一条必要说明。概念或分镜任务遵从用户要求。
 
 ### Positive：标签首行＋有序画面描述
 
@@ -33,6 +33,10 @@
 
 只写选定静态时刻的可见状态，不写未来动作、镜头推移或连续时间线。图像中的方向、支撑、遮挡与受光须能成立。生成参数、参考图绑定和 LoRA 配置不能夹进正文。
 
+### 默认完整表达
+
+默认将选定艺术设计完整转成提示词，保留人物、事件、环境、光色、材质及画法中有实际作用的细节与关系。不因 Anima 的模型规模、推测能力或以往生成遗漏主动删减、简化或重构设计；用户可以自行调整，明确要求压缩或模型专项重构时再处理。完整不等于堆砌或扩写，篇幅依据作品需要，不设固定词数。清晰的对象名称和有序表达继续使用，质量词与既有格式保持不变。
+
 ### 版本与质量标签
 
 | 实际权重 | 固定处理 |
@@ -53,18 +57,20 @@
 
 手工格式示范，未生成图片。以下适用于未指定权重的普通优质插画，也适用于 Aesthetic：含质量词、不含评分词。Base 的首行替换见后文。不附模板占位符或说明段。
 
+建议画幅：4:3｜人物与展开的纸鸢左右分布，海港提供背景层次。
+
 Positive
 
 ```text
-masterpiece, best quality, 1girl, solo, short hair, black hair, blue cardigan, sitting, classroom, anime illustration
+masterpiece, best quality, anime illustration, 1girl, solo, original character, short hair, purple hair, amber eyes, overalls, sitting, kite, rooftop, harbor, afternoon
 
-A young woman with a short black bob and a muted blue cardigan sits at a wooden classroom desk. Her forearms rest on the desktop, her hands overlap loosely, and her gaze rests on the narrow gap between her fingers.
+A young adult kite maker with a softly tousled plum-purple bob, amber eyes, and a small freckle beneath one eye sits cross-legged on a woven mat on a seaside workshop rooftop. She wears faded indigo canvas overalls over a loose cream shirt with rolled sleeves, a vermilion bandanna around her neck, and worn canvas sneakers. Leaning forward with quiet concentration and a slight satisfied smile, she presses a small translucent coral-paper patch over a tear in the wing of an enormous handmade fish-shaped kite. One hand smooths the patch flat while the other steadies the bamboo rib immediately beneath it. Her gaze rests precisely on their contact point. A shallow dish of paste and a small brush sit on a wooden board beside her knee. A loose spool of kite line and two folded paper offcuts complete the working area.
 
-A three-quarter medium shot places her on the left. Empty desks recede toward the back wall, while a pale window area on the right gives her dark silhouette a clear background.
+The kite rests partly across her lap and partly on a low wooden trestle to her right, its lightweight bamboo skeleton visible through the paper skin. Its rounded fish head, broad fin-like wings, and long forked ribbon tail stretch across most of the horizontal frame. The repaired wing has one narrow split and a few older rectangular patches, each carefully integrated into the paper surface. The large circular painted fish eye is visible beyond her hands. Viewed from slightly above in a three-quarter medium-wide composition, the maker occupies the left third and the kite opens across the center and right. A cropped roof beam in the upper foreground establishes a sheltered working corner. Terracotta roof tiles and a low parapet lead toward a harbor below, where compact boats and tightly clustered seaside roofs diminish in scale. A generous strip of pale blue sky gives the intricate kite silhouette room to breathe.
 
-Cool daylight from the right forms a clean light shape across her shoulder and the warm desktop. Broad matte folds distinguish the cardigan from the smooth wood.
+Low afternoon sunlight enters from the right through the suspended edge of the kite, turning its thin ivory and coral paper luminous while leaving the bamboo ribs as delicate darker lines. Overlapping patches appear slightly denser and warmer than the surrounding paper. A broad fish-shaped shadow falls across the mat and rooftop, with softer fin edges and thin rib shadows inside it. Her hands and the repair remain clearly readable against the glowing wing. Cool sky light fills the shaded side of her face and indigo overalls; small warm reflections from the kite connect her skin and cream sleeves to the coral paper. Dry terracotta, fibrous matte paper, smooth bamboo, and coarse canvas have distinct restrained textures. Keep the strongest color contrast around her face, hands, and the repaired section; the distant harbor uses softer blue-green and muted warm planes.
 
-Fine tapered linework and flat anime shadow shapes define the figure. Background detail becomes simpler toward the far wall, keeping her face and hands clearly readable.
+An original Japanese anime narrative illustration combining graceful character drawing with carefully painted architectural scenery. Tapered colored linework defines the face, fingers, bamboo joints, and kite contours. Broad cel-shaded forms organize the figure, while subtle gouache-like brushwork gives the rooftop and harbor tactile depth. Preserve large quiet shapes between clusters of fine detail. The patch, steadying hand, old repairs, and supported kite communicate patient craftsmanship within a single still image. The oversized fish shape creates gentle visual wonder without becoming a living creature or covering the maker's face.
 ```
 
 Negative
@@ -78,7 +84,7 @@ extra people, extra arms, text overlay, watermark
 相同作品确认使用 Base 时，保留以上四段画面描述，Positive 首行改为：
 
 ```text
-masterpiece, best quality, score_7, 1girl, solo, short hair, black hair, blue cardigan, sitting, classroom, anime illustration
+masterpiece, best quality, score_7, anime illustration, 1girl, solo, original character, short hair, purple hair, amber eyes, overalls, sitting, kite, rooftop, harbor, afternoon
 ```
 
 Negative 改为：

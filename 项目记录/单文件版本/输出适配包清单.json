@@ -1,72 +1,97 @@
 {
+  "generic_package": "助手指令/通用创作.md",
+  "status": "design_first_with_optional_model_packages_not_generation_validated",
+  "image_model": "Anima",
+  "verified_date": "2026-10-10",
+  "video_model": "MiniMax-H3",
   "core_instruction_version": "0.5",
-  "image_runs": 0,
+  "video_runs": 0,
+  "version": "0.3.1",
   "packages": [
     {
-      "characters": 17171,
+      "characters": 10795,
+      "model": "通用创作",
+      "sources": [
+        {
+          "path": "助手指令/共用内容/核心指令.md",
+          "sha256": "b14f66fc6b245f8b84974e108d19e9f329033f3a5eb0b15ce0ad70b2b62f9681"
+        },
+        {
+          "path": "视觉表现资源/01-视觉表现激活地图.md",
+          "sha256": "ba6a7713add93224be73f0d4261d1c7bcd275da2151b24206b2f6dc113bbd965"
+        },
+        {
+          "path": "助手指令/共用内容/输出与信息保留.md",
+          "sha256": "1dd1b8cdd94b5c67bc3b1bf78e03123db000327eaa6545fcea2da512b6dfb714"
+        },
+        {
+          "path": "视觉表现资源/10-艺术风格与审美方向发展.md",
+          "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5"
+        }
+      ],
+      "path": "助手指令/通用创作.md",
+      "sha256": "f16f2dec107b0bd69a4546d898b44a9117110ef6efcfca3c2cfc393c37027ff9"
+    },
+    {
+      "characters": 21173,
       "model": "Anima",
       "sources": [
         {
-          "sha256": "8d27d35c7d9b041afb0f91de902d7e3ea94735ee8d45ef0794eb1bd7e39f51f3",
-          "path": "助手指令/共用内容/核心指令.md"
+          "path": "助手指令/共用内容/核心指令.md",
+          "sha256": "b14f66fc6b245f8b84974e108d19e9f329033f3a5eb0b15ce0ad70b2b62f9681"
         },
         {
-          "sha256": "ba6a7713add93224be73f0d4261d1c7bcd275da2151b24206b2f6dc113bbd965",
-          "path": "视觉表现资源/01-视觉表现激活地图.md"
+          "path": "视觉表现资源/01-视觉表现激活地图.md",
+          "sha256": "ba6a7713add93224be73f0d4261d1c7bcd275da2151b24206b2f6dc113bbd965"
         },
         {
-          "sha256": "2cf18687acbbdd7546cf4a93ad71029b826f7c6dc8fe3bb5f306dc6f8972683b",
-          "path": "助手指令/共用内容/输出与信息保留.md"
+          "path": "助手指令/共用内容/输出与信息保留.md",
+          "sha256": "1dd1b8cdd94b5c67bc3b1bf78e03123db000327eaa6545fcea2da512b6dfb714"
         },
         {
-          "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5",
-          "path": "视觉表现资源/10-艺术风格与审美方向发展.md"
+          "path": "视觉表现资源/10-艺术风格与审美方向发展.md",
+          "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5"
         },
         {
-          "sha256": "8a52a426fde69fef291fa7563a758b14e1652002140d40a2891d8a8502286ae4",
-          "path": "视觉表现资源/09-画面深度与静态表现发展.md"
+          "path": "视觉表现资源/09-画面深度与静态表现发展.md",
+          "sha256": "8a52a426fde69fef291fa7563a758b14e1652002140d40a2891d8a8502286ae4"
         },
         {
-          "sha256": "2871599389541201f92125d043f5038e0900189460504a019b1e4f100427d943",
-          "path": "助手指令/共用内容/输出适配/Anima-生图.md"
+          "path": "助手指令/共用内容/输出适配/Anima-生图.md",
+          "sha256": "8ed0f2f15cf30796ec09fba9f9f038306d7171f737577ecfb7a065b343d59b3f"
         }
       ],
       "path": "助手指令/Anima.md",
-      "sha256": "f389105845f67372deb42329adadf1546ff1b2e6d923f993e80d4688363e1bf8"
+      "sha256": "798594d391f3c8fea7a0a447af6dfd84e2da6f2b7efaf0382cde1df1f7d2d775"
     },
     {
-      "characters": 15348,
+      "characters": 16548,
       "model": "MiniMax-H3",
       "sources": [
         {
-          "sha256": "8d27d35c7d9b041afb0f91de902d7e3ea94735ee8d45ef0794eb1bd7e39f51f3",
-          "path": "助手指令/共用内容/核心指令.md"
+          "path": "助手指令/共用内容/核心指令.md",
+          "sha256": "b14f66fc6b245f8b84974e108d19e9f329033f3a5eb0b15ce0ad70b2b62f9681"
         },
         {
-          "sha256": "ba6a7713add93224be73f0d4261d1c7bcd275da2151b24206b2f6dc113bbd965",
-          "path": "视觉表现资源/01-视觉表现激活地图.md"
+          "path": "视觉表现资源/01-视觉表现激活地图.md",
+          "sha256": "ba6a7713add93224be73f0d4261d1c7bcd275da2151b24206b2f6dc113bbd965"
         },
         {
-          "sha256": "2cf18687acbbdd7546cf4a93ad71029b826f7c6dc8fe3bb5f306dc6f8972683b",
-          "path": "助手指令/共用内容/输出与信息保留.md"
+          "path": "助手指令/共用内容/输出与信息保留.md",
+          "sha256": "1dd1b8cdd94b5c67bc3b1bf78e03123db000327eaa6545fcea2da512b6dfb714"
         },
         {
-          "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5",
-          "path": "视觉表现资源/10-艺术风格与审美方向发展.md"
+          "path": "视觉表现资源/10-艺术风格与审美方向发展.md",
+          "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5"
         },
         {
-          "sha256": "7a3b705b0ebf34e4f64b4599b8c8a4dcfe11cb3f314301dc143030e24e0bfa98",
-          "path": "助手指令/共用内容/输出适配/MiniMax-H3-视频.md"
+          "path": "助手指令/共用内容/输出适配/MiniMax-H3-视频.md",
+          "sha256": "7852da59d8f50a3c33364aff21c14704867cb3be6f2efcb1e98ec7a0456e0760"
         }
       ],
       "path": "助手指令/MiniMax-H3.md",
-      "sha256": "58f5d9ba41b62bd6ffa6fc292b8938180859231e0aa6b2283ba4b1460130d439"
+      "sha256": "d6549d31e9907bcdbeb1bcfb0975f9b8ae91e532039fbc0cedc8a0ef39585bbe"
     }
   ],
-  "image_model": "Anima",
-  "version": "0.3.1",
-  "video_model": "MiniMax-H3",
-  "verified_date": "2026-10-10",
-  "status": "separate_model_packages_not_generation_validated",
-  "video_runs": 0
+  "image_runs": 0
 }
