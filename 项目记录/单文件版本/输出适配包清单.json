@@ -1,17 +1,13 @@
 {
-  "image_runs": 0,
-  "generic_package": "助手指令/通用创作.md",
-  "video_runs": 0,
-  "video_model": "MiniMax-H3",
-  "core_instruction_version": "0.5",
-  "version": "0.3.1",
-  "image_model": "Anima",
   "packages": [
     {
-      "sha256": "3f278752913bec96aea87a82ecd99296ed3593984345630abe23b0f0210387a5",
+      "path": "助手指令/通用创作.md",
+      "characters": 10639,
+      "model": "通用创作",
+      "sha256": "3e8db7850617c2babad0f88239263a31bb43b6b5385567b30c67852c26aee2c8",
       "sources": [
         {
-          "sha256": "e7dfa03a444fbeebd7ed3e27be63bb10fcaa6d21f13fa4489ce26f14f7d49f6b",
+          "sha256": "2442ff3e00dc11b75b3a3a00a7204714f3f5ff6c636f18c3f044bb6e03b45637",
           "path": "助手指令/共用内容/核心指令.md"
         },
         {
@@ -26,16 +22,16 @@
           "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5",
           "path": "视觉表现资源/10-艺术风格与审美方向发展.md"
         }
-      ],
-      "path": "助手指令/通用创作.md",
-      "model": "通用创作",
-      "characters": 11040
+      ]
     },
     {
-      "sha256": "3742bf0888502f5a7913a41150bf40680846f969c586337e3abd0ef7f15c1bc9",
+      "path": "助手指令/Anima.md",
+      "characters": 21017,
+      "model": "Anima",
+      "sha256": "24b12804b8de62a82a178c6ad1f717a9937d11a2794c92187679b175a7adc3c0",
       "sources": [
         {
-          "sha256": "e7dfa03a444fbeebd7ed3e27be63bb10fcaa6d21f13fa4489ce26f14f7d49f6b",
+          "sha256": "2442ff3e00dc11b75b3a3a00a7204714f3f5ff6c636f18c3f044bb6e03b45637",
           "path": "助手指令/共用内容/核心指令.md"
         },
         {
@@ -58,16 +54,16 @@
           "sha256": "8ed0f2f15cf30796ec09fba9f9f038306d7171f737577ecfb7a065b343d59b3f",
           "path": "助手指令/共用内容/输出适配/Anima-生图.md"
         }
-      ],
-      "path": "助手指令/Anima.md",
-      "model": "Anima",
-      "characters": 21418
+      ]
     },
     {
-      "sha256": "7cbb51b4a85d1942ba2855078f18ac56c1d11fa6b0373542f492df017d8e378b",
+      "path": "助手指令/MiniMax-H3.md",
+      "characters": 16392,
+      "model": "MiniMax-H3",
+      "sha256": "84d1552ce9742e3487531f9ec28bfe9e7b735ae1916a2d2108b227989caaad8e",
       "sources": [
         {
-          "sha256": "e7dfa03a444fbeebd7ed3e27be63bb10fcaa6d21f13fa4489ce26f14f7d49f6b",
+          "sha256": "2442ff3e00dc11b75b3a3a00a7204714f3f5ff6c636f18c3f044bb6e03b45637",
           "path": "助手指令/共用内容/核心指令.md"
         },
         {
@@ -86,12 +82,16 @@
           "sha256": "7852da59d8f50a3c33364aff21c14704867cb3be6f2efcb1e98ec7a0456e0760",
           "path": "助手指令/共用内容/输出适配/MiniMax-H3-视频.md"
         }
-      ],
-      "path": "助手指令/MiniMax-H3.md",
-      "model": "MiniMax-H3",
-      "characters": 16793
+      ]
     }
   ],
+  "version": "0.3.1",
+  "verified_date": "2026-10-10",
+  "video_model": "MiniMax-H3",
   "status": "design_first_with_optional_model_packages_not_generation_validated",
-  "verified_date": "2026-10-10"
+  "core_instruction_version": "0.5",
+  "image_runs": 0,
+  "generic_package": "助手指令/通用创作.md",
+  "image_model": "Anima",
+  "video_runs": 0
 }
