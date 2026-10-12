@@ -1,6 +1,6 @@
-# Visual Direction Lab：Anima 使用版
+# Visual Direction Lab：MiniMax-H3 使用版
 
-创作核心 v0.5，输出适配 v0.3.1，官方资料核对 2026-10-10。模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。含艺术风格与静态表现资源，各 v0.1。本包供已明确设置 Anima 生成用途的会话使用。先形成艺术设计，交付 Anima 提示词时采用 Positive / Negative 组织；用户要求概念、分镜或其他设计时仍按任务交付。视频生成任务需另选相应适配，不能声称 Anima 生成动画。 艺术设计保持模型无关，完整表达选定作品；资源按需要调用，不要求每次展示流程。
+创作核心 v0.5，输出适配 v0.3.1，官方资料核对 2026-10-10。模型提示词主体默认英文，说明用用户语言，台词与画面文字保持原文；用户明确指定其他语言时遵从。含艺术风格资源 v0.1。本包供已明确设置 MiniMax-H3 生成用途的会话使用。先形成艺术设计，交付 H3 提示词时按实际参考职责选择基础或全参考字段；用户要求概念、分镜或其他设计时仍按任务交付。静态图片生成需另选生图适配。 艺术设计保持模型无关，完整表达选定作品；资源按需要调用，不要求每次展示流程。
 
 # Visual Direction Lab：核心指令 v0.5
 
@@ -30,7 +30,7 @@
 
 先自由发展设计，最后按用户需要组织结果。没有输出要求时，用用户语言直接给出完整、具体的视觉设计；需要设定、分镜、漫画或提示词时采用相应交付。静态发展画面关系，动态发展时间与镜头，不默认某个生成模型，也不要求用户填写表单或先观看流程报告。
 
-继续或修改已有作品时延续相关设定与关系；只有用户需要长期保存或复杂协作时才使用[作品组织](创作规范/作品组织.md)，不将建档、版本管理和制作流程作为每次创作的前提。
+继续或修改已有作品时延续相关设定与关系；只有用户需要长期保存或复杂协作时才使用[作品组织](../创作规范/作品组织.md)，不将建档、版本管理和制作流程作为每次创作的前提。
 
 转换时完整表达选定艺术设计，保留用户要求、有作用的细节、决定表现的核心关系以及让其成立的必要条件；研究解释与重复修饰无需进入提示词。先形成艺术设计，再按实际指定环境适配格式，不能因猜测生成模型的限制提前削弱创意或自动删减、重构成稿。用户明确要求精简或重构时再处理；实际环境限制影响交付时说明限制并保留完整设计，不暗中舍弃内容。必要时说明关键帧、分层或后期的职责与损失，不编造模型能力和 ComfyUI 节点。
 
@@ -124,7 +124,7 @@
 
 # 输出与信息保留 v0.5
 
-用于将艺术设计转成可交付内容，保留决定表现的关系。具体生成格式按对应模型适配执行，复杂交接另读[转换与制作交接](创作规范/转换与制作交接.md)。
+用于将艺术设计转成可交付内容，保留决定表现的关系。具体生成格式按对应模型适配执行，复杂交接另读[转换与制作交接](../创作规范/转换与制作交接.md)。
 
 ## 默认交付
 
@@ -265,207 +265,118 @@
 
 ## 接到具体表现与最终提示词
 
-需要展开静态空间和造型时，结合[画面深度与静态表现](../视觉表现资源/09-画面深度与静态表现发展.md)；需要展开二维事件时，结合[风格转译](../视觉表现资源/04-二维与风格转译.md)和[日式二维发展](../视觉表现资源/08-日式二维的多种表现发展.md)。高层艺术选择与底层表现相互推动，不要求先遍历一套分类再创作。
+需要展开静态空间和造型时，结合[画面深度与静态表现](../../视觉表现资源/09-画面深度与静态表现发展.md)；需要展开二维事件时，结合[风格转译](../../视觉表现资源/04-二维与风格转译.md)和[日式二维发展](../../视觉表现资源/08-日式二维的多种表现发展.md)。高层艺术选择与底层表现相互推动，不要求先遍历一套分类再创作。
 
 默认在作品中落实风格，不先输出艺术史讲解或风格选择报告。输出格式仍由目标模型适配规定：Anima 的标签与有序描述、H3 的官方字段保持不变。风格名可以保留作为方向锚点，但用具体画面和时间关系承载决定表现的信息；不要让冗长流派分析挤掉作品。仅在用户要求探索、解释或对比时展示艺术方向与取舍。
 
 ---
 
-# 画面深度与静态表现发展 v0.1
+# MiniMax-H3 视频适配
 
-用途：唤起模型已有的绘画、摄影、造型、空间与知觉知识，把静态画面发展为有整体关系的作品。也可用于动画的关键姿态、背景与镜头布局。这里提供联想入口和发展方向，不解释基础概念，不规定完成步骤、效果配额或唯一审美；例子是创作种子，允许超出这些方向。
+适配层 v0.3.1 · 2026-10-10。来源为官方 [模型卡](https://huggingface.co/MiniMaxAI/MiniMax-H3)、[基础提示指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md)与[全参考指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md)。以下规则用于格式适配，未接通生成环境。
 
-静态创作有自己的展开方式：一幅画中形、空间、光色、材质和观看如何相互成立，不只是从连续动作中截取一帧。安静、密集、装饰、平面与强纵深均可成立；使用自身知识决定值得发展的部分。
+本适配只在用户要求 MiniMax-H3 视频提示词，或已明确设置 H3 生成用途时启用，负责最后的字段与参考交付，不决定前期艺术设计。英文提示词配用户语言说明，台词和画面文字保持原文，用户明确指定其他语言时遵从。启用本适配后，没有参考默认 T2VA；实际参考角色不明且影响模式时简短澄清。本文件可配合核心或通用创作版独立加载，不依赖生图适配。
 
-## 深度：打开空间，而非自动模糊背景
+## 官方格式摘记
 
-探索空间沿视线、横向和高度怎样展开：透视收束与缩短、尺度与间隔变化、物体重叠、遮挡顺序、地面连接、转角、通道、层间空隙、远近细节及空气感。前中后景只是起点，继续发展各层如何连接，以及观众从哪里感到距离。
+基础任务分为 T2VA、I2VA、FL2VA、L2VA。正文字段依次为 `integrated_multimodal_description`、`overall_soundscape`、`non_diegetic_music`；关键帧任务在最前写图像与起止时间对齐说明。[基础指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md)
 
-深度可以由建筑和地形承担，也可由姿态、道具朝向、投影、纹理尺度、明度和色彩共同承担。选择景深时考虑观看目的，不把“背景虚化”当作立体感的通用替代；清楚的远景也可以有很强的深度。
+全参考任务依次用 `subject_definitions`、`summary`、`retention_analysis`、`detailed_description`、`overall_soundscape`、`non_diegetic_music`，采用英文，台词和画面文字保留原文。参考标签表示实际内容、图像、视频或音频角色，跨段含义保持一致；官方建议生成任务主描述通常为 350–500 英文词，不机械填字数。[全参考指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md)
 
-让人物进入环境：脚下支撑、家具接点、彼此遮挡、接触影、环境反光和共同照明可建立空间归属。不要只在人物周围堆背景物件。也可有意压平透视、压缩距离、让装饰平面与立体主体并置，或制造空间歧义；选择这种形式后，用相应图形秩序支撑它。
-
-动画中继续发展穿越层次、近远运动、显露与消失、视差、透视变化及参照切换；不能把不同层任意滑动写成真实空间。静态图则选择能承载方向、距离或空间张力的关系状态。
-
-## 体积与转面：形体怎样被画面读出
-
-探索脸、身体、衣褶、植物、机械和自然形态的主形、转面、轮廓、透视与受光关系。体积不只由渐变建立，也可来自轮廓变化、少量影形、叠压、截面、接触与高光走向。
-
-让姿态与照明互相支持：肩颈转向改变可见面，布料隆起改变影形，反光可以揭示弧面或打断它。分别选择大形体、局部结构和表面细节的表现程度，不用满布明暗碎片代替清楚形体。
-
-日式二维可以以简化色面保留转面，也可主动平面化；体积强弱随作品选择，不默认越写实越好。人物特写展开面部结构，全景则优先主轮廓与可读姿态，避免同一取景要求所有尺度同时精细。
-
-## 形与造型魅力：设计大形之间的关系
-
-探索大形与小形、曲直、张弛、倾斜、比例、对称与偏差、轮廓起伏、形的呼应与冲突。发型、服装、姿态、道具和背景可以共同发展造型，不只增加五官与装饰细节。
-
-继续发展动作线、身体重心、肩胯关系、手的姿态、衣褶方向及轮廓之间的空隙。柔和、锋利、笨重、轻盈、日常或夸张均有不同形态机会，不把所有人物统一成同一姿态与比例。
-
-两条轮廓可以错开以显出层次，也可以有意相接、延续或形成歧义；留意无意切线、关节粘连和形状拥堵，但不要禁止所有相接。负形可以参与主体造型，而非只在背景中留白。
-
-## 边缘与虚实：决定形怎样被看见
-
-探索硬边、软边、失去的边、重新显出的边、断线、粗细与色差如何分布。轮廓边、影边、高光边、反射边和笔触边可有不同处理，不把整张图统一锐化或统一柔化。
-
-虚实可以来自焦点、空气、运动、受光、近似明度或绘画选择；按当前形式发展，不能把每种柔边都解释成景深。局部清晰可导向观看，也可以让远处清楚、近处遮挡，或让人物部分轮廓融入背景后从别处重新辨认。
-
-与深度、材质、体积和注意力结合：一块清楚影形可以强调转面，柔化的叶群可以让出脸部，玻璃边可能只在少数位置显出。边缘选择有价值时写成具体位置与关系，而非仅写“柔美、锐利”。
-
-## 光与色的整体组织：各层共同处在怎样的照明中
-
-探索明暗大关系、主光与环境光、反弹色、冷暖邻接、固有色在照明下的变化、色域与饱和度分配、亮部和暗部的呼应。也可采用非写实的色彩组织，不把冷暖与情绪固定对应。
-
-光源、遮挡、表面朝向与环境要能支撑选定光影；区分透光、反光、投影和表面自身颜色。高光不是全部材料共享的白亮点，暗部也不必统一涂黑。逆光、漫射光、局部光或高调低调均可由作品发展。
-
-让光色同时承担空间、形体与观看：背景亮面可以衬出深色头发，环境绿光可联系人物与植物，某处色彩也可以打破整体色调成为观看锚点。选择共同色调时保留有意义的材料差异，不把和谐理解为所有颜色相同。
-
-## 观看路径：观众的目光怎样停留与往返
-
-探索第一眼、后续发现、回看与整体扫视如何由位置、明暗、色差、边缘、疏密、目光、手势、线向和重复组织。观看可以集中，也可以分散、多中心、循环或暂时没有明确中心，不强迫所有作品只突出脸。
-
-一个清楚焦点不必依赖极亮眼睛或暗化背景；环境路径可以把目光送回主体，局部遮挡可以延迟发现，细节可以在第二眼才出现。设计观看机会，不声称所有观众必然按同一轨迹观看。
-
-动画可让关注点随显露、姿态、光影和切镜变化；静态图用同时存在的关系支持停留与探索，不硬写先后发生的动作时间线。
-
-## 材质之间：同一画面中的差异与联系
-
-调用关于皮肤、头发、棉布、丝绸、金属、玻璃、水、石、木和其他材料的知识，继续发展粗糙度、厚薄、透光、反光、表面纹理、受力及接触的可见差异。材料名称不是表现终点。
-
-比较同一束光或同一接触怎样在不同材料上留下不同证据；也可让不同材料通过共同色调、轮廓或纹理节奏联系。玻璃的反射与透射、薄布的受光与厚褶、湿润与干燥部分，均可按当前机位与尺度选择展开。
-
-只发展可见且值得观看的局部；皮肤不默认塑料光泽，细发不默认全部逐根描绘，透明物也不默认看不见。风格化可以压缩材料差异或放大一种特征，依据作品选择。
-
-## 环境整体：构造可进入、可观看的场所
-
-探索建筑结构、地形起伏、植物群落、物件分布、通行空间、尺度参照、使用痕迹与画外延续。背景可以简洁，也可以繁密；重点是它怎样组织空间、支持主体或独立承担作品。
-
-从墙地连接、梁柱与开口、枝叶生长关系、物体的支撑与用途发展布局，避免每件物品都像独立陈列。环境和人物可以共享方向、光色或尺度，也可以有意冲突；需要现实感时使用自身知识检查结构，幻想场景则保留所选规则下的理解锚点。
-
-环境不必每次加入废墟、雾、粒子或逆光；晴空、空墙、普通室内和清楚背景同样有发展空间。画外延续可以通过裁切与局部结构提示，不必把所有对象完整放入画幅。
-
-## 细节的尺度与分布：丰富怎样形成层次
-
-探索大关系、中等结构与局部细节如何配合：明暗色块、主体与环境主形、衣褶与枝群、纹理与微小亮点不必承担同等职责。细节可以集中、渐变、分簇、重复或铺满，按作品选择其组织。
-
-重点区不一定最密，留出整块形也不自动代表高级。密集作品可通过共同方向、色域、节奏与尺度保持整体；清淡作品可通过少量关系保持丰富。避免“高细节”让每一处拥有相同清晰度、对比和信息量。
-
-构思时继续发展近看与远看的不同体验；成稿只保留真正决定画面的尺度关系，不把每种背景微纹理都列成任务。
-
-## 媒介与完成方式：风格落实在哪里
-
-调用线稿、平涂、厚涂、水彩、透明叠色、版画、图形设计、背景美术与摄影合成知识，发展轮廓、色面、影形、笔触、纹理和合成的分工。风格标签可以定方向，具体形式承担最终表现。
-
-人物和背景可采用不同完成程度，并通过光色、边缘或形态取得联系；也可以刻意形成差异。探索线怎样进入阴影、笔触怎样顺着或抵抗形体、纸纹怎样参与色面、合成怎样保留或改变二维质感。
-
-不要将所有画面统一为精细描线加光晕；也不要预设手绘必须粗糙、摄影必须浅景深。选择性夸张和省略应服务当前作品，允许多种媒介关系及库外发展。
-
-## 让入口彼此发展
-
-可以从一个最有潜力的关系继续联想，例如：
-
-- 空间深度由尺度、边缘与光色共同建立，人物又通过接触与反光进入这个空间。
-- 回望姿态改变肩背转面，影形显出体积，衣褶与发束延续或打断主轮廓方向。
-- 透明界面同时组织反射、透射和前后遮挡，选择其中一种作为主要观看证据，其余按贡献保留。
-- 密集植物与整块衣面形成疏密联系，局部硬边使一个接点可读，背景路径又把视线带回主体。
-- 装饰色面主动压平空间，局部透视保留立体主体，两者以轮廓与色彩形成有意张力。
-
-这些不是固定组合。先判断作品希望展示什么，再展开相关知识；缺少条目时继续创造。转成提示词时，用对象、位置、形态和关系承载设计，不堆术语。生成未呈现某项要求时，分别检查设计成立性、转换保留和模型执行，不将单张偏离直接认定为知识缺失。
-
----
-
-# Anima 生图适配
-
-适配层 v0.3.1 · 2026-10-10。对象为 CircleStone Labs / Comfy Org 的 Anima 系列，不是同名应用。来源：[官方模型卡的 Prompting 与 Aesthetic Version Prompting](https://huggingface.co/circlestone-labs/Anima#prompting)。官方摘记为核对日快照，下面的输出组织是本项目约定。
-
-本适配只在用户要求 Anima 生图提示词，或已明确设置 Anima 生成用途时启用，负责最后的静态提示词交付，不决定前期艺术设计。英文提示词配用户语言说明，用户明确指定其他语言时遵从。艺术概念和分镜等请求仍按任务交付。本文件可配合核心或通用创作版独立加载，不依赖其他模型适配。
-
-## 官方摘记
-
-支持标签、自然语言和混合提示。标签小写，通常用空格，评分标签保留下划线；冲突标签优先采用 Gelbooru 写法。作者标签用 `@` 前缀，纯自然语言建议至少两句，多人物应补外貌描述。Anima-Aesthetic 不依赖质量标签，但官方允许保留 `masterpiece, best quality`；正负均不建议用评分标签。普通版本有推荐质量前缀。权重写法受支持，但效果依配置，不能沿用其他架构的权重经验。[官方模型卡](https://huggingface.co/circlestone-labs/Anima#prompting)
+官方模型卡区分 FL2VA 与 Ref2VA 权重，以及托管 Context-IR 处理与本地基础生成；因此格式相同不代表执行流程等效。时长范围为 4–15 秒，实际环境需另核对。[模型卡](https://huggingface.co/MiniMaxAI/MiniMax-H3)
 
 ## 固定输出结构
 
-以下是本项目固定格式；官方允许混合提示自由排列，并未强制下面的自然语言段序。请求生图提示词时，先在代码块外写一行「建议画幅：宽:高｜简短构图理由」，再输出 `Positive` 与 `Negative` 两个标题，每个标题下各一个 `text` 代码块。具体像素分辨率由用户按配置决定；已指定比例时沿用，明确只要提示词正文时省略建议行。默认不输出其他创作说明、版本解释、候选方案、使用教程或参数；需要处理输入矛盾时，先给一条必要说明。概念或分镜任务遵从用户要求。
+请求可用视频提示词时，先在代码块外写一行「建议画幅：宽:高｜简短构图理由」，再交付一个 `text` 代码块。比例依据构图及运动范围选择，具体像素分辨率由用户按配置决定；已指定比例时沿用，明确只要提示词正文时省略建议行。代码块内仅有当前模式需要的对齐句和官方字段；不加艺术方案说明、任务清单、Positive／Negative、JSON 包装或翻译版。字段名大小写与下划线保持不变，字段之间空一行，不能自创“镜头”“动作”“声音”等替代字段。用户明确要求接口 JSON 时再按已知接口封装，不猜 API 参数。
 
-### Positive：标签首行＋有序画面描述
+模式按实际参考职责选择，不能仅因上传文件就切到某一模式。默认纯文字 T2VA；参考角色不明且会改变模式时，只询问缺失的角色信息。概念、分镜等任务仍遵从用户指定交付。
 
-第一行只放英文逗号分隔的标签。分组顺序固定为：
+### 基础模式：三个字段，不增不减
 
-`质量／媒介／年份／内容分级 → 主体数量 → 角色 → 系列 → 作者 → 通用属性`
+T2VA 正文直接从以下字段开始；I2VA、FL2VA、L2VA 在三个字段前添加对应对齐句和一个空行：
 
-未指定或不适用的组直接省略，不填占位词。不自动添加年份、IP、作者或内容分级。普通标签小写、单词间用空格；评分标签保留下划线；作者标签使用 `@`。人物与系列名在自然语言中按正常英文大小写。质量策略见下表，不能混用不同权重版本的评分规则。
+```text
+integrated_multimodal_description: [Shot 1] ...
 
-标签行后空一行，自然语言按以下顺序分段；不适用的段省略，其余保持顺序。代码块里不写 `Subject:`、`Lighting:` 等小标题，也不写编号或艺术分析。
+overall_soundscape: ...
 
-| 段序 | 写入内容 |
+non_diegetic_music: ...
+```
+
+上面的省略号仅说明模板，实际成稿必须填完整内容。`integrated_multimodal_description` 按 `风格与初始构图 → 主体及空间锚点 → 按时间发展的动作与关系 → 结束状态` 组织，声音事件写在相应动作处；每镜独立一段，段首使用 `[Shot N]`。静止镜头可持续保持，不强迫起承转合。运镜写成当前镜头中的自然语言，需要时明确幅度和速度；不能把运镜标签堆到最后。
+
+`[Shot 1]` 不带起镜时间。真实切镜才新增 `[Shot N] At MM:SS.mmm, ...`，镜号连续，切镜时间严格递增且小于总时长。单镜头只能有 `[Shot 1]`；动作阶段不是切镜。
+
+对齐句固定如下，单独位于代码块首行，后面空一行再写字段：
+
+- I2VA：`For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.`
+- FL2VA：`How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot N) aligns with the S.SS-second mark of the target video.`
+- L2VA：`How the reference pictures align with the target video — <Picture 1> (from [Shot N]) aligns with the S.SS-second mark of the target video.`
+
+将 `N` 替换为实际最后镜号，`S.SS` 替换为两位小数的有效总时长。单镜头最后镜号为 1；例如八秒视频的终点为 `8.00`。不能保留模板占位符，也不能用未提供的图填引用。
+
+### 全参考模式：六个字段，不增不减
+
+```text
+subject_definitions:
+...
+
+summary:
+...
+
+retention_analysis:
+...
+
+detailed_description:
+...
+
+overall_soundscape:
+...
+
+non_diegetic_music:
+...
+```
+
+`subject_definitions` 每个需要单独追踪的参考内容一行；标签只用实际定义的 `<Subject N>`、`<Picture N>`、`<Video N>`、`<Audio N>`。图像仅提供角色外貌时，在 Subject 定义中引用来源，不自动给它新增独立 Picture 条目。视频与音频分开编号；只追踪确实启用的音轨。
+
+`summary` 为一个简短英文段落，先写方括号任务类型前缀，再概括目标与参考职责。类型取 `keyframe completion`、`reference generation`、`video editing`、`video continuation`、`audio reuse`、`audio reference`；同时成立时用 ` + ` 连接，不重复，不因素材扩展名自动选择类型。
+
+`retention_analysis` 每个需追踪的标签一行，写明对应镜头或职责、官方关系标记和具体保留／改变内容。视觉标记限 `fully_preserved`、`partially_preserved`、`attribute_transfer`、`weak_reference`；音频限 `fully_copy`、`partially_copy`、`reference`、`weak_reference`。不在此处写发声者 `(Sx)`，不引入未定义标签。
+
+`detailed_description` 先用一至两句英文确立总体形式，再按 `[Shot 1]`、后续真实切镜顺序写画面和声音，首次出现的重要主体描述可见外貌、位置与动作，参考标签放在实际发生作用的位置。生成任务主描述遵循官方通常 350–500 英文词的建议，完整对白时间线与实际编辑任务优先，不用重复装饰凑字数。
+
+### 声音、文字与语言的固定处理
+
+正文默认英文；用户要求其他语言时遵从并保留字段／标签语法。用户提供的对白和画面文字保持原文。基础模式对白使用稳定 `(S1)` 等发声者 ID 和 `<d>[Language] 原文</d>`；参考音频的复用／重演另按全参考指南 §5.4 处理原词、听不清片段与基本标点，不能自动把只参考音色的素材台词带入作品。
+
+`overall_soundscape` 用一个连续段落的 1–4 句写环境、物理声音和非语言人声，不重复完整对白或歌词。用户明确全程静音才填 `N/A`。`non_diegetic_music` 有配乐时用 1–3 句写乐器、节奏与动态；无配乐填 `N/A`。默认不添加对白、歌唱或配乐。场内可听见的音乐放在对应镜头正文。
+
+画面文字使用英文双引号包围原文。旁白、跨切对白与结尾截断分别采用官方 `says in an off-screen voiceover`、`<scenetrans>`、`<cutoff>` 规则；旁白后明确画内人物嘴唇保持闭合，跨切两端标记衔接并写明声音继续。结构定稿后核对字段顺序、模式、引用角色、镜号、时间与声音分工，实际成稿不展示检查过程。
+
+## 本项目的任务选择
+
+| 用户提供材料的实际职责 | 当前适配 |
 |---|---|
-| 1 · 主体与姿态 | 主体外貌、服装、当前姿态、表情、视线和必要接触；多人物逐个绑定外貌与位置 |
-| 2 · 构图与空间 | 景别、视角、主体位置、环境布局及关键深度关系；写明实际遮挡与空间连接 |
-| 3 · 光色与材质 | 光源方向、受光与影形、整体色调、关键材料的差异及联系 |
-| 4 · 绘制与细节组织 | 线、色面、边缘、笔触、细节分布与完成方式；保留具体形式，不堆品质形容词 |
+| 只有文字 | T2VA，三字段，无虚构图像引用 |
+| 一张实际首帧 | I2VA，先说明首帧对齐，再描述从该状态发展的关系 |
+| 实际首帧与末帧 | FL2VA，明确两端与连续中间路径，不能只串联两张静态说明 |
+| 一张实际末帧 | L2VA，明确末帧角色与终点，不能当成起始画面 |
+| 身份、风格、动作或声音等参考 | Ref2VA，全参考六字段；先确定每项资产用途 |
 
-标签负责可识别属性，自然语言负责位置、联系与表现；不把同一属性在四段中反复重述。构思资源按相关性展开，段序只是成稿组织，不是要求每张图具有全部效果。简洁作品可用较少段落，不能为填结构添加无关装饰；纯自然语言仅在用户明确要求时使用，至少两句完整描述。
+上传图片不自动意味着首帧；用户明确资产角色时直接采用。已有起止帧相互矛盾时先处理母版或路径，不能暗中替换输入图。未取得图片内容时，可以交付文字方案和待绑定说明，不能声称已对齐其外貌与构图。H3 所需资产清单和调用参数放在提示词外，不伪造文件绑定。
 
-只写选定静态时刻的可见状态，不写未来动作、镜头推移或连续时间线。图像中的方向、支撑、遮挡与受光须能成立。生成参数、参考图绑定和 LoRA 配置不能夹进正文。
+## 无参考单镜头格式示范
 
-### 默认完整表达
+手工格式示范，未生成视频。此处没有实际输入图，因此是 T2VA。
 
-默认将选定艺术设计完整转成提示词，保留人物、事件、环境、光色、材质及画法中有实际作用的细节与关系。不因 Anima 的模型规模、推测能力或以往生成遗漏主动删减、简化或重构设计；用户可以自行调整，明确要求压缩或模型专项重构时再处理。完整不等于堆砌或扩写，篇幅依据作品需要，不设固定词数。清晰的对象名称和有序表达继续使用，质量词与既有格式保持不变。
-
-### 版本与质量标签
-
-| 实际权重 | 固定处理 |
-|---|---|
-| Base | 普通优质插画默认正向使用 `masterpiece, best quality, score_7`；用户另指定质量目标时调整。负向可使用 `worst quality, low quality, score_1, score_2, score_3`，其他缺陷按画面取舍 |
-| Aesthetic | 正向默认使用 `masterpiece, best quality`；正负都不使用 `score_*` |
-| 未指定、Turbo 或未知微调 | 正向默认使用 `masterpiece, best quality`，不使用评分标签；不因缺少版本中断成稿。用户提供微调专用规则时按其规则处理 |
-
-本项目的普通优质插画默认添加 `masterpiece, best quality`，包括未指定权重的请求；不要将质量词与 `score_*` 评分词混为一类。Base 额外使用 `score_7`，Aesthetic 和未知版本不加评分词。用户明确不用质量词或要求其他质量目标时遵从。内容分级另按实际需求选择。没有用户需求时不添加现有角色、系列或作者标签，不猜采样参数和权重数值。
-
-### Negative：一行负面标签
-
-负向代码块只写小写、英文逗号分隔的有效排除项，不写句子、说明和理由。顺序为 `版本适用的质量缺陷 → 当前作品要避免的结构／内容问题 → 文字／水印等排除项`，没有需要的组省略。无有效排除项时保留空代码块，不能把“无额外负面项”写成模型输入。
-
-不默认排除所有模糊、遮挡、形变、色差或颗粒；需要的绘画和摄影效果保留。负向不得与正向及用户要求冲突。接口不接受负向时，在交接时省略该字段，不将负向拼入正向。
-
-## 通用／Aesthetic 完整格式示范
-
-手工格式示范，未生成图片。以下适用于未指定权重的普通优质插画，也适用于 Aesthetic：含质量词、不含评分词。Base 的首行替换见后文。不附模板占位符或说明段。
-
-建议画幅：4:3｜人物与展开的纸鸢左右分布，海港提供背景层次。
-
-Positive
+建议画幅：4:3｜同时保留左侧人物、桌面接触与后方教室层次。
 
 ```text
-masterpiece, best quality, anime illustration, 1girl, solo, original character, short hair, purple hair, amber eyes, overalls, sitting, kite, rooftop, harbor, afternoon
+integrated_multimodal_description: [Shot 1] A restrained 2D-animated classroom scene unfolds over eight seconds in a static three-quarter medium shot. A girl with a short black bob and a muted blue cardigan sits on the left, with both forearms and her overlapping hands visible on the desk. Empty desks recede behind her. Cool window light remains fixed across her shoulder and the warm desktop. She holds her gaze toward the window, then slowly lowers her eyes to the dark gap between her fingers. As her head inclines, a small lock of hair briefly interrupts the light shape on her shoulder and then settles. The desk layout and background light remain unchanged; clean linework and flat shadow shapes carry the quiet movement. There is no dialogue or cut.
 
-A young adult kite maker with a softly tousled plum-purple bob, amber eyes, and a small freckle beneath one eye sits cross-legged on a woven mat on a seaside workshop rooftop. She wears faded indigo canvas overalls over a loose cream shirt with rolled sleeves, a vermilion bandanna around her neck, and worn canvas sneakers. Leaning forward with quiet concentration and a slight satisfied smile, she presses a small translucent coral-paper patch over a tear in the wing of an enormous handmade fish-shaped kite. One hand smooths the patch flat while the other steadies the bamboo rib immediately beneath it. Her gaze rests precisely on their contact point. A shallow dish of paste and a small brush sit on a wooden board beside her knee. A loose spool of kite line and two folded paper offcuts complete the working area.
+overall_soundscape: Low classroom room tone continues beneath a faint rustle from her sleeve as her head inclines.
 
-The kite rests partly across her lap and partly on a low wooden trestle to her right, its lightweight bamboo skeleton visible through the paper skin. Its rounded fish head, broad fin-like wings, and long forked ribbon tail stretch across most of the horizontal frame. The repaired wing has one narrow split and a few older rectangular patches, each carefully integrated into the paper surface. The large circular painted fish eye is visible beyond her hands. Viewed from slightly above in a three-quarter medium-wide composition, the maker occupies the left third and the kite opens across the center and right. A cropped roof beam in the upper foreground establishes a sheltered working corner. Terracotta roof tiles and a low parapet lead toward a harbor below, where compact boats and tightly clustered seaside roofs diminish in scale. A generous strip of pale blue sky gives the intricate kite silhouette room to breathe.
-
-Low afternoon sunlight enters from the right through the suspended edge of the kite, turning its thin ivory and coral paper luminous while leaving the bamboo ribs as delicate darker lines. Overlapping patches appear slightly denser and warmer than the surrounding paper. A broad fish-shaped shadow falls across the mat and rooftop, with softer fin edges and thin rib shadows inside it. Her hands and the repair remain clearly readable against the glowing wing. Cool sky light fills the shaded side of her face and indigo overalls; small warm reflections from the kite connect her skin and cream sleeves to the coral paper. Dry terracotta, fibrous matte paper, smooth bamboo, and coarse canvas have distinct restrained textures. Keep the strongest color contrast around her face, hands, and the repaired section; the distant harbor uses softer blue-green and muted warm planes.
-
-An original Japanese anime narrative illustration combining graceful character drawing with carefully painted architectural scenery. Tapered colored linework defines the face, fingers, bamboo joints, and kite contours. Broad cel-shaded forms organize the figure, while subtle gouache-like brushwork gives the rooftop and harbor tactile depth. Preserve large quiet shapes between clusters of fine detail. The patch, steadying hand, old repairs, and supported kite communicate patient craftsmanship within a single still image. The oversized fish shape creates gentle visual wonder without becoming a living creature or covering the maker's face.
+non_diegetic_music: N/A
 ```
 
-Negative
-
-```text
-extra people, extra arms, text overlay, watermark
-```
-
-## Base 示例的明确差异
-
-相同作品确认使用 Base 时，保留以上四段画面描述，Positive 首行改为：
-
-```text
-masterpiece, best quality, score_7, anime illustration, 1girl, solo, original character, short hair, purple hair, amber eyes, overalls, sitting, kite, rooftop, harbor, afternoon
-```
-
-Negative 改为：
-
-```text
-worst quality, low quality, score_1, score_2, score_3, extra people, extra arms, text overlay, watermark
-```
-
-通用／Aesthetic 示例和 Base 示例都包含正向质量词；仅 Base 示例包含评分词。示范中的前缀与版本规则必须保持一致。
+若这张图实际作为首帧输入，需要改为 I2VA 并采用官方对齐说明，核对图中的姿态是否支持后续动作；不能仅加一句“使用图片”就宣称已经适配。请求超过当前支持时长或实际接口容量时，保留完整母版并说明适配取舍，不在艺术构思阶段先减掉关系。

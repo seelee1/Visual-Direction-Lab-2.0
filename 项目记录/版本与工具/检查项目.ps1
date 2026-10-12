@@ -85,7 +85,14 @@ foreach ($configFile in $caseConfigs) {
     $caseConfig = Get-Content -LiteralPath $configFile.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
     $publicCaseCount += $caseConfig.scenes.Count
     foreach ($condition in $caseConfig.conditions) {
-        if ($condition.material -and -not (Test-Path -LiteralPath (Join-Path $configFile.DirectoryName $condition.material))) { $issues.Add('评估材料路径失效：'+$configFile.Name+'/'+$condition.id) }
+        if ($condition.material) {
+            $materialPath = [System.IO.Path]::GetFullPath((Join-Path $configFile.DirectoryName $condition.material))
+            if (-not (Test-Path -LiteralPath $materialPath)) {
+                $savedMaterial = [System.IO.Path]::GetRelativePath($projectRoot, $materialPath).Replace('\','/')
+                $materialPath = Resolve-SavedPath $savedMaterial
+            }
+            if (-not (Test-Path -LiteralPath $materialPath)) { $issues.Add('评估材料路径失效：'+$configFile.Name+'/'+$condition.id) }
+        }
     }
 }
 $developmentIds = [System.Collections.Generic.List[string]]::new()

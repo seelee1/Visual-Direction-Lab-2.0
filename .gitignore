@@ -8,3 +8,6 @@ venv/
 *.log
 .DS_Store
 Thumbs.db
+
+# 本地作品交付，与助手资源和研究记录分开
+/创作输出/
