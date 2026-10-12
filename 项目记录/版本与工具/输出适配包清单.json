@@ -1,11 +1,17 @@
 {
-  "image_runs": 0,
-  "generic_package": "助手指令/使用版本/通用创作.md",
-  "version": "0.3.1",
   "status": "design_first_with_optional_model_packages_not_generation_validated",
   "video_runs": 0,
+  "generic_package": "助手指令/使用版本/通用创作.md",
+  "core_instruction_version": "0.5",
+  "verified_date": "2026-10-10",
+  "version": "0.3.1",
+  "image_runs": 0,
+  "video_model": "MiniMax-H3",
   "packages": [
     {
+      "path": "助手指令/使用版本/通用创作.md",
+      "sha256": "7d457d6c1f1b18b9c800f28b1549fe381ff35883500c71b9b5081a9c3608838b",
+      "model": "通用创作",
       "sources": [
         {
           "sha256": "a074c68509a6f53f1b33d7624096b65a7a8eb7579f0fa25a115d9363d90d2e61",
@@ -24,12 +30,12 @@
           "path": "视觉表现资源/10-艺术风格与审美方向发展.md"
         }
       ],
-      "characters": 10654,
-      "sha256": "7d457d6c1f1b18b9c800f28b1549fe381ff35883500c71b9b5081a9c3608838b",
-      "path": "助手指令/使用版本/通用创作.md",
-      "model": "通用创作"
+      "characters": 10654
     },
     {
+      "path": "助手指令/使用版本/Anima.md",
+      "sha256": "5d217f4c49655ea969d941c3cc3f1bd1d77ec2443c0202f622a9ac2a6458aad2",
+      "model": "Anima",
       "sources": [
         {
           "sha256": "a074c68509a6f53f1b33d7624096b65a7a8eb7579f0fa25a115d9363d90d2e61",
@@ -56,12 +62,12 @@
           "path": "助手指令/输出适配/Anima-生图.md"
         }
       ],
-      "characters": 21032,
-      "sha256": "5d217f4c49655ea969d941c3cc3f1bd1d77ec2443c0202f622a9ac2a6458aad2",
-      "path": "助手指令/使用版本/Anima.md",
-      "model": "Anima"
+      "characters": 21032
     },
     {
+      "path": "助手指令/使用版本/MiniMax-H3.md",
+      "sha256": "163940ccb9a69d669022adfbb28e2b347458c84679511fe5f3460a802963bdcf",
+      "model": "MiniMax-H3",
       "sources": [
         {
           "sha256": "a074c68509a6f53f1b33d7624096b65a7a8eb7579f0fa25a115d9363d90d2e61",
@@ -84,14 +90,8 @@
           "path": "助手指令/输出适配/MiniMax-H3-视频.md"
         }
       ],
-      "characters": 16407,
-      "sha256": "163940ccb9a69d669022adfbb28e2b347458c84679511fe5f3460a802963bdcf",
-      "path": "助手指令/使用版本/MiniMax-H3.md",
-      "model": "MiniMax-H3"
+      "characters": 16407
     }
   ],
-  "image_model": "Anima",
-  "verified_date": "2026-10-10",
-  "core_instruction_version": "0.5",
-  "video_model": "MiniMax-H3"
+  "image_model": "Anima"
 }

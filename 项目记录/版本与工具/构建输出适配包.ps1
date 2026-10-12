@@ -38,5 +38,5 @@ $sourceRecords = foreach ($source in $sources) { @{path=$source; sha256=(Get-Fil
 @{model=$package.model; path=$output; characters=$body.Length; sha256=(Get-FileHash -LiteralPath (Join-Path $projectRoot $output) -Algorithm SHA256).Hash.ToLowerInvariant(); sources=@($sourceRecords)}
 }
 $manifest = @{version='0.3.1'; core_instruction_version='0.5'; status='design_first_with_optional_model_packages_not_generation_validated'; verified_date='2026-10-10'; generic_package='助手指令/使用版本/通用创作.md'; image_model='Anima'; video_model='MiniMax-H3'; image_runs=0; video_runs=0; packages=@($packageRecords)}
-[System.IO.File]::WriteAllText((Join-Path $projectRoot '项目记录/单文件版本/输出适配包清单.json'), ($manifest | ConvertTo-Json -Depth 10), $utf8Writer)
+[System.IO.File]::WriteAllText((Join-Path $projectRoot '项目记录/版本与工具/输出适配包清单.json'), ($manifest | ConvertTo-Json -Depth 10), $utf8Writer)
 $packageRecords | ForEach-Object { [pscustomobject]@{model=$_.model; package=$_.path; characters=$_.characters; source_files=$_.sources.Count} } | ConvertTo-Json
