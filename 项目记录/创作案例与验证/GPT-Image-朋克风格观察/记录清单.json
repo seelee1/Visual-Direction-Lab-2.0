@@ -1,0 +1,21 @@
+{
+  "type": "user_supplied_image_observation",
+  "controlled_test": false,
+  "model": null,
+  "recorded_date": "2026-10-26",
+  "files": [
+    {
+      "sha256": "24cafb7109b45f6c4249c913f0f0091995e4921f0f6620089f0fefe68fc23e61",
+      "path": "原始提示词.md"
+    },
+    {
+      "sha256": "8da9d1835dfae70ff5fc766aa00efb2e182de33ed5ac659d4a3584c97ccdc025",
+      "path": "用户原图.png"
+    },
+    {
+      "sha256": "8e97ca542d74ff06b93ccc19eebcc9ca23a59a92ad1f6449378b14957427e6ab",
+      "path": "README.md"
+    }
+  ],
+  "submitted_prompt_verified": false
+}
