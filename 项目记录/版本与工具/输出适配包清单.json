@@ -1,178 +1,339 @@
 {
-  "gpt_image_runs": 0,
-  "image_runs": 0,
+  "version": "0.8.0",
+  "core_instruction_version": "0.8",
+  "entry": "创作系统/入口.md",
+  "status": "unified_structure_not_agent_routing_or_generation_validated",
   "adapter_verified_dates": {
-    "GPT-Image": "2026-10-26",
+    "Anima": "2026-10-10",
     "MiniMax-H3": "2026-10-10",
-    "Anima": "2026-10-10"
+    "GPT-Image": "2026-10-26"
   },
-  "verified_date": "2026-10-26",
-  "version": "0.5.0",
-  "status": "design_first_with_optional_model_packages_not_generation_validated",
+  "image_runs": 0,
+  "gpt_image_runs": 0,
+  "video_runs": 0,
   "packages": [
     {
-      "model": "GPT-Image",
+      "model": "统一创作系统",
+      "path": "导出/视觉助手.zip",
+      "sha256": "e976d51398890674aecd7d92232ff84b43510a3c51dbda043215da63520214d4",
       "sources": [
         {
-          "sha256": "de774ac5edefb4c06a465e0872fb6a20a931dcea049b876fa9818774d5e9d751",
-          "path": "助手指令/核心指令.md"
+          "path": "创作系统/入口.md",
+          "sha256": "471741e87aee450e744b9d89ae5481e7502c07888e771f39490d5386ee0147d2"
         },
         {
-          "sha256": "ba6a7713add93224be73f0d4261d1c7bcd275da2151b24206b2f6dc113bbd965",
-          "path": "视觉表现资源/01-视觉表现激活地图.md"
+          "path": "创作系统/材料/表现/既有条目深化-v0.2.md",
+          "sha256": "a3aea7e8d2b27edefd22faf5a0b621bd68c16d5b8aa898116b46393e2a330ff5"
         },
         {
-          "sha256": "d44e19002d3d3274bf611b0b7f723df18db1f591cab7b9c838696ad48174c065",
-          "path": "助手指令/创作规范/交付与信息保留.md"
+          "path": "创作系统/材料/表现/跨域组合深化-v0.2.md",
+          "sha256": "f3a2ee8eaa8f2b12ae4e8eed2b2863da8e3f621c3e361793c2b32dd867a71b5e"
         },
         {
-          "sha256": "fdc69361c4011f9753e8cee623d7e21506a3179be74f56b4522d4d132aa0e9d5",
-          "path": "人类视觉语言库/表达与维护.md"
+          "path": "创作系统/材料/表现/跨域组合与创作跃迁.md",
+          "sha256": "13fea0a10e041eac150abc65f7c183f969227e3f92cb086dae498f7c9f66b095"
         },
         {
-          "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5",
-          "path": "视觉表现资源/10-艺术风格与审美方向发展.md"
+          "path": "创作系统/材料/表现/README.md",
+          "sha256": "818d63e349530bdbad4f18b55baaad2689c4a30d02ed15f1a10ad81d62f9dbcb"
         },
         {
-          "sha256": "8a52a426fde69fef291fa7563a758b14e1652002140d40a2891d8a8502286ae4",
-          "path": "视觉表现资源/09-画面深度与静态表现发展.md"
+          "path": "创作系统/材料/表现/V01-动作与接触.md",
+          "sha256": "5b8a9555cc7454b2952d63d6372971a480c6814649b627b397c92ea1a55ba790"
         },
         {
-          "sha256": "acdaa7d255c783bd16fab148ba8454bd2ffc5e02bfffa021cb7ed16d65691372",
-          "path": "助手指令/输出适配/GPT-Image-生图.md"
+          "path": "创作系统/材料/表现/V02-安静表演与保持.md",
+          "sha256": "17735daaa6e8714ada3e07e47a42c3dd58164e5cdfe10c5ebe4ecaefa6b0026c"
+        },
+        {
+          "path": "创作系统/材料/表现/V03-空间与观察.md",
+          "sha256": "4087f4a0f8ada8df750d99428fd26804902b16bafe04b6ddde4ab850218089ff"
+        },
+        {
+          "path": "创作系统/材料/表现/V04-动态光影.md",
+          "sha256": "14d9cdf0d757519cff7f95bc32aa1697bc635e1359d8ffb425a41936a2820fd2"
+        },
+        {
+          "path": "创作系统/材料/表现/V05-材质与形变.md",
+          "sha256": "7bdfd056656ca23f4d012f8bfb8f5ecc57852b40b63aed0b11218ad5ae332ff8"
+        },
+        {
+          "path": "创作系统/材料/表现/V06-流体与界面.md",
+          "sha256": "4ca799bc9af3ec80f79fe3dea5d6338e9ada6975e41189e642900d030e63ee89"
+        },
+        {
+          "path": "创作系统/材料/表现/V07-自然与环境.md",
+          "sha256": "eb2f0190dff163fac78b875463d84fe618f45202e8ac6dc7683427f178befe3a"
+        },
+        {
+          "path": "创作系统/材料/表现/V08-二维形式与奇幻.md",
+          "sha256": "53ba3d068f05c6df62b84d1e5d81115b54def8737f8f90adacdbb02d584dcb86"
+        },
+        {
+          "path": "创作系统/材料/表现/V09-细微表演与多角色.md",
+          "sha256": "13636ba6d371538af4f0fd1ac0c053aca824c8af4d0a72ea657406ebde2f69e4"
+        },
+        {
+          "path": "创作系统/材料/表现/V10-生物与机械.md",
+          "sha256": "6c541470ce6ef82e072a911fd83355a8eadf1946cd6edfe49ce730c5b5ad9cf9"
+        },
+        {
+          "path": "创作系统/材料/表现/V11-材料状态与复杂界面.md",
+          "sha256": "3a5622885c059c776df9c15b48ad70337e8ba5ca717e70f40f88571c920b9d7d"
+        },
+        {
+          "path": "创作系统/材料/表现/V12-构图与色彩发展.md",
+          "sha256": "5cedec514076e202d148654acf6a336c6c21b47ac90c4dc4e9d0d044dfb37c62"
+        },
+        {
+          "path": "创作系统/材料/表现/V13-镜头组与时间组织.md",
+          "sha256": "33b0a26f9fa78296095139f32a03e82b1499eb76b7a78a23f4ede41491a749f1"
+        },
+        {
+          "path": "创作系统/材料/表现/V14-二维与跨风格表达.md",
+          "sha256": "0d74d8bb7d294798c56f1fdbd6842f3025c8123fca08de2a25bd397f1599390b"
+        },
+        {
+          "path": "创作系统/材料/表现/V15-环境尺度与光学现象.md",
+          "sha256": "c26119c6793f973b3e05c3c0aaec8573a1483fc2f63070767397ba2a04bdaf61"
+        },
+        {
+          "path": "创作系统/材料/场景词库/地点建筑与陈设.md",
+          "sha256": "eb9a2389769e1f3dd206b170a6127941e00035731f77ffa134e41ef1c1d0b24c"
+        },
+        {
+          "path": "创作系统/材料/场景词库/空间状态与特殊背景.md",
+          "sha256": "4fc6220a7d550ccf1bfcd02a0f855644fccf747caf1f3bd9344530d9936ac447"
+        },
+        {
+          "path": "创作系统/材料/场景词库/自然环境与地貌.md",
+          "sha256": "0edf06f5a59e043929fa1fa84b98363318b05d568a5b86fb972efa9b9e79e7f9"
+        },
+        {
+          "path": "创作系统/材料/关系/表达方法.md",
+          "sha256": "65fed574077672da0dbd7542e8e9ff7dd82ef8c874eb5a3a1a428a8e0bb79483"
+        },
+        {
+          "path": "创作系统/材料/关系/索引.md",
+          "sha256": "36dec6a9ae07bcfc454544c8303c11b5e3061ef3284de38bcf8100c8ef1c6104"
+        },
+        {
+          "path": "创作系统/材料/关系/条目/空间与光影.md",
+          "sha256": "1ddebebe8cdd71ed514a06ae51d10c55e95b6b4c385fe32f355b57abeee163fb"
+        },
+        {
+          "path": "创作系统/材料/关系/条目/身体与接触.md",
+          "sha256": "ddf6c7b9d9e439d107e1d3433ee51475fd444b01f85df4e50f3a9d5e4dc48f38"
+        },
+        {
+          "path": "创作系统/材料/关系/条目/衣发与柔性材料.md",
+          "sha256": "e70707a3a1ed96ada829da885c29f232b3afbcd4eecce284855fd5e6102116dc"
+        },
+        {
+          "path": "创作系统/材料/人物外观词库/发型与毛发.md",
+          "sha256": "97b80ed435b9b8af112c061d37c9860fc0252d0f50daed710d7c1493296c1ae6"
+        },
+        {
+          "path": "创作系统/材料/人物外观词库/服饰语境与穿搭.md",
+          "sha256": "2f340f26c5de8f08ce316729afca1f7b64fc7498142b3c3c72506444d3a7d032"
+        },
+        {
+          "path": "创作系统/材料/人物外观词库/服装与配件.md",
+          "sha256": "828f46e1427983ac60d4d8af40b0a7fc881fe6f40884a5087910372f866e153d"
+        },
+        {
+          "path": "创作系统/材料/人物外观词库/身体与面貌.md",
+          "sha256": "cc5c204258b555648759f0e88bad21dcdb8865253d72ccc4aa2497e02d64e515"
+        },
+        {
+          "path": "创作系统/材料/人物外观词库/特殊人物与非人设计.md",
+          "sha256": "d35731682940ef06f1862a6db1f1256c52348eaf074754ccacd47afb231489b4"
+        },
+        {
+          "path": "创作系统/材料/人物外观词库/状态与关系.md",
+          "sha256": "dcfc0356d59337bc020759a9d797fd5c16922fd49875db4f3c853047230ba6aa"
+        },
+        {
+          "path": "创作系统/材料/依据/关系与设计原则.md",
+          "sha256": "e5c8d7f9f3d8bbb475ab9321dda54e7710b34d8d5fafdfffe712b68fc576dd70"
+        },
+        {
+          "path": "创作系统/材料/依据/观察/01-官方二维静帧观察.md",
+          "sha256": "8b68ce4c74d6e921779969148a434c10a259130f35e3e29fa60d35fa9535078c"
+        },
+        {
+          "path": "创作系统/材料/依据/来源登记.md",
+          "sha256": "bdb4884e2ad73e1884e67c01e59e1bccaffa64305e4ca3cd94c843f8372bc3cb"
+        },
+        {
+          "path": "创作系统/材料/依据/研究范围.md",
+          "sha256": "ea55c22e8a891375c1010870834575a6434fa7ea8343880a4e7161138baa30ee"
+        },
+        {
+          "path": "创作系统/材料/知识/K01-意图知觉与构图.md",
+          "sha256": "10ccbe09b10778f5adacf17f628b93bb0a185eed7c289890d9131c31e66f0f90"
+        },
+        {
+          "path": "创作系统/材料/知识/K02-摄影时间与剪辑.md",
+          "sha256": "33d4d4486f3e71922af669825f40fdf2a8510b76c77f51dfead1d6fc8af0eae8"
+        },
+        {
+          "path": "创作系统/材料/知识/K03-表演运动与材质.md",
+          "sha256": "c8aa02c9c165a3c942c731c174ecaa85dd259b68742b5b532b4d5ead7bd6d16f"
+        },
+        {
+          "path": "创作系统/材料/知识/K04-动态光影与色彩.md",
+          "sha256": "66a42395539f192935303dbc1b9548fa26ba77b838e404fb4b38748ce88236b9"
+        },
+        {
+          "path": "创作系统/材料/知识/K05-流体自然与特效.md",
+          "sha256": "e98f6bb82bcdd4bca39d79c821cc4927f5fca506f4edc379abf8778268888dde"
+        },
+        {
+          "path": "创作系统/材料/知识/K06-日式二维动画专题.md",
+          "sha256": "f48de2c07ca02a82f987c94d6b3e01936241fa5b5c94442e62d4ae374455e76c"
+        },
+        {
+          "path": "创作系统/材料/知识/K07-细微表演与多角色.md",
+          "sha256": "691b6deb99780c56163cad3a9b5f4795471a3d21ee31d29135d0a2e00bb9ed07"
+        },
+        {
+          "path": "创作系统/材料/知识/K08-生物与机械.md",
+          "sha256": "a8e28b1867253a018630f60fba4c2766edcd93f6c0b518eca56f1c4449f64339"
+        },
+        {
+          "path": "创作系统/材料/知识/K09-材料状态与复杂界面.md",
+          "sha256": "e1a67b58c4b3bcbb418cece3d7b85aacc2095024dc3ead7ce6400f15b57d3aeb"
+        },
+        {
+          "path": "创作系统/材料/知识/K10-构图与色彩发展.md",
+          "sha256": "c4b279169952d5127ceec711e8d3e9431f4027e0340e59fffd9bbd8553fd6e61"
+        },
+        {
+          "path": "创作系统/材料/知识/K11-镜头组与时间组织.md",
+          "sha256": "3a1bc313f25c8dcc3c818af4f071b3256f390b39ed371a358cfdaeb5bc62fa82"
+        },
+        {
+          "path": "创作系统/材料/知识/K12-二维与跨风格表达.md",
+          "sha256": "3752b592805f6b264c417733aefc253b71028fb3c0be5bb640df7765118ef50c"
+        },
+        {
+          "path": "创作系统/材料/知识/K13-环境尺度与光学现象.md",
+          "sha256": "f047c42da229e934d18ce97b7edd0ce1ae36aa8b8c681f62f00fa4b2f3d37604"
+        },
+        {
+          "path": "创作系统/材料/知识/README.md",
+          "sha256": "098e08d08651ccec5f9a9e2892d167d6b5be2a08da33a12d873d22c1ac2739d7"
+        },
+        {
+          "path": "创作系统/材料/README.md",
+          "sha256": "5a12ce00e0691cede41a8439161d953b3ebc4b60a29ac11ed33269d0b83097c7"
+        },
+        {
+          "path": "创作系统/交付/信息保留.md",
+          "sha256": "3b59b8b0d89afe3749b364653e31259fc0655218eaeb788ae8a844b716be1f5d"
+        },
+        {
+          "path": "创作系统/交付/制作交接.md",
+          "sha256": "633677dfe6dcc7095f168fd60fdf5c87cd8725e5b2032f2798c6ec2e8a48f881"
+        },
+        {
+          "path": "创作系统/交付/Anima-生图.md",
+          "sha256": "cb314d00eb269da2e80423889354603841ef633eb1bb575114c2ebe1eb74beca"
+        },
+        {
+          "path": "创作系统/交付/GPT-Image-生图.md",
+          "sha256": "3d04fa21640e506aad332ec16e14992a24b622ad89159a44656dbdcd2651b8a9"
+        },
+        {
+          "path": "创作系统/交付/MiniMax-H3-视频.md",
+          "sha256": "dc86505cd38c5abce2e216c7c2808b666655db179d9e6d99d33b7a9c7b897bae"
+        },
+        {
+          "path": "创作系统/交付/README.md",
+          "sha256": "ce881c9845c7b5de5c149cf940de9f1d71a7b094821d0c9ca3285210c4ff5e5a"
+        },
+        {
+          "path": "创作系统/能力/场景设计.md",
+          "sha256": "3ba5489151fd4ccd9481ac640117568b58ae8549284dfca0be43ba6a387d6180"
+        },
+        {
+          "path": "创作系统/能力/创意展开.md",
+          "sha256": "f25f1a2da6bf262338158afbd8db7eaa0caad345563cef7cf81b4521d7dc6c84"
+        },
+        {
+          "path": "创作系统/能力/二维表现.md",
+          "sha256": "2db9c879977ae43be8b9333b43208b3b928d2e5a4c691edd6ea17e80613389bd"
+        },
+        {
+          "path": "创作系统/能力/二维转译.md",
+          "sha256": "9bf6bbdae89e2218f70d0a0578f508d9dc6ba15c02d6b8bdaa60f084d929113e"
+        },
+        {
+          "path": "创作系统/能力/构图.md",
+          "sha256": "62ccbd7558f6798fc3c25b4a2d7f66583051bc92f9a556522c1844f262436173"
+        },
+        {
+          "path": "创作系统/能力/关系组织.md",
+          "sha256": "05c9bc42e267e42f4891c48dfd45c6aa1003a8d921b1825fdc9426e9f358e7f1"
+        },
+        {
+          "path": "创作系统/能力/观察与形式.md",
+          "sha256": "a2b57e676c90ec59e53628706dc696acfcebd5264cd1eed5a07eb010bad1f859"
+        },
+        {
+          "path": "创作系统/能力/过程展开.md",
+          "sha256": "1c43930adf6c06f54fd1c96224f72e21dced7669ac1e85423cde9b4ac7d5c296"
+        },
+        {
+          "path": "创作系统/能力/剪辑与时空组织.md",
+          "sha256": "d0ecfb5ccd4328101268f220c0c358b2458586c44e968554b30bd5c93b35467b"
+        },
+        {
+          "path": "创作系统/能力/静态画面.md",
+          "sha256": "5d72a01f2588111059abeefc0366daae88d077899b289660175a383eec32fddd"
+        },
+        {
+          "path": "创作系统/能力/人物设计.md",
+          "sha256": "e1a485ecb853c2668c32fc5acfce6c156a79e2194318825edc27875a70e9f006"
+        },
+        {
+          "path": "创作系统/能力/艺术变体.md",
+          "sha256": "1678c7742b8e30ce8bdce43bbf7b5507dae7203df5eecb4cc8d3721812ca7ddd"
+        },
+        {
+          "path": "创作系统/能力/艺术语言.md",
+          "sha256": "429632e0b5b3aaa0477305eb08409cd36d86443baa12596e3cb52360a86a8508"
+        },
+        {
+          "path": "创作系统/能力/运动与物理.md",
+          "sha256": "bfe192ea526e71130cb5e8baab7f02b70def0c590244e6d3bc3b151e8fb63565"
+        },
+        {
+          "path": "创作系统/能力/运镜.md",
+          "sha256": "74a1512f3885843d95e63f3ec162456a57f03874d3d11a7afbc65771720a8dd0"
+        },
+        {
+          "path": "创作系统/任务/分镜.md",
+          "sha256": "4b5acac67c853e7d15908be9f4610b59493140e376bd4f5244922e897dfcff46"
+        },
+        {
+          "path": "创作系统/任务/漫画.md",
+          "sha256": "8576fc49d540ddd5aa58bdd69730b2a7c81e5a228fea80347a61a5de1cd09913"
+        },
+        {
+          "path": "创作系统/任务/系列.md",
+          "sha256": "ffdc71c264f91d49a726a93e04bbbbc3c150283ad7c8f952ae5b8302c2bd671a"
+        },
+        {
+          "path": "创作系统/任务/专门用途.md",
+          "sha256": "e71c97fa01ef0d7039eee7ac99509006af382aa69886a819a40d4d21ede3de4d"
+        },
+        {
+          "path": "创作系统/任务/作品延续.md",
+          "sha256": "7d0a7827e2c1215c4f4e1828314682b28d1753caf4e050785bc1e9f7794d0ff8"
         }
-      ],
-      "sha256": "35379f5dfab5dc69ab7155f8bd208ec829a82ea85c6a33587decb86e3cdbcb54",
-      "characters": 18932,
-      "path": "助手指令/使用版本/GPT-Image.md"
-    },
-    {
-      "model": "通用创作",
-      "sources": [
-        {
-          "sha256": "de774ac5edefb4c06a465e0872fb6a20a931dcea049b876fa9818774d5e9d751",
-          "path": "助手指令/核心指令.md"
-        },
-        {
-          "sha256": "ba6a7713add93224be73f0d4261d1c7bcd275da2151b24206b2f6dc113bbd965",
-          "path": "视觉表现资源/01-视觉表现激活地图.md"
-        },
-        {
-          "sha256": "d44e19002d3d3274bf611b0b7f723df18db1f591cab7b9c838696ad48174c065",
-          "path": "助手指令/创作规范/交付与信息保留.md"
-        },
-        {
-          "sha256": "fdc69361c4011f9753e8cee623d7e21506a3179be74f56b4522d4d132aa0e9d5",
-          "path": "人类视觉语言库/表达与维护.md"
-        },
-        {
-          "sha256": "c95324804d5890234cdc9b06769ddc5574754931c945cff1acfd5c598d3e9267",
-          "path": "人类视觉语言库/关系条目/身体与接触.md"
-        },
-        {
-          "sha256": "a1d3292699c41c543478f2fc3e59974fa0d1dcd5bea534a2a5548dc93ba5c513",
-          "path": "人类视觉语言库/关系条目/衣发与柔性材料.md"
-        },
-        {
-          "sha256": "318bec217552b40d00e8c57ef35168bface5b736c6a68d8afeae133a18f2534b",
-          "path": "人类视觉语言库/关系条目/空间与光影.md"
-        },
-        {
-          "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5",
-          "path": "视觉表现资源/10-艺术风格与审美方向发展.md"
-        }
-      ],
-      "sha256": "bdf45a4cb23c4ad1239657a9a18beddbf6c7331c710d81d35042edf8d1cbbeb6",
-      "characters": 15836,
-      "path": "助手指令/使用版本/通用创作.md"
-    },
-    {
-      "model": "Anima",
-      "sources": [
-        {
-          "sha256": "de774ac5edefb4c06a465e0872fb6a20a931dcea049b876fa9818774d5e9d751",
-          "path": "助手指令/核心指令.md"
-        },
-        {
-          "sha256": "ba6a7713add93224be73f0d4261d1c7bcd275da2151b24206b2f6dc113bbd965",
-          "path": "视觉表现资源/01-视觉表现激活地图.md"
-        },
-        {
-          "sha256": "d44e19002d3d3274bf611b0b7f723df18db1f591cab7b9c838696ad48174c065",
-          "path": "助手指令/创作规范/交付与信息保留.md"
-        },
-        {
-          "sha256": "fdc69361c4011f9753e8cee623d7e21506a3179be74f56b4522d4d132aa0e9d5",
-          "path": "人类视觉语言库/表达与维护.md"
-        },
-        {
-          "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5",
-          "path": "视觉表现资源/10-艺术风格与审美方向发展.md"
-        },
-        {
-          "sha256": "8a52a426fde69fef291fa7563a758b14e1652002140d40a2891d8a8502286ae4",
-          "path": "视觉表现资源/09-画面深度与静态表现发展.md"
-        },
-        {
-          "sha256": "8ed0f2f15cf30796ec09fba9f9f038306d7171f737577ecfb7a065b343d59b3f",
-          "path": "助手指令/输出适配/Anima-生图.md"
-        }
-      ],
-      "sha256": "93e47d4fde21230b8233d8aab417aeef1be250e6672adaefc58f29d6cf40e6ab",
-      "characters": 22616,
-      "path": "助手指令/使用版本/Anima.md"
-    },
-    {
-      "model": "MiniMax-H3",
-      "sources": [
-        {
-          "sha256": "de774ac5edefb4c06a465e0872fb6a20a931dcea049b876fa9818774d5e9d751",
-          "path": "助手指令/核心指令.md"
-        },
-        {
-          "sha256": "ba6a7713add93224be73f0d4261d1c7bcd275da2151b24206b2f6dc113bbd965",
-          "path": "视觉表现资源/01-视觉表现激活地图.md"
-        },
-        {
-          "sha256": "d44e19002d3d3274bf611b0b7f723df18db1f591cab7b9c838696ad48174c065",
-          "path": "助手指令/创作规范/交付与信息保留.md"
-        },
-        {
-          "sha256": "fdc69361c4011f9753e8cee623d7e21506a3179be74f56b4522d4d132aa0e9d5",
-          "path": "人类视觉语言库/表达与维护.md"
-        },
-        {
-          "sha256": "c95324804d5890234cdc9b06769ddc5574754931c945cff1acfd5c598d3e9267",
-          "path": "人类视觉语言库/关系条目/身体与接触.md"
-        },
-        {
-          "sha256": "a1d3292699c41c543478f2fc3e59974fa0d1dcd5bea534a2a5548dc93ba5c513",
-          "path": "人类视觉语言库/关系条目/衣发与柔性材料.md"
-        },
-        {
-          "sha256": "318bec217552b40d00e8c57ef35168bface5b736c6a68d8afeae133a18f2534b",
-          "path": "人类视觉语言库/关系条目/空间与光影.md"
-        },
-        {
-          "sha256": "a55134645d68f12dbe53e7f12dd6f01fbd068956a869f65d2838552aba4ad0a5",
-          "path": "视觉表现资源/10-艺术风格与审美方向发展.md"
-        },
-        {
-          "sha256": "7852da59d8f50a3c33364aff21c14704867cb3be6f2efcb1e98ec7a0456e0760",
-          "path": "助手指令/输出适配/MiniMax-H3-视频.md"
-        }
-      ],
-      "sha256": "75a28cd8cc4ed0bfae397508f01732c343245b21a9b04a498f21ac0e51c8824e",
-      "characters": 21589,
-      "path": "助手指令/使用版本/MiniMax-H3.md"
+      ]
     }
-  ],
-  "generic_package": "助手指令/使用版本/通用创作.md",
-  "core_instruction_version": "0.6",
-  "video_model": "MiniMax-H3",
-  "video_runs": 0,
-  "image_models": [
-    "Anima",
-    "GPT-Image"
   ]
 }

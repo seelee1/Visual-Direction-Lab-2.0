@@ -27,23 +27,79 @@ foreach ($package in $manifest.packages) {
         if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $record.sha256) { $issues.Add('使用版需重建或核对：'+$record.path) }
     }
 }
+$runtimeRoot = Join-Path $projectRoot '创作系统'
+$runtimeFiles = @(Get-ChildItem -LiteralPath $runtimeRoot -Filter '*.md' -Recurse -File)
+foreach ($oldDirectory in @('助手指令','视觉表现资源','人类视觉语言库','参考资料')) {
+    if (Test-Path -LiteralPath (Join-Path $projectRoot $oldDirectory)) { $issues.Add('旧运行目录仍存在：'+$oldDirectory) }
+}
+if ($manifest.packages.Count -ne 1 -or $manifest.entry -ne '创作系统/入口.md') { $issues.Add('运行入口或导出未统一') }
+$modules = @(Get-ChildItem -LiteralPath (Join-Path $runtimeRoot '能力'),(Join-Path $runtimeRoot '任务') -Filter '*.md' -File)
+foreach ($module in $modules) {
+    $moduleBody = Get-Content -LiteralPath $module.FullName -Raw -Encoding UTF8
+    foreach ($field in @('层级','何时读取','解决什么','何时深入','何时停止')) {
+        if (-not $moduleBody.Contains('**'+$field+'**')) { $issues.Add('模块缺少调用说明：'+$module.Name+' / '+$field) }
+    }
+}
+# 检查统一入口能沿正文链接到达每份运行材料，防止迁移留下孤立文件。
+$visited = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+$queue = [Collections.Generic.Queue[string]]::new()
+$queue.Enqueue((Join-Path $runtimeRoot '入口.md'))
+while ($queue.Count -gt 0) {
+    $current = $queue.Dequeue()
+    if (-not $visited.Add($current) -or -not (Test-Path -LiteralPath $current)) { continue }
+    $body = [IO.File]::ReadAllText($current)
+    foreach ($match in [regex]::Matches($body,'\]\(([^)]+)\)')) {
+        $target = $match.Groups[1].Value
+        if ($target -match '^(https?:|app:|codex:|#)') { continue }
+        $relative = ($target -split '#',2)[0]
+        $absolute = [IO.Path]::GetFullPath((Join-Path (Split-Path $current -Parent) $relative))
+        if ($absolute.StartsWith($runtimeRoot+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase) -and $absolute.EndsWith('.md')) { $queue.Enqueue($absolute) }
+    }
+}
+foreach ($file in $runtimeFiles) {
+    if (-not $visited.Contains($file.FullName)) { $issues.Add('入口无法到达运行材料：'+$file.FullName) }
+}
+foreach ($package in $manifest.packages) {
+    $sourcePaths = @($package.sources | ForEach-Object { $_.path })
+    if ($sourcePaths[0] -ne '创作系统/入口.md') { $issues.Add('导出没有统一入口') }
+    if (@($sourcePaths | Select-Object -Unique).Count -ne $sourcePaths.Count) { $issues.Add('导出重复来源') }
+    if ($sourcePaths.Count -ne $runtimeFiles.Count) { $issues.Add('导出未覆盖完整运行目录') }
+    foreach ($file in $runtimeFiles) {
+        $relative = [IO.Path]::GetRelativePath($projectRoot,$file.FullName).Replace('\','/')
+        if ($relative -notin $sourcePaths) { $issues.Add('运行材料未进入导出：'+$relative) }
+    }
+    $archive = [IO.Compression.ZipFile]::OpenRead((Join-Path $projectRoot $package.path))
+    try {
+        if ($archive.Entries.Count -ne $sourcePaths.Count+1 -or -not $archive.GetEntry('导出说明.md')) { $issues.Add('导出包条目不完整') }
+        foreach ($source in $package.sources) {
+            $entry = $archive.GetEntry($source.path)
+            if (-not $entry) { $issues.Add('导出缺少正文：'+$source.path); continue }
+            $stream = $entry.Open()
+            $hasher = [Security.Cryptography.SHA256]::Create()
+            try { $hash = [Convert]::ToHexString($hasher.ComputeHash($stream)).ToLowerInvariant() }
+            finally { $stream.Dispose(); $hasher.Dispose() }
+            if ($hash -ne $source.sha256) { $issues.Add('导出正文与来源不一致：'+$source.path) }
+        }
+    } finally { $archive.Dispose() }
+}
 $developmentIds = [System.Collections.Generic.List[string]]::new()
-foreach ($file in @(Get-ChildItem -LiteralPath (Join-Path $projectRoot '视觉表现资源') -Filter '*.md' -File)) {
+foreach ($file in $modules) {
     $resourceText = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
     foreach ($match in [regex]::Matches($resourceText, '(?m)^## (S-V\d+|P-D\d+|J-V\d+)\b|(?m)^\| (O-F\d+) \|')) {
         $resourceId = $match.Groups[1].Value + $match.Groups[2].Value
         $developmentIds.Add($resourceId)
     }
 }
+
 foreach ($group in @($developmentIds | Group-Object)) {
     if ($group.Count -gt 1) { $issues.Add('深化资源编号重复：'+$group.Name) }
 }
 $actualModelRuns = 0
-$visualLanguageRoot = Join-Path $projectRoot '人类视觉语言库'
+$visualLanguageRoot = Join-Path $projectRoot '创作系统/材料/关系'
 $relationIds = [Collections.Generic.List[string]]::new()
 $relationFields = @('日常入口','成立条件','可见过程','观察与表达','变体与边界','依据与验证')
-$experienceIndex = Get-Content -LiteralPath (Join-Path $visualLanguageRoot '日常经验索引.md') -Raw -Encoding UTF8
-foreach ($file in @(Get-ChildItem -LiteralPath (Join-Path $visualLanguageRoot '关系条目') -Filter '*.md' -File)) {
+$experienceIndex = Get-Content -LiteralPath (Join-Path $visualLanguageRoot '索引.md') -Raw -Encoding UTF8
+foreach ($file in @(Get-ChildItem -LiteralPath (Join-Path $visualLanguageRoot '条目') -Filter '*.md' -File)) {
     $relationText = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
     foreach ($entry in [regex]::Matches($relationText, '(?ms)^## (VL-[A-Z]\d+) ([^\r\n]+)\r?\n(.*?)(?=^## |\z)')) {
         $id = $entry.Groups[1].Value
