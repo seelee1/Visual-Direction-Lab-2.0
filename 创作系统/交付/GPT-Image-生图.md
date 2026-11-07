@@ -1,5 +1,7 @@
 # GPT Image 生图适配
 
+能力判断遵循[交付层的意图理解与官方核验](README.md#从用户意图判断能力)：未收录的需求先核对官方支持情况，不把本文当作能力白名单。
+
 适配层 v0.1 · 官方资料核对：2026-10-26。对象为 OpenAI GPT Image 系列；“GPT Image”“gptimage”均可触发本适配，不据此猜定具体 API 型号。来源为官方[提示指南](https://developers.openai.com/api/docs/guides/image-prompting)与[图像生成说明](https://developers.openai.com/api/docs/guides/image-generation)。本项目尚未直接执行 GPT Image 生图或完成受控验证；已有[用户成图观察](../../项目记录/创作案例与验证/GPT-Image-朋克风格观察/README.md)，实际模型与设置未知。
 
 仅在用户要求 GPT Image 提示词或已明确设置该生成用途时启用。先依据核心完成艺术设计，再适配静态成稿；概念、分镜等任务仍按用户要求交付。本文件属于统一创作系统的交付层，只在对应目标明确后读取。

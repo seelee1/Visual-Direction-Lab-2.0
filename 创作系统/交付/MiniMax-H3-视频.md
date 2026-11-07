@@ -1,5 +1,7 @@
 # MiniMax-H3 视频适配
 
+能力判断遵循[交付层的意图理解与官方核验](README.md#从用户意图判断能力)：未收录的需求先核对官方支持情况，不把本文当作能力白名单。
+
 适配层 v0.3.1 · 2026-10-10。来源为官方 [模型卡](https://huggingface.co/MiniMaxAI/MiniMax-H3)、[基础提示指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_base_en.md)与[全参考指南](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/VIDEO_PROMPT_WRITING_GUIDE_ref_en.md)。以下规则用于格式适配，未接通生成环境。
 
 本适配只在用户要求 MiniMax-H3 视频提示词，或已明确设置 H3 生成用途时启用，负责最后的字段与参考交付，不决定前期艺术设计。英文提示词配用户语言说明，台词和画面文字保持原文，用户明确指定其他语言时遵从。启用本适配后，没有参考默认 T2VA；实际参考角色不明且影响模式时简短澄清。本文件属于统一创作系统的交付层，只在对应目标明确后读取。

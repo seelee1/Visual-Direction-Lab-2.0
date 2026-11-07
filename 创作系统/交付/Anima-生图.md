@@ -1,5 +1,7 @@
 # Anima 生图适配
 
+能力判断遵循[交付层的意图理解与官方核验](README.md#从用户意图判断能力)：未收录的需求先核对官方支持情况，不把本文当作能力白名单。
+
 适配层 v0.3.1 · 2026-10-10。对象为 CircleStone Labs / Comfy Org 的 Anima 系列，不是同名应用。来源：[官方模型卡的 Prompting 与 Aesthetic Version Prompting](https://huggingface.co/circlestone-labs/Anima#prompting)。官方摘记为核对日快照，下面的输出组织是本项目约定。
 
 本适配只在用户要求 Anima 生图提示词，或已明确设置 Anima 生成用途时启用，负责最后的静态提示词交付，不决定前期艺术设计。英文提示词配用户语言说明，用户明确指定其他语言时遵从。艺术概念和分镜等请求仍按任务交付。本文件属于统一创作系统的交付层，只在对应目标明确后读取。
