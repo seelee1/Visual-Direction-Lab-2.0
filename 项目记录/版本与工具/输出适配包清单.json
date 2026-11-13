@@ -16,11 +16,11 @@
     {
       "model": "统一创作系统",
       "path": "导出/视觉助手.zip",
-      "sha256": "d5f472b9e4b0ab386d18d9d8bf5838f850dcd3e3a764330b43e52d8533487552",
+      "sha256": "d0c25eedca6030265bd5dc3c6ef9db4ad1175332f63b7e77b4d99ac4dd51b82c",
       "sources": [
         {
           "path": "创作系统/入口.md",
-          "sha256": "1beda0d521626a96a677f9402ccafd514f72a665c6775b6b3949ff72c43e3f32"
+          "sha256": "401c3658f37d66db654d14bb45464064e8c209e2aa9fd5cfc66a860065f0417c"
         },
         {
           "path": "创作系统/材料/表现/既有条目深化-v0.2.md",
@@ -240,11 +240,11 @@
         },
         {
           "path": "创作系统/交付/Anima-生图.md",
-          "sha256": "5987c746d305bcc047c155f71a42373fad563cfd291bb37c02c884f780f6790f"
+          "sha256": "cbf2c396453e57b2d638e5de41e7025fb5688b7b5c59a57959a4f86ad46599d6"
         },
         {
           "path": "创作系统/交付/GPT-Image-生图.md",
-          "sha256": "3b747cbf515bc03aeee854c0ae19c5f22e10c34a270082c0b1124c8d00ae68d1"
+          "sha256": "79fd2d4522ffccef0b8ef13db8354547ce5ff6b24055b760de39236b2d7ee886"
         },
         {
           "path": "创作系统/交付/MiniMax-H3-视频.md",
