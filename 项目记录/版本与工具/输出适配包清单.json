@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "0.8.1",
   "core_instruction_version": "0.8",
   "entry": "创作系统/入口.md",
   "status": "unified_structure_not_agent_routing_or_generation_validated",
@@ -16,7 +16,7 @@
     {
       "model": "统一创作系统",
       "path": "导出/视觉助手.zip",
-      "sha256": "d0c25eedca6030265bd5dc3c6ef9db4ad1175332f63b7e77b4d99ac4dd51b82c",
+      "sha256": "ddfcbe7b009f2176559a4b26f3980cba866a8293217846df2a77f165362185b7",
       "sources": [
         {
           "path": "创作系统/入口.md",
@@ -240,7 +240,7 @@
         },
         {
           "path": "创作系统/交付/Anima-生图.md",
-          "sha256": "cbf2c396453e57b2d638e5de41e7025fb5688b7b5c59a57959a4f86ad46599d6"
+          "sha256": "139ce8781a275eeea67bc2d065e48c30195673db6d375c1648242dfaa0d1142a"
         },
         {
           "path": "创作系统/交付/GPT-Image-生图.md",

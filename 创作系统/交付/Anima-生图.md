@@ -2,7 +2,7 @@
 
 能力判断遵循[交付层的意图理解与官方核验](README.md#从用户意图判断能力)：未收录的需求先核对官方支持情况，不把本文当作能力白名单。
 
-适配层 v0.3.1 · 2026-10-10。对象为 CircleStone Labs / Comfy Org 的 Anima 系列，不是同名应用。来源：[官方模型卡的 Prompting 与 Aesthetic Version Prompting](https://huggingface.co/circlestone-labs/Anima#prompting)。官方摘记为核对日快照，下面的输出组织是本项目约定。
+适配层 v0.4.0 · 2026-11-13。对象为 CircleStone Labs / Comfy Org 的 Anima 系列，不是同名应用。来源：[官方模型卡的 Prompting 与 Aesthetic Version Prompting](https://huggingface.co/circlestone-labs/Anima#prompting)。官方摘记为 2026-10-10 核对日快照，下面的输出组织与长度约定是本项目约定，不是官方限制。
 
 本适配只在用户要求 Anima 生图提示词，或已明确设置 Anima 生成用途时启用，负责最后的静态提示词交付，不决定前期艺术设计。英文提示词配用户语言说明，用户明确指定其他语言时遵从。艺术概念和分镜等请求仍按任务交付。本文件属于统一创作系统的交付层，只在对应目标明确后读取。
 
@@ -35,11 +35,15 @@
 
 从用户要求和选定作品设计提取媒介标签与画法描述。使用 Anima 只确定交付规则。需要日式插画时可用 `anime illustration`，其他画法按作品选择标签，或用自然语言描述具体绘制方式。
 
+单张角色或场景插画先表达已经选定的主构图：人物姿态与取景、前景怎样遮挡或框取、背景怎样衬托，以及主要明暗色块如何分布。物件细节只保留改变身份、行动、观看路径或画面大形的部分；不能用“精致背景、电影感构图”等概括词替代可见的位置与关系。由生成结果偶然形成的好构图，不能倒认作原提示词已经设计出的内容。
+
 只写选定静态时刻的可见状态，不写未来动作、镜头推移或连续时间线。图像中的方向、支撑、遮挡与受光须能成立。生成参数、参考图绑定和 LoRA 配置不能夹进正文。
 
-### 默认完整表达
+### 默认篇幅与信息保留
 
-默认将选定艺术设计完整转成提示词，保留人物、事件、环境、光色、材质及画法中有实际作用的细节与关系。不因 Anima 的模型规模、推测能力或以往生成遗漏主动删减、简化或重构设计；用户可以自行调整，明确要求压缩或模型专项重构时再处理。完整不等于堆砌或扩写，篇幅依据作品需要，不设固定词数。清晰的对象名称和有序表达继续使用，质量词与既有格式保持不变。
+普通单张插画的 Positive 自然语言默认约 120–220 个英文词，通常不超过 260 个；标签首行只选关键属性，不把自然语言的细节再列一遍。Negative 只列确有必要的排除项。这是项目的交付篇幅约定，不是模型容量或最佳效果的实测结论。用户指定更短篇幅时从其要求；明确要求复杂完整设计且关键条件无法容纳时可以超过。
+
+先在艺术设计中选定身份、动作、核心画面关系与必要的空间光色，再凝练表达；不要先设计大量配饰和背景物，最后为了凑字数暗中删掉。保留用户明确要求及使画面成立的条件，合并重复描述，省略当前取景不可辨或不改变画面的装饰。若压缩会损失用户指定的核心内容，保留核心并简短说明取舍。清晰的对象名称和有序表达继续使用，质量词与既有格式保持不变。
 
 ### 版本与质量标签
 
@@ -68,13 +72,13 @@ Positive
 ```text
 masterpiece, best quality, anime illustration, 1girl, solo, original character, short hair, purple hair, amber eyes, overalls, sitting, kite, rooftop, harbor, afternoon
 
-A young adult kite maker with a softly tousled plum-purple bob, amber eyes, and a small freckle beneath one eye sits cross-legged on a woven mat on a seaside workshop rooftop. She wears faded indigo canvas overalls over a loose cream shirt with rolled sleeves, a vermilion bandanna around her neck, and worn canvas sneakers. Leaning forward with quiet concentration and a slight satisfied smile, she presses a small translucent coral-paper patch over a tear in the wing of an enormous handmade fish-shaped kite. One hand smooths the patch flat while the other steadies the bamboo rib immediately beneath it. Her gaze rests precisely on their contact point. A shallow dish of paste and a small brush sit on a wooden board beside her knee. A loose spool of kite line and two folded paper offcuts complete the working area.
+A young adult kite maker with a tousled purple bob and amber eyes sits cross-legged on a seaside rooftop. She wears indigo overalls over a cream shirt. Leaning over a large fish-shaped kite, she smooths a coral-paper patch onto its torn wing while her other hand steadies the bamboo rib beneath it. Her gaze rests on the repair.
 
-The kite rests partly across her lap and partly on a low wooden trestle to her right, its lightweight bamboo skeleton visible through the paper skin. Its rounded fish head, broad fin-like wings, and long forked ribbon tail stretch across most of the horizontal frame. The repaired wing has one narrow split and a few older rectangular patches, each carefully integrated into the paper surface. The large circular painted fish eye is visible beyond her hands. Viewed from slightly above in a three-quarter medium-wide composition, the maker occupies the left third and the kite opens across the center and right. A cropped roof beam in the upper foreground establishes a sheltered working corner. Terracotta roof tiles and a low parapet lead toward a harbor below, where compact boats and tightly clustered seaside roofs diminish in scale. A generous strip of pale blue sky gives the intricate kite silhouette room to breathe.
+Viewed slightly from above, the maker occupies the left third of a horizontal frame. The kite rests across her lap and a low trestle, opening its broad fins and forked tail across the center and right. A roof beam crops the upper foreground; roof tiles and a low parapet lead toward a small harbor below. Pale sky surrounds the kite's silhouette.
 
-Low afternoon sunlight enters from the right through the suspended edge of the kite, turning its thin ivory and coral paper luminous while leaving the bamboo ribs as delicate darker lines. Overlapping patches appear slightly denser and warmer than the surrounding paper. A broad fish-shaped shadow falls across the mat and rooftop, with softer fin edges and thin rib shadows inside it. Her hands and the repair remain clearly readable against the glowing wing. Cool sky light fills the shaded side of her face and indigo overalls; small warm reflections from the kite connect her skin and cream sleeves to the coral paper. Dry terracotta, fibrous matte paper, smooth bamboo, and coarse canvas have distinct restrained textures. Keep the strongest color contrast around her face, hands, and the repaired section; the distant harbor uses softer blue-green and muted warm planes.
+Afternoon sunlight passes through the kite's thin ivory and coral paper, revealing its darker bamboo ribs. Its fish-shaped shadow falls across the rooftop mat. Cool sky light fills her shaded face and overalls, while the strongest warm contrast stays around her hands and the repaired wing. The distant harbor recedes in softer blue-green tones.
 
-An original Japanese anime narrative illustration combining graceful character drawing with carefully painted architectural scenery. Tapered colored linework defines the face, fingers, bamboo joints, and kite contours. Broad cel-shaded forms organize the figure, while subtle gouache-like brushwork gives the rooftop and harbor tactile depth. Preserve large quiet shapes between clusters of fine detail. The patch, steadying hand, old repairs, and supported kite communicate patient craftsmanship within a single still image. The oversized fish shape creates gentle visual wonder without becoming a living creature or covering the maker's face.
+An anime-inspired narrative illustration with tapered colored linework on her face, hands, and kite, broad cel-shaded forms on the figure, and soft gouache-like brushwork in the background. Keep the repair sharply readable and leave quiet shapes between clusters of detail.
 ```
 
 Negative
