@@ -17,11 +17,11 @@
     {
       "model": "统一创作系统",
       "path": "导出/视觉助手.zip",
-      "sha256": "38ca841fb911ca4c63eae59595c757de3869e87806b838ab25047dd7baa4493b",
+      "sha256": "85dee4589340de97759516fa4332bd9e8f55e272b5be22659174ee93c23387a9",
       "sources": [
         {
           "path": "创作系统/入口.md",
-          "sha256": "1300eadf5ee80e9d86c4d8188c3c17273c01d0c1623720a5c3fabf01fb62a87a"
+          "sha256": "cbb977d87152410ba350522dff08ab584b2c2840773d698cada59d66a73b96c8"
         },
         {
           "path": "创作系统/材料/表现/既有条目深化-v0.2.md",
@@ -233,7 +233,7 @@
         },
         {
           "path": "创作系统/交付/信息保留.md",
-          "sha256": "306e9fe995336e1c230ddbc4533c9b904195e5da7979af3fef00b65f8e4f67e1"
+          "sha256": "3be21d413e0de28effa8083bec26fc155cf404c1d1b14a0384fa19b40ccdffca"
         },
         {
           "path": "创作系统/交付/制作交接.md",
