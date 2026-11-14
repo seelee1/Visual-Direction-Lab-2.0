@@ -39,7 +39,7 @@ $package = [ordered]@{model='统一创作系统'; path=$output; sha256=(Get-File
 $manifest = [ordered]@{
     version='0.8.1'; core_instruction_version='0.8'; entry='创作系统/入口.md'
     status='unified_structure_not_agent_routing_or_generation_validated'
-    adapter_verified_dates=[ordered]@{Anima='2026-10-10'; 'MiniMax-H3'='2026-10-10'; 'GPT-Image'='2026-10-26'; 'Seedance'='2026-10-29'}
+    adapter_verified_dates=[ordered]@{Anima='2026-10-10'; 'MiniMax-H3'='2026-10-10'; 'GPT-Image'='2026-10-26'; 'Seedance'='2026-10-29'; 'Krea-2'='2026-11-14'}
     image_runs=0; gpt_image_runs=0; video_runs=0; packages=@($package)
 }
 $json = ($manifest | ConvertTo-Json -Depth 10).Replace([string][char]13,'') + [char]10

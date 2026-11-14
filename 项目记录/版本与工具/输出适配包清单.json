@@ -7,7 +7,8 @@
     "Anima": "2026-10-10",
     "MiniMax-H3": "2026-10-10",
     "GPT-Image": "2026-10-26",
-    "Seedance": "2026-10-29"
+    "Seedance": "2026-10-29",
+    "Krea-2": "2026-11-14"
   },
   "image_runs": 0,
   "gpt_image_runs": 0,
@@ -16,11 +17,11 @@
     {
       "model": "统一创作系统",
       "path": "导出/视觉助手.zip",
-      "sha256": "ddfcbe7b009f2176559a4b26f3980cba866a8293217846df2a77f165362185b7",
+      "sha256": "38ca841fb911ca4c63eae59595c757de3869e87806b838ab25047dd7baa4493b",
       "sources": [
         {
           "path": "创作系统/入口.md",
-          "sha256": "401c3658f37d66db654d14bb45464064e8c209e2aa9fd5cfc66a860065f0417c"
+          "sha256": "1300eadf5ee80e9d86c4d8188c3c17273c01d0c1623720a5c3fabf01fb62a87a"
         },
         {
           "path": "创作系统/材料/表现/既有条目深化-v0.2.md",
@@ -232,7 +233,7 @@
         },
         {
           "path": "创作系统/交付/信息保留.md",
-          "sha256": "b672ed731cb2e6da44bf928b2bddfecd551358b54f5e4716f3f5772402612f63"
+          "sha256": "306e9fe995336e1c230ddbc4533c9b904195e5da7979af3fef00b65f8e4f67e1"
         },
         {
           "path": "创作系统/交付/制作交接.md",
@@ -240,23 +241,27 @@
         },
         {
           "path": "创作系统/交付/Anima-生图.md",
-          "sha256": "139ce8781a275eeea67bc2d065e48c30195673db6d375c1648242dfaa0d1142a"
+          "sha256": "f049d6c42e8c42ed41bc594eecf9b3957f16200d0f191e303209246676f9ed83"
         },
         {
           "path": "创作系统/交付/GPT-Image-生图.md",
-          "sha256": "79fd2d4522ffccef0b8ef13db8354547ce5ff6b24055b760de39236b2d7ee886"
+          "sha256": "eab142dd0eb350f4ef188533c2eb660ce6363c63b2f54f67e0d77adc5e2916d7"
+        },
+        {
+          "path": "创作系统/交付/Krea-2-生图.md",
+          "sha256": "6800f5e2e9cb9d082699122cd301c5161f52167a974581b4ecf675c578306dca"
         },
         {
           "path": "创作系统/交付/MiniMax-H3-视频.md",
-          "sha256": "be5e7cb03e1b6f091b01c5d2ecda65a057f87d7c1db14f8c7ef96ef1ba010e42"
+          "sha256": "a74ed2556da8fd59c33bede155c851ee49dd59e7bd8cf610478c1c36bd9dd912"
         },
         {
           "path": "创作系统/交付/README.md",
-          "sha256": "c0814fe16b96aaf539dca8e110d8285fb0fdb97913e51f01ebbccc782594d83c"
+          "sha256": "1bde7106ea30bd09098a35bcabe548f167f1d48eeafa9e3f060919f78bc0fda1"
         },
         {
           "path": "创作系统/交付/Seedance-视频.md",
-          "sha256": "d899294daba2e0b10cfc057a2b141110024f734ff69078af887ced9c7e43e3da"
+          "sha256": "0c7617b675a0ed3cf61910c0a3b15a6122f6b770a138573c36982f4b0fa84ec9"
         },
         {
           "path": "创作系统/能力/场景设计.md",
@@ -276,7 +281,7 @@
         },
         {
           "path": "创作系统/能力/构图.md",
-          "sha256": "1f7912d482e7f55ffc9071a58b6086e6d7dd1d4e0ea5bfe33f6a80f19d7822e2"
+          "sha256": "a7b7140604c3dda6bf403275e122eeed0a5070ea4a11f9ccaaa64917779852ab"
         },
         {
           "path": "创作系统/能力/关系组织.md",
@@ -308,7 +313,7 @@
         },
         {
           "path": "创作系统/能力/艺术语言.md",
-          "sha256": "6ca610add2c273241964ade1f92de838a07f89a044d7f455e11198a7011ad186"
+          "sha256": "da3706b2d03945adbe72136629450685e2fff4a6e71b30d7c56686bc176d3d49"
         },
         {
           "path": "创作系统/能力/运动与物理.md",
